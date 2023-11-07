@@ -1,0 +1,12 @@
+.vscode
+.husky
+src
+swa
+.eslintrc.js
+.gitignore
+.npmrc
+.prettierignore
+.prettierrc.js
+commitlint.config.ts
+package-lock.json
+tsconfig.json
