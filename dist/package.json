@@ -1,6 +1,6 @@
 {
-	"name": "generate_swagger",
-	"version": "1.0.40",
+	"name": "jlg_generate_by_swagger",
+	"version": "0.0.1",
 	"description": "Use swagger.json to generate the corresponding TS constraint and AXIOS interface call function",
 	"bin": "./dist/index.js",
 	"main": "./dist/index.js",
