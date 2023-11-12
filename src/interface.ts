@@ -1,5 +1,4 @@
 import fs from 'fs';
-import path from 'path';
 import constant from './constant';
 import { log, duplicateRemovalInArr, schemaObject } from './utils';
 import { I_Config } from './type';
@@ -90,16 +89,13 @@ const getInterFileRecordStr = (config: I_Config, obj: { components: { schemas: {
 };
 
 const init = (config: I_Config) => {
-	const swaggerFileName = config.swaggerFileName ?? constant.swaggerFileName;
-
 	const interfaceNamePrepend = config.interfaceNamePrepend ?? constant.interfaceNamePrepend;
 
-	const swaggerFile = path.join(__dirname, swaggerFileName); // JSON文件名
 	return new Promise((resolve, reject) => {
-		fs.readFile(swaggerFile, (err, data) => {
+		fs.readFile(config.swaggerFileName, (err, data) => {
 			log('info', '开始生成ts类型文件');
 			if (err) {
-				log('error', `读取文件${swaggerFile}时发生错误：${err.message}`);
+				log('error', `读取文件${config.swaggerFileName}时发生错误：${err.message}`);
 				return;
 			}
 
@@ -109,7 +105,7 @@ const init = (config: I_Config) => {
 				resolve(swaInterFileStr);
 				log('info', 'ts类型文件生成成功');
 			} catch (err) {
-				reject(`解析JSON文件${swaggerFile}时发生错误：${err}`);
+				reject(`解析JSON文件${config.swaggerFileName}时发生错误：${err}`);
 			}
 		});
 	});

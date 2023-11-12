@@ -1,17 +1,13 @@
 import fs from 'fs';
-import path from 'path';
-import constant from './constant';
 import { log, duplicateRemovalInArr, schemaObjectProperties } from './utils';
 import { I_Config } from './type';
 
 const requestInit = (config: I_Config) => {
-	const swaggerFileName = config.swaggerFileName ?? constant.swaggerFileName;
-	const swaggerFile = path.join(__dirname, swaggerFileName);
 	return new Promise((resolve, reject) => {
-		fs.readFile(swaggerFile, (err, data) => {
+		fs.readFile(config.swaggerFileName, (err, data) => {
 			log('info', '开始生成request接口文件');
 			if (err) {
-				log('error', `读取文件${swaggerFile}时发生错误：${err.message}`);
+				log('error', `读取文件${config.swaggerFileName}时发生错误：${err.message}`);
 				return;
 			}
 
@@ -143,7 +139,7 @@ const requestInit = (config: I_Config) => {
 				log('info', 'request接口文件生成成功');
 			} catch (err) {
 				reject(err);
-				log('error', `解析JSON文件${swaggerFile}时发生错误：${err}`);
+				log('error', `解析JSON文件${config.swaggerFileName}时发生错误：${err}`);
 			}
 		});
 	});

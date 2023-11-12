@@ -2,18 +2,18 @@
 为jlg前端项目根据后端的swagger文档生成前端代码（Typescript，Axios）。
 
 ## 安装
-`npm i jlg_generate_by_swagger -D`
+`npm i jlg_generate_by_swagger@latest -D`或`npm i jlg_generate_by_swagger@latest -g`
 
-## 使用方法
+## 使用方法（局部安装）
 1>: 在项目根目录中创建`.generateSwaggerrc`文件，内容如下：
 ```
 {
     // 远程swagger.json文件URL
     "swaggerUrl": "http://10.1.2.9:10031/swagger/v1/swagger.json",
     // 生成的swagger.json文件路径，默认src/apiType/swagger.json
-    "swaggerFileName": "../../../src/apiType/swagger.json",
+    "swaggerFileName": "src/apiType/swagger.json",
     // 生成的接口文件路径，默认src/apiType/api.ts
-    "resultFileName": "../../../src/apiType/result.ts",
+    "resultFileName": "src/apiType/result.ts",
     // 生成文件中的Typescript类型命名前缀，默认AT_
     "interfaceNamePrepend": "AT_",
     // 封装的axios实例引入路径，默认import axios from '@/request/index'
@@ -30,6 +30,25 @@
 ```
 
 3>: 启动终端，在项目根目录下执行命令：`npm run jlg_generate_by_swagger`等待一段时间之后将会在src文件夹中生成apiType文件夹，文件夹中包含`swagger.json`和`result.ts`文件。
+
+## 使用方法（全局安装）
+1>: 在项目根目录中创建`.generateSwaggerrc`文件，内容如下：
+```
+{
+    // 远程swagger.json文件URL
+    "swaggerUrl": "http://10.1.2.9:10031/swagger/v1/swagger.json",
+    // 生成的swagger.json文件路径，默认src/apiType/swagger.json
+    "swaggerFileName": "src/apiType/swagger.json",
+    // 生成的接口文件路径，默认src/apiType/api.ts
+    "resultFileName": "src/apiType/result.ts",
+    // 生成文件中的Typescript类型命名前缀，默认AT_
+    "interfaceNamePrepend": "AT_",
+    // 封装的axios实例引入路径，默认import axios from '@/request/index'
+    "axiosUrl": "import axios from '@/axios/index'"
+}
+```
+
+2>: 启动终端，在项目根目录下执行命令：`jlg_generate_by_swagger`等待一段时间之后将会在src文件夹中生成apiType文件夹，文件夹中包含`swagger.json`和`result.ts`文件。
 
 ## 特性
 

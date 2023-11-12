@@ -15,16 +15,16 @@ explorer.search().then((result) => {
 	if (result && result.config) {
 		// 使用result.config中的配置信息来实现你的功能
 		const config: I_Config = result.config;
-		const resultFileName = config.resultFileName ?? constant.resultFileName;
-		const fileWriteFile = path.join(__dirname, resultFileName); // 本地保存的文件名
+		config.resultFileName = path.join(process.cwd(), config.resultFileName ?? constant.resultFileName);
+		config.swaggerFileName = path.join(process.cwd(), config.swaggerFileName ?? constant.swaggerFileName);
 		swaggerInit(config).then(() => {
 			Promise.all([requestInit(config), interfaceInit(config)])
 				.then((res) => {
-					if (!fs.existsSync(fileWriteFile) || fs.statSync(fileWriteFile).isDirectory()) {
+					if (!fs.existsSync(config.resultFileName) || fs.statSync(config.resultFileName).isDirectory()) {
 						// 路径不存在或者是一个目录，进行创建
-						fs.mkdirSync(path.dirname(fileWriteFile), { recursive: true });
+						fs.mkdirSync(path.dirname(config.resultFileName), { recursive: true });
 					}
-					fs.writeFileSync(fileWriteFile, res.join(''));
+					fs.writeFileSync(config.resultFileName, res.join(''));
 				})
 				.catch((err) => {
 					log('error', err);
