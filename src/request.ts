@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { log, duplicateRemovalInArr, schemaObjectProperties } from './utils';
+import { log, duplicateRemovalInArr, schemaObjectProperties, I_SchemaObjectPropertiesReturn } from './utils';
 import { I_Config } from './type';
 
 const requestInit = (config: I_Config) => {
@@ -17,7 +17,12 @@ const requestInit = (config: I_Config) => {
 				const requestGetkeys: string[] = [];
 				const requestPostkeys: string[] = [];
 				const requestParametersKeys: string[] = [];
-				let requestFileContent = config.axiosUrl + '\nexport declare interface ResponseData<T>{content: T;message: string | void;status: number;}\n';
+				let requestFileContent = [
+					config.axiosUrl,
+					'export declare interface ResponseData<T>{content: T;message: string | void;status: number;}',
+					'type ItemInTu<T, K> = T extends [infer F, ...infer R] ? (F extends K ? true : ItemInTu<R, K>) : false;',
+					'export declare type U_I_NoNull<T, U extends Array<keyof T>> = {[K in keyof T as ItemInTu<U, K> extends true ? never : K]: T[K];} & {[K in keyof T as ItemInTu<U, K> extends true ? K : never]-?: T[K];};',
+				].join('\n');
 				Object.keys(obj.paths).forEach((axiosUrl) => {
 					let requestFileItemContent = `export const `;
 					Object.keys(obj.paths[axiosUrl]).forEach((requestType) => {
@@ -27,15 +32,27 @@ const requestInit = (config: I_Config) => {
 								return str.replace(/^\{|\}$/g, '');
 							})
 							.join('');
-						requestFileItemContent += `${requestType}${str.substring(0, 1).toUpperCase() + str.substring(1)} = `;
+						requestFileItemContent += `${requestType}${str.substring(0, 1).toUpperCase() + str.substring(1)}`;
 						requestTypeArr.push(requestType);
 						let parameterStr = '';
 						let parameData = '';
 						const axiosOption = obj.paths[axiosUrl][requestType];
 						const parameterTypeKeyArr: string[] = [];
-						let returnType = '';
+						const functionTypeArr: string[] = [];
+						let result: I_SchemaObjectPropertiesReturn = {
+							interContentItemGenericStrValue: '',
+							isSchemaType: false,
+							interContentItemStrValue: '',
+							schameTypeName: '',
+						};
+						let responseResult: I_SchemaObjectPropertiesReturn = {
+							interContentItemGenericStrValue: '',
+							isSchemaType: false,
+							interContentItemStrValue: '',
+							schameTypeName: '',
+						};
 						if (axiosOption.responses[200].content && axiosOption.responses[200].content['application/json']) {
-							returnType = schemaObjectProperties(
+							responseResult = schemaObjectProperties(
 								config,
 								{
 									properties: {
@@ -45,14 +62,20 @@ const requestInit = (config: I_Config) => {
 								'value',
 								[],
 								[],
-								''
+								'',
+								false,
+								true,
+								['RNU']
 							);
+							if (responseResult.isSchemaType) {
+								functionTypeArr.push(`RNU extends (keyof ${responseResult.schameTypeName})[] = []`);
+							}
 						}
 						if (axiosOption.parameters) {
 							parameterStr += axiosOption.parameters.reduce((acc: string, parameter: { name: string; schema?: any }) => {
 								const typeKey = parameter.name;
 								parameterTypeKeyArr.push(typeKey);
-								const typeValue = schemaObjectProperties(
+								result = schemaObjectProperties(
 									config,
 									{
 										properties: {
@@ -63,20 +86,24 @@ const requestInit = (config: I_Config) => {
 									[],
 									[],
 									',',
-									true
+									true,
+									true,
+									[`NU${acc.length}`]
 								);
 								Object.keys(parameter).forEach((parameterKey) => {
 									requestParametersKeys.push(parameterKey);
 								});
-								return `${acc}${typeKey}: ${typeValue}`;
+								if (result.isSchemaType) {
+									functionTypeArr.push(`NU${acc.length} extends (keyof ${result.schameTypeName})[] = []`);
+								}
+								return `${acc}${typeKey}: ${result.interContentItemGenericStrValue}`;
 							}, '');
 						}
 
 						if (axiosOption.requestBody) {
 							const typeKey = 'data';
-							let typeValue = '';
 							if (axiosOption.requestBody.content && axiosOption.requestBody.content['application/json']) {
-								typeValue = schemaObjectProperties(
+								result = schemaObjectProperties(
 									config,
 									{
 										properties: {
@@ -86,10 +113,16 @@ const requestInit = (config: I_Config) => {
 									'value',
 									[],
 									[],
-									','
+									'',
+									false,
+									true,
+									['NUDATA']
 								);
+								if (result.isSchemaType) {
+									functionTypeArr.push(`NUDATA extends (keyof ${result.schameTypeName})[] = []`);
+								}
 							} else if (axiosOption.requestBody.content && axiosOption.requestBody.content['multipart/form-data']) {
-								typeValue = schemaObjectProperties(
+								result = schemaObjectProperties(
 									config,
 									{
 										properties: {
@@ -99,18 +132,26 @@ const requestInit = (config: I_Config) => {
 									'value',
 									[],
 									[],
-									','
+									'',
+									true,
+									true,
+									['NUDATA']
 								);
+								if (result.isSchemaType) {
+									functionTypeArr.push(`NUDATA extends (keyof ${result.schameTypeName})[] = []`);
+								}
 							}
-							parameData += `${typeKey}:${typeValue}`;
+							parameData += `${typeKey}:${result.interContentItemGenericStrValue}`;
 						}
 						const urlParameStr = parameterTypeKeyArr
 							.map((item) => {
 								return '${' + item + "?'" + item + "='" + '+' + item + ':' + "''" + '}';
 							})
 							.join('&');
-						requestFileItemContent = `${requestFileItemContent}(${parameterStr + parameData}) => {\n\t return axios.${requestType}${
-							returnType ? '<ResponseData<' + returnType + '>>' : ''
+						requestFileItemContent = `${requestFileItemContent} = ${functionTypeArr.length !== 0 ? '<' + functionTypeArr.join(',') + '>' : ''}(${
+							parameterStr + parameData
+						}) => {\n\t return axios.${requestType}${
+							responseResult.interContentItemGenericStrValue ? '<ResponseData<' + responseResult.interContentItemGenericStrValue + '>>' : ''
 						}(\`${axiosUrl}${urlParameStr ? '?' : ''}${urlParameStr}\`${axiosOption.requestBody ? ',data' : ''});\n};\n`;
 
 						Object.keys(axiosOption).forEach((item3) => {

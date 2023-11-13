@@ -1,5 +1,4 @@
 import fs from 'fs';
-import constant from './constant';
 import { log, duplicateRemovalInArr, schemaObject } from './utils';
 import { I_Config } from './type';
 
@@ -17,7 +16,7 @@ const schemaInteger = (schema: any, propertiesEnumKeyKey: string[]) => {
 	return enumContentStrDone;
 };
 
-const getInterFileRecordStr = (config: I_Config, obj: { components: { schemas: { [x: string]: any } } }, interfaceNamePrepend: string) => {
+const getInterFileRecordStr = (config: I_Config, obj: { components: { schemas: { [x: string]: any } } }) => {
 	let swaInterFileStr = '';
 	const propertiesEnumKeyKey: Array<string> = [];
 	const proTypeArr: Array<undefined | string> = [];
@@ -28,14 +27,15 @@ const getInterFileRecordStr = (config: I_Config, obj: { components: { schemas: {
 		if (schema.properties && schema.type !== 'object') {
 			log('error', '出现properties但是type不是object的情况,请立刻处理');
 		}
+		const typeName = config.interfaceNamePrepend + item;
 		if (schema.type === 'object') {
 			// interface头
-			const interHeadStr = `export declare interface ${interfaceNamePrepend}${item}`;
+			const interHeadStr = `export declare interface ${typeName}`;
 			const interContentStrDone = schemaObject(config, schema, proTypeArr, propertiesKeyKey);
 			const interStr = interHeadStr + '\t' + interContentStrDone;
 			swaInterFileStr = swaInterFileStr + interStr + ';\n\n';
 		} else if (schema.type === 'integer') {
-			const enumHeadStr = `export enum ${interfaceNamePrepend}${item}`;
+			const enumHeadStr = `export enum ${typeName}`;
 			const enumContentStrDone = schemaInteger(schema, propertiesEnumKeyKey);
 			const enumStr = enumHeadStr + '\t' + enumContentStrDone;
 			swaInterFileStr = swaInterFileStr + enumStr + ';\n\n';
@@ -89,8 +89,6 @@ const getInterFileRecordStr = (config: I_Config, obj: { components: { schemas: {
 };
 
 const init = (config: I_Config) => {
-	const interfaceNamePrepend = config.interfaceNamePrepend ?? constant.interfaceNamePrepend;
-
 	return new Promise((resolve, reject) => {
 		fs.readFile(config.swaggerFileName, (err, data) => {
 			log('info', '开始生成ts类型文件');
@@ -101,7 +99,7 @@ const init = (config: I_Config) => {
 
 			try {
 				const obj = JSON.parse(data.toString('utf-8')); // 将JSON字符串转换为JavaScript对象
-				const swaInterFileStr = getInterFileRecordStr(config, obj, interfaceNamePrepend);
+				const swaInterFileStr = getInterFileRecordStr(config, obj);
 				resolve(swaInterFileStr);
 				log('info', 'ts类型文件生成成功');
 			} catch (err) {

@@ -10,10 +10,16 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"cSpell.words": [
 		"commitlint",
+		"Getkeys",
+		"NUDATA",
 		"openapi",
+		"parame",
+		"Postkeys",
 		"preinstall",
+		"schame",
 		"SERVERPORT",
 		"SERVERURL",
+		"UNDATA",
 		"zedtqujmhmmthddb"
 	]
 }
