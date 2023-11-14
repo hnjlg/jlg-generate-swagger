@@ -15,9 +15,9 @@ export default {
 		'const COMPANY_CODE = useUserInfoStoreHook().companyCode;',
 	],
 	// 可选，在生成的函数中自定义一段逻辑
-	axiosFuncContent(parameterStr: string) {
-		if (parameterStr.includes('FirmCode')) {
-			return `if(!FirmCode){FirmCode = COMPANY_CODE}`;
+	axiosFuncContent(_parameterStr: string, handleAxiosUrl: string) {
+		if (handleAxiosUrl.includes('${FirmCodeURL}')) {
+			return `const FirmCodeURL = COMPANY_CODE`;
 		} else {
 			return '';
 		}

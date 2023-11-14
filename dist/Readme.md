@@ -15,9 +15,9 @@ export default {
 	// 远程swagger.json文件URL
 	swaggerUrl: 'http://10.1.2.9:10023/swagger/v1/swagger.json',
 	// 生成的swagger.json文件路径，默认src/apiType/swagger.json
-	swaggerFileName: 'src/apiType/production/swagger.json',
+	swaggerFileName: 'test/apiType/production/swagger.json',
 	// 生成的接口文件路径，默认src/apiType/api.ts
-	resultFileName: 'src/apiType/production/result.ts',
+	resultFileName: 'test/apiType/production/result.ts',
 	// 生成文件中的Typescript类型命名前缀，默认AT_
 	interfaceNamePrepend: 'AT_',
 	// 封装的axios实例引入路径，默认import axios from '@/request/index'
@@ -28,14 +28,15 @@ export default {
 		'const COMPANY_CODE = useUserInfoStoreHook().companyCode;',
 	],
 	// 可选，在生成的函数中自定义一段逻辑
-	axiosFuncContent(parameterStr: string) {
-		if (parameterStr.includes('FirmCode')) {
-			return `if(!FirmCode){FirmCode = COMPANY_CODE}`;
+	axiosFuncContent(_parameterStr: string, handleAxiosUrl: string) {
+		if (handleAxiosUrl.includes('${FirmCodeURL}')) {
+			return `const FirmCodeURL = COMPANY_CODE`;
 		} else {
 			return '';
 		}
 	},
 };
+
 ```
 
 2>: 在`package.json`中添加如下命令：

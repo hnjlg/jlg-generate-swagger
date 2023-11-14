@@ -14,17 +14,13 @@ export const postFirmCodeAssessSubmitAssess = <NUDATA extends (keyof AT_AssessMo
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssessModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Assess/SubmitAssess?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Assess/SubmitAssess?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeAssessGetAssessById = <RNU extends (keyof AT_CheckViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_CheckViewModel, RNU>>>(
-		`/${FirmCode}/Assess/GetAssessById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Assess/GetAssessById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeAssessGetAssessToPage = <
@@ -34,11 +30,9 @@ export const postFirmCodeAssessGetAssessToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssessQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_AssessPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Assess/GetAssessToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Assess/GetAssessToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -46,20 +40,16 @@ export const postFirmCodeflowAssetApplyAssentAllocation = <NUDATA extends (keyof
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssentAllocationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetApply/AssentAllocation?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetApply/AssentAllocation?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowAssetApplyGetAllocationAssetLederByApplyDetailsId = <RNU extends (keyof AT_AssetLedgerPageModel)[] = []>(
 	applyDetailsId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_AssetLedgerPageModel, RNU>[]>>(
-		`/${FirmCode}/flow/AssetApply/GetAllocationAssetLederByApplyDetailsId?${applyDetailsId ? 'applyDetailsId=' + applyDetailsId : ''}&${
+		`/${FirmCodeURL}/flow/AssetApply/GetAllocationAssetLederByApplyDetailsId?${applyDetailsId ? 'applyDetailsId=' + applyDetailsId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -68,75 +58,59 @@ export const getFirmCodeflowAssetApplyGetAssetApplyByFlowId = <RNU extends (keyo
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelAssetApplyViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/AssetApply/GetAssetApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/AssetApply/GetAssetApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowAssetApplyDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowAssetApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetApplyPendingAudit = <NUDATA extends (keyof AT_FlowAssetApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetApplyRejectAudit = <NUDATA extends (keyof AT_FlowAssetApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetApplyDynamicRejectAudit = <NUDATA extends (keyof AT_FlowAssetApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetApplyResetAudit = <NUDATA extends (keyof AT_FlowAssetApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetApplySaveDraft = <NUDATA extends (keyof AT_FlowAssetApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetApplySubmitAudit = <NUDATA extends (keyof AT_FlowAssetApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetApplyGetAssetApplyToPage = <
 	RNU extends (keyof AT_AssetApplyPageModelIEnumerableInt32Tuple)[] = [],
@@ -145,38 +119,30 @@ export const postFirmCodeflowAssetApplyGetAssetApplyToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetApplyQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_AssetApplyPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/AssetApply/GetAssetApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/AssetApply/GetAssetApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeflowAssetApplyDeleteAssetApplyByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/AssetApply/DeleteAssetApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/AssetApply/DeleteAssetApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowAssetApplyGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/AssetApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/AssetApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowAssetApplyGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/AssetApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/AssetApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -185,38 +151,30 @@ export const postFirmCodeAssetDefineAddAssetDefine = <NUDATA extends (keyof AT_A
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetDefineModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/AssetDefine/AddAssetDefine?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/AssetDefine/AddAssetDefine?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeAssetDefineUpdateAssetDefine = <NUDATA extends (keyof AT_AssetDefineModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetDefineModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/AssetDefine/UpdateAssetDefine?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/AssetDefine/UpdateAssetDefine?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeAssetDefineDeleteAssetDefine = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/AssetDefine/DeleteAssetDefine?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/AssetDefine/DeleteAssetDefine?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAssetDefineGetAssetDefineById = <RNU extends (keyof AT_AssetDefineViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_AssetDefineViewModel, RNU>>>(
-		`/${FirmCode}/AssetDefine/GetAssetDefineById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/AssetDefine/GetAssetDefineById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeAssetDefineGetAssetDefineToPage = <
@@ -226,55 +184,43 @@ export const postFirmCodeAssetDefineGetAssetDefineToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetDefineQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_AssetDefinePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/AssetDefine/GetAssetDefineToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/AssetDefine/GetAssetDefineToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeAssetDefineGetAssetDefineTreeList = <RNU extends (keyof AT_AssetDefineTreeListModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_AssetDefineTreeListModel, RNU>[]>>(
-		`/${FirmCode}/AssetDefine/GetAssetDefineTreeList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/AssetDefine/GetAssetDefineTreeList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAssetDefineSearchAssetDefineDropDownList = <RNU extends (keyof AT_AssetDefineDropDownModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_AssetDefineDropDownModel, RNU>[]>>(
-		`/${FirmCode}/AssetDefine/SearchAssetDefineDropDownList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/AssetDefine/SearchAssetDefineDropDownList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAssetDefineSearchAssetDefineBigList = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/AssetDefine/SearchAssetDefineBigList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/AssetDefine/SearchAssetDefineBigList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAssetDefineSearchAssetDefineSmallList = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/AssetDefine/SearchAssetDefineSmallList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/AssetDefine/SearchAssetDefineSmallList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAssetDefineSearchAssetDefineCategoryNameList = <RNU extends (keyof AT_AssetDefineViewModel)[] = []>(
 	upLevel: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_AssetDefineViewModel, RNU>[]>>(
-		`/${FirmCode}/AssetDefine/SearchAssetDefineCategoryNameList?${upLevel ? 'upLevel=' + upLevel : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/AssetDefine/SearchAssetDefineCategoryNameList?${upLevel ? 'upLevel=' + upLevel : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowAssetLedgerGetAssetLedgerToPage = <
@@ -284,11 +230,9 @@ export const postFirmCodeflowAssetLedgerGetAssetLedgerToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetLedgerQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_AssetLedgerPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/AssetLedger/GetAssetLedgerToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/AssetLedger/GetAssetLedgerToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -296,103 +240,81 @@ export const postFirmCodeflowAssetLedgerAssetLedgerExport = <NUDATA extends (key
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetLedgerQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/AssetLedgerExport?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/AssetLedgerExport?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetLedgerDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowAssetLedgerModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetLedgerModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetLedgerPendingAudit = <NUDATA extends (keyof AT_FlowAssetLedgerModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetLedgerModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetLedgerRejectAudit = <NUDATA extends (keyof AT_FlowAssetLedgerModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetLedgerModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetLedgerDynamicRejectAudit = <NUDATA extends (keyof AT_FlowAssetLedgerModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetLedgerModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetLedgerResetAudit = <NUDATA extends (keyof AT_FlowAssetLedgerModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetLedgerModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetLedgerSaveDraft = <NUDATA extends (keyof AT_FlowAssetLedgerModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetLedgerModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetLedgerSubmitAudit = <NUDATA extends (keyof AT_FlowAssetLedgerModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetLedgerModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowAssetLedgerGetUpdateAssetManageModelById = <RNU extends (keyof AT_MergeUpdateAssetManageModel)[] = []>(
 	id: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MergeUpdateAssetManageModel, RNU>>>(
-		`/${FirmCode}/flow/AssetLedger/GetUpdateAssetManageModelById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/AssetLedger/GetUpdateAssetManageModelById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowAssetLedgerUpdateAssetManageModel = <NUDATA extends (keyof AT_MergeUpdateAssetManageModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_MergeUpdateAssetManageModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/UpdateAssetManageModel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/UpdateAssetManageModel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetLedgerGetAssetManageBatchUpdateByIds = <RNU extends (keyof AT_RevertBatchUpdateAssetManageModel)[] = []>(
 	FirmCode: any,
 	data: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RevertBatchUpdateAssetManageModel, RNU>[]>>(
-		`/${FirmCode}/flow/AssetLedger/GetAssetManageBatchUpdateByIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/AssetLedger/GetAssetManageBatchUpdateByIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -400,45 +322,35 @@ export const postFirmCodeflowAssetLedgerBatchUpdateAssetManage = <NUDATA extends
 	FirmCode: any,
 	data: U_I_NoNull<AT_BatchUpdateAssetManageModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/BatchUpdateAssetManage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/BatchUpdateAssetManage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowAssetLedgerGetAssetLedgerByFlowId = <RNU extends (keyof AT_FlowModelAssetLedgerViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelAssetLedgerViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/AssetLedger/GetAssetLedgerByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/AssetLedger/GetAssetLedgerByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowAssetLedgerDeleteAssetLedgerByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/AssetLedger/DeleteAssetLedgerByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/AssetLedger/DeleteAssetLedgerByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowAssetLedgerBatchSetIsLabel = (isLabel: any, FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/AssetLedger/BatchSetIsLabel?${isLabel ? 'isLabel=' + isLabel : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/AssetLedger/BatchSetIsLabel?${isLabel ? 'isLabel=' + isLabel : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeflowAssetLedgerAssetLessor = (assetLessorCode: any, savePlace: any, FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/AssetLedger/AssetLessor?${assetLessorCode ? 'assetLessorCode=' + assetLessorCode : ''}&${
+		`/${FirmCodeURL}/flow/AssetLedger/AssetLessor?${assetLessorCode ? 'assetLessorCode=' + assetLessorCode : ''}&${
 			savePlace ? 'savePlace=' + savePlace : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
@@ -448,36 +360,28 @@ export const postFirmCodeflowAssetLedgerBatchEnterInvoice = <NUDATA extends (key
 	FirmCode: any,
 	data: U_I_NoNull<AT_BatchEnterInvoice, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetLedger/BatchEnterInvoice?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetLedger/BatchEnterInvoice?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetLedgerGetAssetLedgerByIds = <RNU extends (keyof AT_GetEnterInvoiceDetails)[] = []>(FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_GetEnterInvoiceDetails, RNU>[]>>(
-		`/${FirmCode}/flow/AssetLedger/GetAssetLedgerByIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/AssetLedger/GetAssetLedgerByIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowAssetLedgerGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/AssetLedger/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/AssetLedger/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowAssetLedgerGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/AssetLedger/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/AssetLedger/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -489,11 +393,9 @@ export const postFirmCodeAssetLedgerCompanyGetAssetLedgerCompanyToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetLedgerCompanyQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_AssetLedgerCompanyPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/AssetLedgerCompany/GetAssetLedgerCompanyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/AssetLedgerCompany/GetAssetLedgerCompanyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -501,64 +403,50 @@ export const postFirmCodeAssetLedgerCompanyAddAssetLedgerCompany = <NUDATA exten
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetCompanyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/AssetLedgerCompany/AddAssetLedgerCompany?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/AssetLedgerCompany/AddAssetLedgerCompany?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeAssetLedgerCompanyUpdateAssetLedgerCompany = <NUDATA extends (keyof AT_AssetCompanyModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetCompanyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/AssetLedgerCompany/UpdateAssetLedgerCompany?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/AssetLedgerCompany/UpdateAssetLedgerCompany?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeAssetLedgerCompanySearchAssetLedgerCompany = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/AssetLedgerCompany/SearchAssetLedgerCompany?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/AssetLedgerCompany/SearchAssetLedgerCompany?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeAssetLessorAddAssetLessor = <NUDATA extends (keyof AT_AssetLessorModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetLessorModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/AssetLessor/AddAssetLessor?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/AssetLessor/AddAssetLessor?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeAssetLessorUpdateAssetLessor = <NUDATA extends (keyof AT_AssetLessorModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetLessorModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/AssetLessor/UpdateAssetLessor?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/AssetLessor/UpdateAssetLessor?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeAssetLessorGetAssetLessorById = <RNU extends (keyof AT_AssetLessorModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_AssetLessorModel, RNU>>>(
-		`/${FirmCode}/AssetLessor/GetAssetLessorById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/AssetLessor/GetAssetLessorById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAssetLessorGetAssetLessorsByLessor = <RNU extends (keyof AT_AssetLessorViewModel)[] = []>(lessor: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_AssetLessorViewModel, RNU>[]>>(
-		`/${FirmCode}/AssetLessor/GetAssetLessorsByLessor?${lessor ? 'lessor=' + lessor : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/AssetLessor/GetAssetLessorsByLessor?${lessor ? 'lessor=' + lessor : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeAssetLessorGetAssetLessorToPage = <
@@ -568,11 +456,9 @@ export const postFirmCodeAssetLessorGetAssetLessorToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetLessorQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_AssetLessorPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/AssetLessor/GetAssetLessorToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/AssetLessor/GetAssetLessorToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -583,11 +469,9 @@ export const postFirmCodeflowAssetPurchaseGetAssetPurchaseToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_AssetPurchaseQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_AssetPurchasePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/AssetPurchase/GetAssetPurchaseToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/AssetPurchase/GetAssetPurchaseToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -595,82 +479,64 @@ export const postFirmCodeflowAssetPurchaseDynamicSubmitAudit = <NUDATA extends (
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetPurchase/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetPurchase/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetPurchasePendingAudit = <NUDATA extends (keyof AT_FlowAssetPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetPurchase/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetPurchase/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetPurchaseRejectAudit = <NUDATA extends (keyof AT_FlowAssetPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetPurchase/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetPurchase/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetPurchaseDynamicRejectAudit = <NUDATA extends (keyof AT_FlowAssetPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetPurchase/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetPurchase/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetPurchaseResetAudit = <NUDATA extends (keyof AT_FlowAssetPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetPurchase/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetPurchase/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetPurchaseSaveDraft = <NUDATA extends (keyof AT_FlowAssetPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetPurchase/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetPurchase/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetPurchaseSubmitAudit = <NUDATA extends (keyof AT_FlowAssetPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAssetPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetPurchase/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetPurchase/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowAssetPurchaseGetAssetPurchaseByFlowId = <RNU extends (keyof AT_FlowModelAssetPurchaseViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelAssetPurchaseViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/AssetPurchase/GetAssetPurchaseByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/AssetPurchase/GetAssetPurchaseByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowAssetPurchaseGetWarehousing = <RNU extends (keyof AT_WarehousingDetailsModel)[] = []>(FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_WarehousingDetailsModel, RNU>[]>>(
-		`/${FirmCode}/flow/AssetPurchase/GetWarehousing?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/AssetPurchase/GetWarehousing?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -678,10 +544,8 @@ export const postFirmCodeflowAssetPurchaseWarehousing = <NUDATA extends (keyof A
 	FirmCode: any,
 	data: U_I_NoNull<AT_WarehousingModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/AssetPurchase/Warehousing?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/AssetPurchase/Warehousing?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowAssetPurchaseGetTransferAssetPurchaseDetailsByAssetApplyDetailsId = <
 	RNU extends (keyof AT_AssetPurchaseDetailsViewModel)[] = [],
@@ -689,127 +553,101 @@ export const postFirmCodeflowAssetPurchaseGetTransferAssetPurchaseDetailsByAsset
 	FirmCode: any,
 	data: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_AssetPurchaseDetailsViewModel, RNU>[]>>(
-		`/${FirmCode}/flow/AssetPurchase/GetTransferAssetPurchaseDetailsByAssetApplyDetailsId?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/AssetPurchase/GetTransferAssetPurchaseDetailsByAssetApplyDetailsId?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeflowAssetPurchaseDeleteAssetPurchase = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/AssetPurchase/DeleteAssetPurchase?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/AssetPurchase/DeleteAssetPurchase?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowAssetPurchaseGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/AssetPurchase/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/AssetPurchase/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowAssetPurchaseGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/AssetPurchase/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/AssetPurchase/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeAuthorizationGetAllPageAuthorization = <RNU extends (keyof AT_AuthorizationViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_AuthorizationViewModel, RNU>[]>>(
-		`/${FirmCode}/Authorization/GetAllPageAuthorization?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Authorization/GetAllPageAuthorization?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAuthorizationGetAllPopupAuthorization = <RNU extends (keyof AT_AuthorizationViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_AuthorizationViewModel, RNU>[]>>(
-		`/${FirmCode}/Authorization/GetAllPopupAuthorization?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Authorization/GetAllPopupAuthorization?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAuthorizationGetCurrentUserPageRoute = <RNU extends (keyof AT_SysPageRouteViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SysPageRouteViewModel, RNU>[]>>(
-		`/${FirmCode}/Authorization/GetCurrentUserPageRoute?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Authorization/GetCurrentUserPageRoute?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAuthorizationGetHotPageRoute = <RNU extends (keyof AT_SysPageRouteViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SysPageRouteViewModel, RNU>[]>>(
-		`/${FirmCode}/Authorization/GetHotPageRoute?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Authorization/GetHotPageRoute?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAuthorizationGetUserPageAuthorization = <RNU extends (keyof AT_PageAuthorizationViewModel)[] = []>(
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PageAuthorizationViewModel, RNU>[]>>(
-		`/${FirmCode}/Authorization/GetUserPageAuthorization?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Authorization/GetUserPageAuthorization?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAuthorizationGetUserPopupAuthorization = <RNU extends (keyof AT_PopupAuthorizationViewModel)[] = []>(
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PopupAuthorizationViewModel, RNU>[]>>(
-		`/${FirmCode}/Authorization/GetUserPopupAuthorization?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Authorization/GetUserPopupAuthorization?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAuthorizationGetRolePageAuthorization = <RNU extends (keyof AT_PageAuthorizationViewModel)[] = []>(
 	roleId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PageAuthorizationViewModel, RNU>[]>>(
-		`/${FirmCode}/Authorization/GetRolePageAuthorization?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Authorization/GetRolePageAuthorization?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAuthorizationGetRolePopupAuthorization = <RNU extends (keyof AT_PopupAuthorizationViewModel)[] = []>(
 	roleId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PopupAuthorizationViewModel, RNU>[]>>(
-		`/${FirmCode}/Authorization/GetRolePopupAuthorization?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Authorization/GetRolePopupAuthorization?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeAuthorizationGetCurrentUserPageAuthorizationByRouteKey = <RNU extends (keyof AT_PageAuthorizationViewModel)[] = []>(
 	routeKey: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PageAuthorizationViewModel, RNU>>>(
-		`/${FirmCode}/Authorization/GetCurrentUserPageAuthorizationByRouteKey?${routeKey ? 'routeKey=' + routeKey : ''}&${
+		`/${FirmCodeURL}/Authorization/GetCurrentUserPageAuthorizationByRouteKey?${routeKey ? 'routeKey=' + routeKey : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -818,119 +656,93 @@ export const getFirmCodeAuthorizationGetCurrentUserPopupAuthorizationByPopupkey 
 	popupkey: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PopupAuthorizationViewModel, RNU>>>(
-		`/${FirmCode}/Authorization/GetCurrentUserPopupAuthorizationByPopupkey?${popupkey ? 'popupkey=' + popupkey : ''}&${
+		`/${FirmCodeURL}/Authorization/GetCurrentUserPopupAuthorizationByPopupkey?${popupkey ? 'popupkey=' + popupkey : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowBorrowGetBorrowById = <RNU extends (keyof AT_BorrowViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_BorrowViewModel, RNU>>>(
-		`/${FirmCode}/flow/Borrow/GetBorrowById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Borrow/GetBorrowById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowBorrowGetBorrowByFlowId = <RNU extends (keyof AT_FlowModelBorrowViewModelTuple)[] = []>(flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelBorrowViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Borrow/GetBorrowByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Borrow/GetBorrowByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowBorrowDeleteBorrowFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Borrow/DeleteBorrowFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Borrow/DeleteBorrowFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowBorrowBorrowRepayment = <NUDATA extends (keyof AT_RepaymentRecordModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_RepaymentRecordModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Borrow/BorrowRepayment?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Borrow/BorrowRepayment?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBorrowBorrowInterest = <NUDATA extends (keyof AT_BorrowInterestModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_BorrowInterestModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Borrow/BorrowInterest?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Borrow/BorrowInterest?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBorrowDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowBorrowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBorrowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Borrow/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Borrow/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBorrowPendingAudit = <NUDATA extends (keyof AT_FlowBorrowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBorrowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Borrow/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Borrow/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBorrowRejectAudit = <NUDATA extends (keyof AT_FlowBorrowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBorrowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Borrow/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Borrow/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBorrowDynamicRejectAudit = <NUDATA extends (keyof AT_FlowBorrowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBorrowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Borrow/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Borrow/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBorrowResetAudit = <NUDATA extends (keyof AT_FlowBorrowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBorrowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Borrow/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Borrow/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBorrowSaveDraft = <NUDATA extends (keyof AT_FlowBorrowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBorrowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Borrow/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Borrow/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBorrowSubmitAudit = <NUDATA extends (keyof AT_FlowBorrowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBorrowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Borrow/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Borrow/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBorrowGetBorrowToPage = <
 	RNU extends (keyof AT_BorrowPageModelIEnumerableInt32Tuple)[] = [],
@@ -939,51 +751,41 @@ export const postFirmCodeflowBorrowGetBorrowToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_BorrowQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_BorrowPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Borrow/GetBorrowToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Borrow/GetBorrowToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowBorrowGetBorrowByUser = <RNU extends (keyof AT_GetBorrowByUserModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetBorrowByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/Borrow/GetBorrowByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Borrow/GetBorrowByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowBorrowGetPayBackRecordByMoneyBorrowCode = <RNU extends (keyof AT_PayBackRecordModel)[] = []>(
 	borrowCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PayBackRecordModel, RNU>[]>>(
-		`/${FirmCode}/flow/Borrow/GetPayBackRecordByMoneyBorrowCode?${borrowCode ? 'borrowCode=' + borrowCode : ''}&${
+		`/${FirmCodeURL}/flow/Borrow/GetPayBackRecordByMoneyBorrowCode?${borrowCode ? 'borrowCode=' + borrowCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowBorrowGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Borrow/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Borrow/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowBorrowGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Borrow/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Borrow/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -992,23 +794,19 @@ export const postFirmCodeBorrowUserSubmitBorrowUser = <NUDATA extends (keyof AT_
 	FirmCode: any,
 	data: U_I_NoNull<AT_BorrowUserModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/BorrowUser/SubmitBorrowUser?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/BorrowUser/SubmitBorrowUser?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeBorrowUserRemoveBorrowUser = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/BorrowUser/RemoveBorrowUser?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/BorrowUser/RemoveBorrowUser?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+	);
 };
 export const getFirmCodeBorrowUserGetBorrowUserById = <RNU extends (keyof AT_BorrowUserModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_BorrowUserModel, RNU>>>(
-		`/${FirmCode}/BorrowUser/GetBorrowUserById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/BorrowUser/GetBorrowUserById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeBorrowUserGetBorrowUserToPage = <
@@ -1018,11 +816,9 @@ export const postFirmCodeBorrowUserGetBorrowUserToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_BorrowUserQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_BorrowUserPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/BorrowUser/GetBorrowUserToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/BorrowUser/GetBorrowUserToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -1033,11 +829,9 @@ export const postFirmCodeflowBusinessTripGetBusinessTripToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_BusinessTripQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_BusinessTripPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/BusinessTrip/GetBusinessTripToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/BusinessTrip/GetBusinessTripToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -1045,111 +839,87 @@ export const getFirmCodeflowBusinessTripGetBusinessTripByUser = <RNU extends (ke
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetBusinessTripByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/BusinessTrip/GetBusinessTripByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/BusinessTrip/GetBusinessTripByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowBusinessTripDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowBusinessTripModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBusinessTripModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/BusinessTrip/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/BusinessTrip/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBusinessTripPendingAudit = <NUDATA extends (keyof AT_FlowBusinessTripModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBusinessTripModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/BusinessTrip/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/BusinessTrip/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBusinessTripRejectAudit = <NUDATA extends (keyof AT_FlowBusinessTripModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBusinessTripModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/BusinessTrip/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/BusinessTrip/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBusinessTripDynamicRejectAudit = <NUDATA extends (keyof AT_FlowBusinessTripModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBusinessTripModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/BusinessTrip/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/BusinessTrip/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBusinessTripResetAudit = <NUDATA extends (keyof AT_FlowBusinessTripModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBusinessTripModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/BusinessTrip/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/BusinessTrip/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBusinessTripSaveDraft = <NUDATA extends (keyof AT_FlowBusinessTripModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBusinessTripModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/BusinessTrip/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/BusinessTrip/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowBusinessTripSubmitAudit = <NUDATA extends (keyof AT_FlowBusinessTripModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowBusinessTripModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/BusinessTrip/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/BusinessTrip/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowBusinessTripGetBusinessTripByFlowId = <RNU extends (keyof AT_FlowModelBusinessTripViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelBusinessTripViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/BusinessTrip/GetBusinessTripByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/BusinessTrip/GetBusinessTripByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowBusinessTripDeleteBusinessTripByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/BusinessTrip/DeleteBusinessTripByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/BusinessTrip/DeleteBusinessTripByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowBusinessTripGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/BusinessTrip/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/BusinessTrip/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowBusinessTripGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/BusinessTrip/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/BusinessTrip/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -1158,92 +928,72 @@ export const getFirmCodeflowCancelDepGetCancelDepByFlowId = <RNU extends (keyof 
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelCancelDepViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/CancelDep/GetCancelDepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/CancelDep/GetCancelDepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowCancelDepDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowCancelDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelDep/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelDep/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelDepPendingAudit = <NUDATA extends (keyof AT_FlowCancelDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelDep/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelDep/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelDepRejectAudit = <NUDATA extends (keyof AT_FlowCancelDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelDep/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelDep/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelDepDynamicRejectAudit = <NUDATA extends (keyof AT_FlowCancelDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelDep/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelDep/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelDepSaveDraft = <NUDATA extends (keyof AT_FlowCancelDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelDep/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelDep/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelDepSubmitAudit = <NUDATA extends (keyof AT_FlowCancelDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelDep/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelDep/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelDepResetAudit = <NUDATA extends (keyof AT_FlowCancelDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelDep/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelDep/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowCancelDepGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/CancelDep/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/CancelDep/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowCancelDepGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/CancelDep/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/CancelDep/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -1252,92 +1002,72 @@ export const getFirmCodeflowCancelLevelGetCancelLevelByFlowId = <RNU extends (ke
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelCancelLevelViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/CancelLevel/GetCancelLevelByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/CancelLevel/GetCancelLevelByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowCancelLevelDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowCancelLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelLevel/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelLevel/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelLevelPendingAudit = <NUDATA extends (keyof AT_FlowCancelLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelLevel/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelLevel/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelLevelRejectAudit = <NUDATA extends (keyof AT_FlowCancelLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelLevel/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelLevel/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelLevelDynamicRejectAudit = <NUDATA extends (keyof AT_FlowCancelLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelLevel/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelLevel/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelLevelSaveDraft = <NUDATA extends (keyof AT_FlowCancelLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelLevel/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelLevel/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelLevelSubmitAudit = <NUDATA extends (keyof AT_FlowCancelLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelLevel/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelLevel/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelLevelResetAudit = <NUDATA extends (keyof AT_FlowCancelLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelLevel/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelLevel/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowCancelLevelGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/CancelLevel/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/CancelLevel/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowCancelLevelGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/CancelLevel/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/CancelLevel/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -1346,412 +1076,312 @@ export const getFirmCodeflowCancelPositionGetCancelPositionByFlowId = <RNU exten
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelCancelPositionViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/CancelPosition/GetCancelPositionByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/CancelPosition/GetCancelPositionByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowCancelPositionDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowCancelPositionModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelPosition/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelPosition/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelPositionPendingAudit = <NUDATA extends (keyof AT_FlowCancelPositionModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelPosition/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelPosition/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelPositionRejectAudit = <NUDATA extends (keyof AT_FlowCancelPositionModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelPosition/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelPosition/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelPositionDynamicRejectAudit = <NUDATA extends (keyof AT_FlowCancelPositionModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelPosition/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelPosition/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelPositionSaveDraft = <NUDATA extends (keyof AT_FlowCancelPositionModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelPosition/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelPosition/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelPositionSubmitAudit = <NUDATA extends (keyof AT_FlowCancelPositionModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelPosition/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelPosition/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCancelPositionResetAudit = <NUDATA extends (keyof AT_FlowCancelPositionModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCancelPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/CancelPosition/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/CancelPosition/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowCancelPositionGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/CancelPosition/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/CancelPosition/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowCancelPositionGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/CancelPosition/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/CancelPosition/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeCommonSearchLeaseState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchLeaseState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchLeaseState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchVehicleLeaseCostType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchVehicleLeaseCostType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchVehicleLeaseCostType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchVehicleLeaseState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchVehicleLeaseState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchVehicleLeaseState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchStaffChangeType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchStaffChangeType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchStaffChangeType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSalaryFixedRecordDataType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSalaryFixedRecordDataType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSalaryFixedRecordDataType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSalaryFixedRecordDataSource = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSalaryFixedRecordDataSource?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSalaryFixedRecordDataSource?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchDepReviewedBy = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchDepReviewedBy?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchDepReviewedBy?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllDepJoint = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAllDepJoint?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllDepJoint?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchPayMethod = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchPayMethod?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchPayMethod?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchTurnState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchTurnState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchTurnState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchStockStateEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchStockStateEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchStockStateEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAssetPurchasePayStateEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAssetPurchasePayStateEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAssetPurchasePayStateEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchFourLevelByDepCode = <RNU extends (keyof AT_DepNameModel)[] = []>(depCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_DepNameModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchFourLevelByDepCode?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchFourLevelByDepCode?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllFourLevel = <RNU extends (keyof AT_DepNameModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_DepNameModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchAllFourLevel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllFourLevel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSlaveCardBagStateEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSlaveCardBagStateEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSlaveCardBagStateEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSalaryDeductStateEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSalaryDeductStateEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSalaryDeductStateEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSalaryDeductItemEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSalaryDeductItemEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSalaryDeductItemEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSalaryDeductItemTypeEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSalaryDeductItemTypeEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSalaryDeductItemTypeEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchStaffInfoByBarCode = <RNU extends (keyof AT_StaffInfo)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffInfo, RNU>>>(
-		`/${FirmCode}/Common/SearchStaffInfoByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchStaffInfoByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchResumeChannelEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchResumeChannelEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchResumeChannelEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAffinityEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAffinityEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAffinityEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchInterviewResultEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchInterviewResultEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchInterviewResultEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchInterviewTranscriptReasonEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchInterviewTranscriptReasonEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchInterviewTranscriptReasonEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchFinalResultEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchFinalResultEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchFinalResultEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchVehicleCarType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchVehicleCarType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchVehicleCarType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRechargeType = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRechargeType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRechargeType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCostType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(IsEnable: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCostType?${IsEnable ? 'IsEnable=' + IsEnable : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCostType?${IsEnable ? 'IsEnable=' + IsEnable : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCostProject = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(IsEnable: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCostProject?${IsEnable ? 'IsEnable=' + IsEnable : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCostProject?${IsEnable ? 'IsEnable=' + IsEnable : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCostSubject = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCostSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCostSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRentState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRentState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRentState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRentHouseType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRentHouseType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRentHouseType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRentPurpose = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRentPurpose?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRentPurpose?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRentMethod = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRentMethod?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRentMethod?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRentDetailsType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRentDetailsType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRentDetailsType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchDepositState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchDepositState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchDepositState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRewardSubject = <RNU extends (keyof AT_RewardSubjectModel)[] = []>(rewardType: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_RewardSubjectModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchRewardSubject?${rewardType ? 'rewardType=' + rewardType : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRewardSubject?${rewardType ? 'rewardType=' + rewardType : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchBorrowUser = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchBorrowUser?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchBorrowUser?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSocialSecurityCso = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(searchText: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSocialSecurityCso?${searchText ? 'searchText=' + searchText : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSocialSecurityCso?${searchText ? 'searchText=' + searchText : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCso = <RNU extends (keyof AT_CsoViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.get<ResponseData<U_I_NoNull<AT_CsoViewModel, RNU>[]>>(`/${FirmCode}/Common/SearchCso?${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.get<ResponseData<U_I_NoNull<AT_CsoViewModel, RNU>[]>>(`/${FirmCodeURL}/Common/SearchCso?${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
 };
 export const getFirmCodeCommonSearchDepByBarCode = <RNU extends (keyof AT_DepNameModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_DepNameModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchDepByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchDepByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchPostByBarCode = <RNU extends (keyof AT_StaffPostIsDefaultModel)[] = []>(
@@ -1759,109 +1389,83 @@ export const getFirmCodeCommonSearchPostByBarCode = <RNU extends (keyof AT_Staff
 	depCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffPostIsDefaultModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchPostByBarCode?${barCode ? 'barCode=' + barCode : ''}&${depCode ? 'depCode=' + depCode : ''}&${
+		`/${FirmCodeURL}/Common/SearchPostByBarCode?${barCode ? 'barCode=' + barCode : ''}&${depCode ? 'depCode=' + depCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeCommonSearchStaffInfoByDepCode = <RNU extends (keyof AT_StaffInfo)[] = []>(depCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffInfo, RNU>[]>>(
-		`/${FirmCode}/Common/SearchStaffInfoByDepCode?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchStaffInfoByDepCode?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMeetRoom = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMeetRoom?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMeetRoom?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetMeetRoom = <RNU extends (keyof AT_MeetViewRoomModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MeetViewRoomModel, RNU>[]>>(
-		`/${FirmCode}/Common/GetMeetRoom?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetMeetRoom?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSocialInsuranceScheme = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSocialInsuranceScheme?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSocialInsuranceScheme?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSocialInsuranceSubject = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSocialInsuranceSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSocialInsuranceSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchExcludeHouseFundSocialInsuranceSubject = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchExcludeHouseFundSocialInsuranceSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchExcludeHouseFundSocialInsuranceSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchHouseFundSubject = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchHouseFundSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchHouseFundSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetInsuranceType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/GetInsuranceType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetInsuranceType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetPaymentMethod = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/GetPaymentMethod?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetPaymentMethod?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchTaxCreditSubject = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchTaxCreditSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchTaxCreditSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSalarySubject = <RNU extends (keyof AT_SalarySubjectModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SalarySubjectModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchSalarySubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSalarySubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSalarySubjectType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSalarySubjectType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSalarySubjectType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSalaryStaffState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(
@@ -1869,29 +1473,23 @@ export const getFirmCodeCommonSearchSalaryStaffState = <RNU extends (keyof AT_Ke
 	isChangeState: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSalaryStaffState?${isNoStop ? 'isNoStop=' + isNoStop : ''}&${isChangeState ? 'isChangeState=' + isChangeState : ''}&${
-			FirmCode ? 'FirmCode=' + FirmCode : ''
-		}`
+		`/${FirmCodeURL}/Common/SearchSalaryStaffState?${isNoStop ? 'isNoStop=' + isNoStop : ''}&${
+			isChangeState ? 'isChangeState=' + isChangeState : ''
+		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRewardType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRewardType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRewardType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllWelfareSubject = <RNU extends (keyof AT_WelfareSubjectModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_WelfareSubjectModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchAllWelfareSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllWelfareSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMaterialByName = <RNU extends (keyof AT_MaterialSimpleModel)[] = []>(
@@ -1901,11 +1499,9 @@ export const getFirmCodeCommonSearchMaterialByName = <RNU extends (keyof AT_Mate
 	fromCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialSimpleModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchMaterialByName?${fmCode ? 'fmCode=' + fmCode : ''}&${materialName ? 'materialName=' + materialName : ''}&${
+		`/${FirmCodeURL}/Common/SearchMaterialByName?${fmCode ? 'fmCode=' + fmCode : ''}&${materialName ? 'materialName=' + materialName : ''}&${
 			isUsableAmount ? 'isUsableAmount=' + isUsableAmount : ''
 		}&${fromCode ? 'fromCode=' + fromCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
@@ -1915,93 +1511,71 @@ export const getFirmCodeCommonSearchMaterialSupplierByName = <RNU extends (keyof
 	materialSupplierName: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialSupplierSimpleModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchMaterialSupplierByName?${fmCode ? 'fmCode=' + fmCode : ''}&${
+		`/${FirmCodeURL}/Common/SearchMaterialSupplierByName?${fmCode ? 'fmCode=' + fmCode : ''}&${
 			materialSupplierName ? 'materialSupplierName=' + materialSupplierName : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMaterialAttributeType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMaterialAttributeType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMaterialAttributeType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMaterialType = <RNU extends (keyof AT_MaterialTypeNameModel)[] = []>(isAll: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialTypeNameModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchMaterialType?${isAll ? 'isAll=' + isAll : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMaterialType?${isAll ? 'isAll=' + isAll : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMaterialPurchaseBusinessType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMaterialPurchaseBusinessType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMaterialPurchaseBusinessType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMaterialStockBusinessType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMaterialStockBusinessType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMaterialStockBusinessType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMaterialPurpose = <RNU extends (keyof AT_MaterialPurposeNameModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialPurposeNameModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchMaterialPurpose?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMaterialPurpose?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchExtractMode = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchExtractMode?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchExtractMode?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchPersonalReceipt = <RNU extends (keyof AT_PersonalReceiptSimpleModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PersonalReceiptSimpleModel, RNU>[]>>(
-		`/${FirmCode}/Common/SearchPersonalReceipt?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchPersonalReceipt?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchFirmBankState = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchFirmBankState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchFirmBankState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchFirmBankPurpose = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchFirmBankPurpose?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchFirmBankPurpose?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetInductionDate = (barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/Common/GetInductionDate?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetInductionDate?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetMaterialMatchContrast = <RNU extends (keyof AT_MaterialMatchContrastModel)[] = []>(
@@ -2011,11 +1585,9 @@ export const getFirmCodeCommonGetMaterialMatchContrast = <RNU extends (keyof AT_
 	toMaterialCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialMatchContrastModel, RNU>>>(
-		`/${FirmCode}/Common/GetMaterialMatchContrast?${fromFirmCode ? 'fromFirmCode=' + fromFirmCode : ''}&${
+		`/${FirmCodeURL}/Common/GetMaterialMatchContrast?${fromFirmCode ? 'fromFirmCode=' + fromFirmCode : ''}&${
 			fromMaterialCode ? 'fromMaterialCode=' + fromMaterialCode : ''
 		}&${toFirmCode ? 'toFirmCode=' + toFirmCode : ''}&${toMaterialCode ? 'toMaterialCode=' + toMaterialCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
@@ -2023,757 +1595,569 @@ export const getFirmCodeCommonGetMaterialMatchContrast = <RNU extends (keyof AT_
 	);
 };
 export const getFirmCodeCommonSearchAllStaffNotIncludedIsAudit = <RNU extends (keyof AT_StaffInfo)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffInfo, RNU>[]>>(
-		`/${FirmCode}/Common/SearchAllStaffNotIncludedIsAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllStaffNotIncludedIsAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearcAccount = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearcAccount?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearcAccount?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAssetManageState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(isApply: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAssetManageState?${isApply ? 'isApply=' + isApply : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAssetManageState?${isApply ? 'isApply=' + isApply : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAssetApplyState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAssetApplyState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAssetApplyState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAssetManageInvoiceType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAssetManageInvoiceType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAssetManageInvoiceType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchTeachingDetailsState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchTeachingDetailsState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchTeachingDetailsState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAssetDefineLevel = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAssetDefineLevel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAssetDefineLevel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMaterialCheckType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMaterialCheckType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMaterialCheckType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMeetRoomSetColorType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMeetRoomSetColorType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMeetRoomSetColorType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchGrantWayType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchGrantWayType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchGrantWayType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeCommonRouteClick = (routeId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Common/RouteClick?${routeId ? 'routeId=' + routeId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/RouteClick?${routeId ? 'routeId=' + routeId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSalaryType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSalaryType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSalaryType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchHotelAttachmentType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchHotelAttachmentType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchHotelAttachmentType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRentAttachmentType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRentAttachmentType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRentAttachmentType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchVehicleAttachmentFromType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchVehicleAttachmentFromType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchVehicleAttachmentFromType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchInsuranceAttachmentFromType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchInsuranceAttachmentFromType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchInsuranceAttachmentFromType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchVehicleUpkeepType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchVehicleUpkeepType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchVehicleUpkeepType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchVirtueSubjectType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchVirtueSubjectType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchVirtueSubjectType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSocialInsurancePayState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSocialInsurancePayState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSocialInsurancePayState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSalaryStateEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSalaryStateEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSalaryStateEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSStaffGrowState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSStaffGrowState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSStaffGrowState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCsoBankBook = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(csoCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCsoBankBook?${csoCode ? 'csoCode=' + csoCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCsoBankBook?${csoCode ? 'csoCode=' + csoCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetFirmCsoBankBook = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(firm: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/GetFirmCsoBankBook?${firm ? 'firm=' + firm : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetFirmCsoBankBook?${firm ? 'firm=' + firm : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCsoBankBookByBookName = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(bookName: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCsoBankBookByBookName?${bookName ? 'bookName=' + bookName : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCsoBankBookByBookName?${bookName ? 'bookName=' + bookName : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchPayState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchPayState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchPayState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchBackState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchBackState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchBackState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchNowState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchNowState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchNowState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMaterialApplyType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMaterialApplyType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMaterialApplyType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchDepCodeMatchByDepCode = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(depCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchDepCodeMatchByDepCode?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchDepCodeMatchByDepCode?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeCommonSearchDepCodeMatchByDepCodes = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchDepCodeMatchByDepCodes?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Common/SearchDepCodeMatchByDepCodes?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeCommonGetPayBackRecordByMoneyCode = <RNU extends (keyof AT_PayBackRecordModel)[] = []>(moneyCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PayBackRecordModel, RNU>[]>>(
-		`/${FirmCode}/Common/GetPayBackRecordByMoneyCode?${moneyCode ? 'moneyCode=' + moneyCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetPayBackRecordByMoneyCode?${moneyCode ? 'moneyCode=' + moneyCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetBamsDepCodeByBarCode = <RNU extends (keyof AT_KeyValueStringModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringModel, RNU>>>(
-		`/${FirmCode}/Common/GetBamsDepCodeByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetBamsDepCodeByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchInterestRatUnitType = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchInterestRatUnitType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchInterestRatUnitType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMaterialApplyState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMaterialApplyState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMaterialApplyState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchGrantState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchGrantState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchGrantState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchLevelResetFlowResetType = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchLevelResetFlowResetType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchLevelResetFlowResetType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetLevelByBarCode = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/GetLevelByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetLevelByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeCommonCancelFlowlistHomeShow = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Common/CancelFlowlistHomeShow?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/CancelFlowlistHomeShow?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchProvidentFundState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchProvidentFundState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchProvidentFundState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchPaybackPeriod = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchPaybackPeriod?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchPaybackPeriod?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchWorkStatus = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchWorkStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchWorkStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchIncumbencyWorkStatus = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchIncumbencyWorkStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchIncumbencyWorkStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllDep = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAllDep?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllDep?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchOneLevelDep = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchOneLevelDep?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchOneLevelDep?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchTwoLevelDep = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchTwoLevelDep?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchTwoLevelDep?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchThreeLevelDep = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchThreeLevelDep?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchThreeLevelDep?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchFourLevelDep = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchFourLevelDep?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchFourLevelDep?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchLevel = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchLevel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchLevel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllPosition = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAllPosition?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllPosition?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllRoles = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAllRoles?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllRoles?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllOnJobStaff = <RNU extends (keyof AT_StaffInfo)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffInfo, RNU>[]>>(
-		`/${FirmCode}/Common/SearchAllOnJobStaff?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllOnJobStaff?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllStaff = <RNU extends (keyof AT_StaffInfo)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.get<ResponseData<U_I_NoNull<AT_StaffInfo, RNU>[]>>(`/${FirmCode}/Common/SearchAllStaff?${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.get<ResponseData<U_I_NoNull<AT_StaffInfo, RNU>[]>>(`/${FirmCodeURL}/Common/SearchAllStaff?${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
 };
 export const getFirmCodeCommonSearchDepType = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchDepType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchDepType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchDailylogType = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchDailylogType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchDailylogType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchEducationType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchEducationType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchEducationType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchEducationRequireType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchEducationRequireType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchEducationRequireType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMaritalStatus = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMaritalStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMaritalStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchPopupRoute = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(searchText: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchPopupRoute?${searchText ? 'searchText=' + searchText : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchPopupRoute?${searchText ? 'searchText=' + searchText : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchPositionByDepCode = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(depCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchPositionByDepCode?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchPositionByDepCode?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchProfessionalStatusType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchProfessionalStatusType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchProfessionalStatusType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRecruitmentDemandReasonType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRecruitmentDemandReasonType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRecruitmentDemandReasonType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSexRequireType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSexRequireType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSexRequireType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchSexType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchSexType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchSexType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchWorkExperienceType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchWorkExperienceType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchWorkExperienceType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchComputerStandardType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchComputerStandardType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchComputerStandardType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchFilterType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchFilterType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchFilterType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchStaff = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(searchText: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchStaff?${searchText ? 'searchText=' + searchText : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchStaff?${searchText ? 'searchText=' + searchText : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllProvince = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAllProvince?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllProvince?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllCityByProvince = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(provinceid: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAllCityByProvince?${provinceid ? 'provinceid=' + provinceid : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllCityByProvince?${provinceid ? 'provinceid=' + provinceid : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchTrademarkTrend = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchTrademarkTrend?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchTrademarkTrend?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchHotelStar = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchHotelStar?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchHotelStar?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchHotelState = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchHotelState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchHotelState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchInterviewModality = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchInterviewModality?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchInterviewModality?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllCountyByCity = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(cityId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAllCountyByCity?${cityId ? 'cityId=' + cityId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllCountyByCity?${cityId ? 'cityId=' + cityId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAllFlowType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAllFlowType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAllFlowType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchBirthdayType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchBirthdayType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchBirthdayType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRecruitmentDemandStatus = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRecruitmentDemandStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRecruitmentDemandStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchNewsletterStatus = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchNewsletterStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchNewsletterStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchEmployWorkStatus = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchEmployWorkStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchEmployWorkStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchPeriodType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchPeriodType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchPeriodType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchLogRule = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchLogRule?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchLogRule?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchIsInterviewStatus = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchIsInterviewStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchIsInterviewStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRelationType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRelationType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRelationType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchFlowListState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchFlowListState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchFlowListState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchResumeStatus = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchResumeStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchResumeStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchResumeTimelineType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchResumeTimelineType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchResumeTimelineType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchInterviewResultType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchInterviewResultType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchInterviewResultType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchTeachingState = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchTeachingState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchTeachingState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchTeachingType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchTeachingType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchTeachingType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchTalkType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchTalkType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchTalkType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAssessType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAssessType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAssessType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchAssessResult = <RNU extends (keyof AT_KeyValueIntViewModel)[] = [], NU0 extends (keyof AT_AssessType)[] = []>(
 	assessType: U_I_NoNull<AT_AssessType, NU0>,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchAssessResult?${assessType ? 'assessType=' + assessType : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchAssessResult?${assessType ? 'assessType=' + assessType : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMeetForm = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMeetForm?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMeetForm?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchMeetType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchMeetType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchMeetType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchTeachTemplateByDepAndPost = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(
@@ -2781,299 +2165,227 @@ export const getFirmCodeCommonSearchTeachTemplateByDepAndPost = <RNU extends (ke
 	postCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchTeachTemplateByDepAndPost?${depCode ? 'depCode=' + depCode : ''}&${postCode ? 'postCode=' + postCode : ''}&${
+		`/${FirmCodeURL}/Common/SearchTeachTemplateByDepAndPost?${depCode ? 'depCode=' + depCode : ''}&${postCode ? 'postCode=' + postCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeCommonGetUserDepPost = <RNU extends (keyof AT_DepPost)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_DepPost, RNU>[]>>(
-		`/${FirmCode}/Common/GetUserDepPost?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetUserDepPost?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchScheme = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchScheme?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchScheme?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCsoUseCategory = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCsoUseCategory?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCsoUseCategory?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCsoAttachmentType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCsoAttachmentType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCsoAttachmentType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCsoStatus = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCsoStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCsoStatus?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchHolidayUnit = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchHolidayUnit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchHolidayUnit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchHolidayMode = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchHolidayMode?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchHolidayMode?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchHolidayRule = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchHolidayRule?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchHolidayRule?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchResignType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchResignType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchResignType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchResignComplexCardEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchResignComplexCardEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchResignComplexCardEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchResignComplexOutEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchResignComplexOutEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchResignComplexOutEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchResignComplexOfficeSystemEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchResignComplexOfficeSystemEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchResignComplexOfficeSystemEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchResignComplexFixedAssetsEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchResignComplexFixedAssetsEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchResignComplexFixedAssetsEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchTransferTypeEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchTransferTypeEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchTransferTypeEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchContractTypeByText = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(text: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchContractTypeByText?${text ? 'text=' + text : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchContractTypeByText?${text ? 'text=' + text : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchVehicleEnum = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchVehicleEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchVehicleEnum?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCsoSocialType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCsoSocialType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCsoSocialType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchholidayType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchholidayType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchholidayType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchStaffBankByBarCode = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchStaffBankByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchStaffBankByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetOperatorBarCode = <RNU extends (keyof AT_OperatorModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_OperatorModel, RNU>>>(
-		`/${FirmCode}/Common/GetOperatorBarCode?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetOperatorBarCode?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRepaymentType = <RNU extends (keyof AT_KeyValueIntDefaultViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntDefaultViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRepaymentType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRepaymentType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchRepaymentMode = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchRepaymentMode?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchRepaymentMode?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchInterestType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchInterestType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchInterestType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCsoByCosName = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(csoName: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCsoByCosName?${csoName ? 'csoName=' + csoName : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCsoByCosName?${csoName ? 'csoName=' + csoName : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetFamilyInfoById = <RNU extends (keyof AT_FamilyInfoModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FamilyInfoModel, RNU>>>(
-		`/${FirmCode}/Common/GetFamilyInfoById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetFamilyInfoById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetFirmAllScheme = <RNU extends (keyof AT_SchemeInfoModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SchemeInfoModel, RNU>[]>>(
-		`/${FirmCode}/Common/GetFirmAllScheme?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetFirmAllScheme?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonGetFirmBySchemeCode = <RNU extends (keyof AT_FirmSimpleModel)[] = []>(schemeCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FirmSimpleModel, RNU>[]>>(
-		`/${FirmCode}/Common/GetFirmBySchemeCode?${schemeCode ? 'schemeCode=' + schemeCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/GetFirmBySchemeCode?${schemeCode ? 'schemeCode=' + schemeCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchInductionAttachmentType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchInductionAttachmentType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchInductionAttachmentType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCommonSearchCardType = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/Common/SearchCardType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Common/SearchCardType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeContractAddContract = <NUDATA extends (keyof AT_ContractModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_ContractModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Contract/AddContract?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Contract/AddContract?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeContractUpdateContract = <NUDATA extends (keyof AT_ContractUpdateModel)[] = []>(
 	contractId: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_ContractUpdateModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Contract/UpdateContract?${contractId ? 'contractId=' + contractId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Contract/UpdateContract?${contractId ? 'contractId=' + contractId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeContractContractHandle = (contractId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Contract/ContractHandle?${contractId ? 'contractId=' + contractId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Contract/ContractHandle?${contractId ? 'contractId=' + contractId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeContractRemoveContract = (contractId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Contract/RemoveContract?${contractId ? 'contractId=' + contractId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Contract/RemoveContract?${contractId ? 'contractId=' + contractId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeContractGetContractById = <RNU extends (keyof AT_ContractViewModel)[] = []>(contractId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_ContractViewModel, RNU>>>(
-		`/${FirmCode}/Contract/GetContractById?${contractId ? 'contractId=' + contractId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Contract/GetContractById?${contractId ? 'contractId=' + contractId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeContractGetHistoryContract = <RNU extends (keyof AT_ContractPageModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_ContractPageModel, RNU>[]>>(
-		`/${FirmCode}/Contract/GetHistoryContract?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Contract/GetHistoryContract?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeContractGetContractToPage = <
@@ -3083,11 +2395,9 @@ export const postFirmCodeContractGetContractToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_ContractQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ContractPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Contract/GetContractToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Contract/GetContractToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3095,17 +2405,13 @@ export const postFirmCodeContractTypeSubmitContractType = <NUDATA extends (keyof
 	FirmCode: any,
 	data: U_I_NoNull<AT_ContractTypeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/ContractType/SubmitContractType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/ContractType/SubmitContractType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeContractTypeGetContractTypeById = <RNU extends (keyof AT_ContractTypeModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_ContractTypeModel, RNU>>>(
-		`/${FirmCode}/ContractType/GetContractTypeById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/ContractType/GetContractTypeById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeContractTypeGetContractTypeToPage = <
@@ -3115,108 +2421,84 @@ export const postFirmCodeContractTypeGetContractTypeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_ContractTypeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ContractTypePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/ContractType/GetContractTypeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/ContractType/GetContractTypeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeContractTypeDeleteContractType = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/ContractType/DeleteContractType?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/ContractType/DeleteContractType?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowCostGetCostById = <RNU extends (keyof AT_CostViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_CostViewModel, RNU>>>(
-		`/${FirmCode}/flow/Cost/GetCostById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Cost/GetCostById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowCostDeleteCostFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Cost/DeleteCostFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Cost/DeleteCostFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowCostGetCostByFlowId = <RNU extends (keyof AT_FlowModelCostViewModelTuple)[] = []>(flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelCostViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Cost/GetCostByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Cost/GetCostByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowCostDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowCostModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCostModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Cost/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Cost/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCostPendingAudit = <NUDATA extends (keyof AT_FlowCostModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCostModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Cost/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Cost/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCostRejectAudit = <NUDATA extends (keyof AT_FlowCostModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCostModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Cost/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Cost/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCostDynamicRejectAudit = <NUDATA extends (keyof AT_FlowCostModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCostModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Cost/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Cost/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCostResetAudit = <NUDATA extends (keyof AT_FlowCostModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCostModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Cost/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Cost/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCostSaveDraft = <NUDATA extends (keyof AT_FlowCostModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCostModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Cost/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Cost/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCostSubmitAudit = <NUDATA extends (keyof AT_FlowCostModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowCostModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Cost/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Cost/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowCostGetCostToPage = <
 	RNU extends (keyof AT_CostPageModelIEnumerableInt32Tuple)[] = [],
@@ -3225,38 +2507,30 @@ export const postFirmCodeflowCostGetCostToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CostPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Cost/GetCostToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Cost/GetCostToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowCostGetCostByUser = <RNU extends (keyof AT_GetCostByUserModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetCostByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/Cost/GetCostByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Cost/GetCostByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowCostGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Cost/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Cost/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowCostGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Cost/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Cost/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -3268,11 +2542,9 @@ export const postFirmCodeCostInvoiceGetCostInvoiceToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostInvoiceQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CostInvoicePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/CostInvoice/GetCostInvoiceToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/CostInvoice/GetCostInvoiceToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3280,43 +2552,33 @@ export const postFirmCodeCostInvoiceBatchCostInvoice = <NUDATA extends (keyof AT
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostInvoiceQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/CostInvoice/BatchCostInvoice?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/CostInvoice/BatchCostInvoice?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeCostInvoiceAddCostInvoice = <NUDATA extends (keyof AT_CostInvoiceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostInvoiceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/CostInvoice/AddCostInvoice?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/CostInvoice/AddCostInvoice?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeCostInvoiceBatchConfirm = (FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/CostInvoice/BatchConfirm?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/CostInvoice/BatchConfirm?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeCostInvoiceGetCostInvoiceCompanyByBarCode = <RNU extends (keyof AT_CostInvoiceCompanyModel)[] = []>(
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_CostInvoiceCompanyModel, RNU>>>(
-		`/${FirmCode}/CostInvoice/GetCostInvoiceCompanyByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/CostInvoice/GetCostInvoiceCompanyByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeCostInvoiceGetCostInvoiceById = <RNU extends (keyof AT_CostInvoiceViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_CostInvoiceViewModel, RNU>>>(
-		`/${FirmCode}/CostInvoice/GetCostInvoiceById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/CostInvoice/GetCostInvoiceById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeCostInvoiceSummaryGetCostInvoiceSummaryToPage = <
@@ -3326,11 +2588,9 @@ export const postFirmCodeCostInvoiceSummaryGetCostInvoiceSummaryToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostInvoiceSummaryQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CostInvoiceSummaryPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/CostInvoiceSummary/GetCostInvoiceSummaryToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/CostInvoiceSummary/GetCostInvoiceSummaryToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3338,53 +2598,41 @@ export const postFirmCodeCostInvoiceSummaryBatchZeroClean = <NUDATA extends (key
 	FirmCode: any,
 	data: U_I_NoNull<AT_ZeroClean, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/CostInvoiceSummary/BatchZeroClean?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/CostInvoiceSummary/BatchZeroClean?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeCostInvoiceSummaryBatchCostInvoiceSummary = <NUDATA extends (keyof AT_CostInvoiceSummaryQueryModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostInvoiceSummaryQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/CostInvoiceSummary/BatchCostInvoiceSummary?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/CostInvoiceSummary/BatchCostInvoiceSummary?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeCostInvoiceSummaryUpdateCostInvoiceCompany = <NUDATA extends (keyof AT_UpdateCostInvoiceCompanyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_UpdateCostInvoiceCompanyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/CostInvoiceSummary/UpdateCostInvoiceCompany?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/CostInvoiceSummary/UpdateCostInvoiceCompany?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeCostProjectAddCostProject = <NUDATA extends (keyof AT_CostProjectModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostProjectModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/CostProject/AddCostProject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/CostProject/AddCostProject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeCostProjectUpdateCostProject = <NUDATA extends (keyof AT_CostProjectModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostProjectModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/CostProject/UpdateCostProject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/CostProject/UpdateCostProject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeCostProjectGetCostProjectById = <RNU extends (keyof AT_CostProjectModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_CostProjectModel, RNU>>>(
-		`/${FirmCode}/CostProject/GetCostProjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/CostProject/GetCostProjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeCostProjectGetCostProjectToPage = <
@@ -3394,11 +2642,9 @@ export const postFirmCodeCostProjectGetCostProjectToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostProjectQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CostProjectPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/CostProject/GetCostProjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/CostProject/GetCostProjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3406,17 +2652,13 @@ export const postFirmCodeCostSubjectSubmitCostSubject = <NUDATA extends (keyof A
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostSubjectModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/CostSubject/SubmitCostSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/CostSubject/SubmitCostSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeCostSubjectGetCostSubjectById = <RNU extends (keyof AT_CostSubjectModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_CostSubjectModel, RNU>>>(
-		`/${FirmCode}/CostSubject/GetCostSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/CostSubject/GetCostSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeCostSubjectGetCostSubjectToPage = <
@@ -3426,11 +2668,9 @@ export const postFirmCodeCostSubjectGetCostSubjectToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostSubjectQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CostSubjectPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/CostSubject/GetCostSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/CostSubject/GetCostSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3438,17 +2678,13 @@ export const postFirmCodeCostTypeSubmitCostType = <NUDATA extends (keyof AT_Cost
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostTypeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/CostType/SubmitCostType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/CostType/SubmitCostType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeCostTypeGetCostTypeById = <RNU extends (keyof AT_CostTypeModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_CostTypeModel, RNU>>>(
-		`/${FirmCode}/CostType/GetCostTypeById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/CostType/GetCostTypeById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeCostTypeGetCostToTypePage = <
@@ -3458,11 +2694,9 @@ export const postFirmCodeCostTypeGetCostToTypePage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_CostTypeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CostTypePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/CostType/GetCostToTypePage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/CostType/GetCostToTypePage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3473,78 +2707,60 @@ export const postFirmCodeCsoGetCsoToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_CsoQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CsoPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Cso/GetCsoToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Cso/GetCsoToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeCsoGetStaffListByCsoCode = (csoCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/Cso/GetStaffListByCsoCode?${csoCode ? 'csoCode=' + csoCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Cso/GetStaffListByCsoCode?${csoCode ? 'csoCode=' + csoCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeCsoAddCso = <NUDATA extends (keyof AT_CsoModel)[] = []>(FirmCode: any, data: U_I_NoNull<AT_CsoModel, NUDATA>) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Cso/AddCso?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Cso/AddCso?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeCsoUpdateCso = <NUDATA extends (keyof AT_CsoModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_CsoModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Cso/UpdateCso?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Cso/UpdateCso?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeCsoGetCsoById = <RNU extends (keyof AT_CsoViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CsoViewModel, RNU>>>(
-		`/${FirmCode}/Cso/GetCsoById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Cso/GetCsoById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeDailylogSaveDailyLog = <NUDATA extends (keyof AT_DailyLogRequestModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_DailyLogRequestModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Dailylog/SaveDailyLog?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Dailylog/SaveDailyLog?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeDailylogDeleteDailyLog = (dailyLogId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/Dailylog/DeleteDailyLog?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Dailylog/DeleteDailyLog?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeDailylogSaveDailyLogComment = <NUDATA extends (keyof AT_DailyLogRequsetComment)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_DailyLogRequsetComment, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Dailylog/SaveDailyLogComment?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Dailylog/SaveDailyLogComment?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeDailylogDeleteDailyLogComment = (dailyLogCommentId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/Dailylog/DeleteDailyLogComment?${dailyLogCommentId ? 'dailyLogCommentId=' + dailyLogCommentId : ''}&${
+		`/${FirmCodeURL}/Dailylog/DeleteDailyLogComment?${dailyLogCommentId ? 'dailyLogCommentId=' + dailyLogCommentId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -3553,45 +2769,35 @@ export const postFirmCodeDailylogDailyLogShare = <NUDATA extends (keyof AT_Daily
 	FirmCode: any,
 	data: U_I_NoNull<AT_DailylogRequestShare, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Dailylog/DailyLogShare?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Dailylog/DailyLogShare?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeDailylogDailyLogPraise = (dailyLogId: any, isPraise: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/Dailylog/DailyLogPraise?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${isPraise ? 'isPraise=' + isPraise : ''}&${
+		`/${FirmCodeURL}/Dailylog/DailyLogPraise?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${isPraise ? 'isPraise=' + isPraise : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeDailylogDailyLogKeep = (dailyLogId: any, isKeep: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/Dailylog/DailyLogKeep?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${isKeep ? 'isKeep=' + isKeep : ''}&${
+		`/${FirmCodeURL}/Dailylog/DailyLogKeep?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${isKeep ? 'isKeep=' + isKeep : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeDailylogDailyLogRead = (dailyLogId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/Dailylog/DailyLogRead?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Dailylog/DailyLogRead?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeDailylogGetDailyLogReadUser = (dailyLogId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/Dailylog/GetDailyLogReadUser?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Dailylog/GetDailyLogReadUser?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeDailylogGetDailylogList = <
@@ -3602,79 +2808,65 @@ export const postFirmCodeDailylogGetDailylogList = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_DailylogQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_DailylogPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Dailylog/GetDailylogList?${pageType ? 'pageType=' + pageType : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Dailylog/GetDailylogList?${pageType ? 'pageType=' + pageType : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeDailylogGetDailyLogPageCount = <RNU extends (keyof AT_DailyLogPageCountModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_DailyLogPageCountModel, RNU>>>(
-		`/${FirmCode}/Dailylog/GetDailyLogPageCount?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Dailylog/GetDailyLogPageCount?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeDailylogGetDailyLogInfoById = <RNU extends (keyof AT_DailyLogViewModel)[] = []>(dailyLogId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_DailyLogViewModel, RNU>>>(
-		`/${FirmCode}/Dailylog/GetDailyLogInfoById?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Dailylog/GetDailyLogInfoById?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeDailylogGetDailylogCommentViewModelById = <RNU extends (keyof AT_DailylogCommentBaseViewModel)[] = []>(
 	dailyLogId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_DailylogCommentBaseViewModel, RNU>[]>>(
-		`/${FirmCode}/Dailylog/GetDailylogCommentViewModelById?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Dailylog/GetDailylogCommentViewModelById?${dailyLogId ? 'dailyLogId=' + dailyLogId : ''}&${
+			FirmCode ? 'FirmCode=' + FirmCode : ''
+		}`
 	);
 };
 export const postFirmCodeflowDepDynamicRejectAudit = <NUDATA extends (keyof AT_FlowDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Dep/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Dep/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowDepDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Dep/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Dep/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowDepGetDepByCode = <RNU extends (keyof AT_FlowModelDepViewModelTuple)[] = []>(
 	depCode: any,
 	popupKey: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelDepViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Dep/GetDepByCode?${depCode ? 'depCode=' + depCode : ''}&${popupKey ? 'popupKey=' + popupKey : ''}&${
+		`/${FirmCodeURL}/flow/Dep/GetDepByCode?${depCode ? 'depCode=' + depCode : ''}&${popupKey ? 'popupKey=' + popupKey : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowDepGetDepByFlowId = <RNU extends (keyof AT_FlowModelDepViewModelTuple)[] = []>(flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelDepViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Dep/GetDepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Dep/GetDepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowDepGetCancelDepToPage = <
@@ -3684,11 +2876,9 @@ export const postFirmCodeflowDepGetCancelDepToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_CancelDepQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CancelDepPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Dep/GetCancelDepToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Dep/GetCancelDepToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3700,11 +2890,9 @@ export const postFirmCodeflowDepGetUserInfoByDep = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_UserQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_UserPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Dep/GetUserInfoByDep?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Dep/GetUserInfoByDep?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3716,11 +2904,9 @@ export const postFirmCodeflowDepGetSomeUserInfoByDep = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_UserQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_UserPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Dep/GetSomeUserInfoByDep?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Dep/GetSomeUserInfoByDep?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3732,11 +2918,9 @@ export const postFirmCodeflowDepGetStaffInfoByDep = <RNU extends (keyof AT_Staff
 	FirmCode: any,
 	data: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_StaffInfoSimpleModel, RNU>[]>>(
-		`/${FirmCode}/flow/Dep/GetStaffInfoByDep?${depCode ? 'depCode=' + depCode : ''}&${yearMonth ? 'yearMonth=' + yearMonth : ''}&${
+		`/${FirmCodeURL}/flow/Dep/GetStaffInfoByDep?${depCode ? 'depCode=' + depCode : ''}&${yearMonth ? 'yearMonth=' + yearMonth : ''}&${
 			sex ? 'sex=' + sex : ''
 		}&${isWelefare ? 'isWelefare=' + isWelefare : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
@@ -3748,59 +2932,47 @@ export const getFirmCodeflowDepGetStaffInfoIncludFourthLevelByDep = <RNU extends
 	sex: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffInfoSimpleModel, RNU>[]>>(
-		`/${FirmCode}/flow/Dep/GetStaffInfoIncludFourthLevelByDep?${depCode ? 'depCode=' + depCode : ''}&${yearMonth ? 'yearMonth=' + yearMonth : ''}&${
-			sex ? 'sex=' + sex : ''
-		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Dep/GetStaffInfoIncludFourthLevelByDep?${depCode ? 'depCode=' + depCode : ''}&${
+			yearMonth ? 'yearMonth=' + yearMonth : ''
+		}&${sex ? 'sex=' + sex : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowDepGetDepTreeList = <RNU extends (keyof AT_DepTreeListMole)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_DepTreeListMole, RNU>[]>>(
-		`/${FirmCode}/flow/Dep/GetDepTreeList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Dep/GetDepTreeList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowDepGetDepTreeListByDepCode = <RNU extends (keyof AT_DepTreeListMole)[] = []>(depCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_DepTreeListMole, RNU>>>(
-		`/${FirmCode}/flow/Dep/GetDepTreeListByDepCode?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Dep/GetDepTreeListByDepCode?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowDepPendingAudit = <NUDATA extends (keyof AT_FlowDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Dep/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Dep/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowDepRejectAudit = <NUDATA extends (keyof AT_FlowDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Dep/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Dep/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowDepResetAudit = <NUDATA extends (keyof AT_FlowDepModel)[] = []>(
 	depCode: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Dep/ResetAudit?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Dep/ResetAudit?${depCode ? 'depCode=' + depCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3808,61 +2980,47 @@ export const postFirmCodeflowDepSaveDraft = <NUDATA extends (keyof AT_FlowDepMod
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Dep/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Dep/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowDepSubmitAudit = <NUDATA extends (keyof AT_FlowDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Dep/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Dep/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowDepRenewalDepFatherData = (password: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Dep/RenewalDepFatherData?${password ? 'password=' + password : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Dep/RenewalDepFatherData?${password ? 'password=' + password : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowDepDeleteDepByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Dep/DeleteDepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Dep/DeleteDepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowDepUpdateDepSort = <NUDATA extends (keyof AT_UpdateDepSort)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_UpdateDepSort, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Dep/UpdateDepSort?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Dep/UpdateDepSort?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowDepGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Dep/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Dep/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowDepGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Dep/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Dep/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -3871,44 +3029,34 @@ export const postFirmCodeDepSpecialAddDepSpecial = <NUDATA extends (keyof AT_Dep
 	FirmCode: any,
 	data: U_I_NoNull<AT_DepSpecialAddModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/DepSpecial/AddDepSpecial?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/DepSpecial/AddDepSpecial?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeDepSpecialDeleteDepSpecial = (vestCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/DepSpecial/DeleteDepSpecial?${vestCode ? 'vestCode=' + vestCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/DepSpecial/DeleteDepSpecial?${vestCode ? 'vestCode=' + vestCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeDepSpecialGetDepSpecialByUser = (vestCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/DepSpecial/GetDepSpecialByUser?${vestCode ? 'vestCode=' + vestCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/DepSpecial/GetDepSpecialByUser?${vestCode ? 'vestCode=' + vestCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeDepSpecialGetDepSpecialList = <RNU extends (keyof AT_DepSpecialListModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_DepSpecialListModel, RNU>[]>>(
-		`/${FirmCode}/DepSpecial/GetDepSpecialList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/DepSpecial/GetDepSpecialList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeDispatchAuthorizationDispatchPageAuthorizationToUser = <NUDATA extends (keyof AT_DispatchAuthorizationToUserModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_DispatchAuthorizationToUserModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/DispatchAuthorization/DispatchPageAuthorizationToUser?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/DispatchAuthorization/DispatchPageAuthorizationToUser?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3916,11 +3064,9 @@ export const postFirmCodeDispatchAuthorizationDispatchPopupAuthorizationToUser =
 	FirmCode: any,
 	data: U_I_NoNull<AT_DispatchAuthorizationToUserModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/DispatchAuthorization/DispatchPopupAuthorizationToUser?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/DispatchAuthorization/DispatchPopupAuthorizationToUser?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3928,11 +3074,9 @@ export const postFirmCodeDispatchAuthorizationDispatchPageAuthorizationToRole = 
 	FirmCode: any,
 	data: U_I_NoNull<AT_DispatchAuthorizationToRoleModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/DispatchAuthorization/DispatchPageAuthorizationToRole?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/DispatchAuthorization/DispatchPageAuthorizationToRole?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -3940,120 +3084,94 @@ export const postFirmCodeDispatchAuthorizationDispatchPopupAuthorizationToRole =
 	FirmCode: any,
 	data: U_I_NoNull<AT_DispatchAuthorizationToRoleModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/DispatchAuthorization/DispatchPopupAuthorizationToRole?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/DispatchAuthorization/DispatchPopupAuthorizationToRole?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowEmployGetEmployApproveById = <RNU extends (keyof AT_EmployViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_EmployViewModel, RNU>>>(
-		`/${FirmCode}/flow/Employ/GetEmployApproveById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Employ/GetEmployApproveById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowEmployGetEmployApproveByFlowId = <RNU extends (keyof AT_FlowModelEmployViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelEmployViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Employ/GetEmployApproveByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Employ/GetEmployApproveByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowEmployDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowEmployApproveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowEmployApproveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Employ/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Employ/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowEmployPendingAudit = <NUDATA extends (keyof AT_FlowEmployApproveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowEmployApproveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Employ/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Employ/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowEmployRejectAudit = <NUDATA extends (keyof AT_FlowEmployApproveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowEmployApproveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Employ/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Employ/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowEmployDynamicRejectAudit = <NUDATA extends (keyof AT_FlowEmployApproveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowEmployApproveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Employ/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Employ/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowEmployResetAudit = <NUDATA extends (keyof AT_FlowEmployApproveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowEmployApproveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Employ/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Employ/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowEmploySaveDraft = <NUDATA extends (keyof AT_FlowEmployApproveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowEmployApproveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Employ/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Employ/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowEmploySubmitAudit = <NUDATA extends (keyof AT_FlowEmployApproveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowEmployApproveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Employ/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Employ/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowEmployDeleteEmploy = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Employ/DeleteEmploy?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Employ/DeleteEmploy?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowEmployGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Employ/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Employ/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowEmployGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Employ/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Employ/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -4065,20 +3183,16 @@ export const postFirmCodeEmployeeBirthdayGetEmployeeBirthdayToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_EmployeeBirthdayQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_EmployeeBirthdayPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/EmployeeBirthday/GetEmployeeBirthdayToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/EmployeeBirthday/GetEmployeeBirthdayToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeEntryManageGetEntryManageById = <RNU extends (keyof AT_EntryManageViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_EntryManageViewModel, RNU>>>(
-		`/${FirmCode}/EntryManage/GetEntryManageById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/EntryManage/GetEntryManageById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeEntryManageGetEntryManegeToPage = <
@@ -4088,20 +3202,16 @@ export const postFirmCodeEntryManageGetEntryManegeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_EntryManegeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_EntryManagePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/EntryManage/GetEntryManegeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/EntryManage/GetEntryManegeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeEntryManageToPersonnel = (id: any, popupKey: any, salaryPopupKey: any, employPopupKey: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/EntryManage/ToPersonnel?${id ? 'id=' + id : ''}&${popupKey ? 'popupKey=' + popupKey : ''}&${
+		`/${FirmCodeURL}/EntryManage/ToPersonnel?${id ? 'id=' + id : ''}&${popupKey ? 'popupKey=' + popupKey : ''}&${
 			salaryPopupKey ? 'salaryPopupKey=' + salaryPopupKey : ''
 		}&${employPopupKey ? 'employPopupKey=' + employPopupKey : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
@@ -4111,11 +3221,9 @@ export const postFirmCodeEntryManageUpdateEntryManage = <NUDATA extends (keyof A
 	FirmCode: any,
 	data: U_I_NoNull<AT_EntryManageModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/EntryManage/UpdateEntryManage?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/EntryManage/UpdateEntryManage?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4123,35 +3231,27 @@ export const postFirmCodeEntryManageUnemployed = <NUDATA extends (keyof AT_Unemp
 	FirmCode: any,
 	data: U_I_NoNull<AT_UnemployedModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/EntryManage/Unemployed?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/EntryManage/Unemployed?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeEntryManageConfirmEnrollment = <NUDATA extends (keyof AT_ConfirmEnrollmentModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_ConfirmEnrollmentModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/EntryManage/ConfirmEnrollment?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/EntryManage/ConfirmEnrollment?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeFaceTalkSubmitFaceTalk = <NUDATA extends (keyof AT_FaceTalkModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FaceTalkModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/FaceTalk/SubmitFaceTalk?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/FaceTalk/SubmitFaceTalk?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeFaceTalkGetFaceTalkById = <RNU extends (keyof AT_FaceTalkViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FaceTalkViewModel, RNU>>>(
-		`/${FirmCode}/FaceTalk/GetFaceTalkById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/FaceTalk/GetFaceTalkById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeFaceTalkGetFaceTalkToPage = <
@@ -4161,35 +3261,27 @@ export const postFirmCodeFaceTalkGetFaceTalkToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_FaceTalkQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_FaceTalkPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/FaceTalk/GetFaceTalkToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/FaceTalk/GetFaceTalkToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeFirmGetFirmInfo = <RNU extends (keyof AT_FirmModel)[] = []>(fmCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FirmModel, RNU>>>(
-		`/${FirmCode}/Firm/GetFirmInfo?${fmCode ? 'fmCode=' + fmCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Firm/GetFirmInfo?${fmCode ? 'fmCode=' + fmCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeFirmGetFirmDepChecker = <RNU extends (keyof AT_FirmDepCheckerModel)[] = []>(fmCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FirmDepCheckerModel, RNU>[]>>(
-		`/${FirmCode}/Firm/GetFirmDepChecker?${fmCode ? 'fmCode=' + fmCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Firm/GetFirmDepChecker?${fmCode ? 'fmCode=' + fmCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeFirmUpdateFirm = <NUDATA extends (keyof AT_FirmModel)[] = []>(FirmCode: any, data: U_I_NoNull<AT_FirmModel, NUDATA>) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Firm/UpdateFirm?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Firm/UpdateFirm?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeFirmGetFirmToPage = <
 	RNU extends (keyof AT_FirmPageModelIEnumerableInt32Tuple)[] = [],
@@ -4198,11 +3290,9 @@ export const postFirmCodeFirmGetFirmToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_FirmQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_FirmPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Firm/GetFirmToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Firm/GetFirmToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4210,17 +3300,13 @@ export const postFirmCodeFirmAdminiBindAccountToStaff = <NUDATA extends (keyof A
 	FirmCode: any,
 	data: U_I_NoNull<AT_AccountToStaffModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/FirmAdmini/BindAccountToStaff?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/FirmAdmini/BindAccountToStaff?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeFirmAdminiUnBindAccountToStaff = (barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/FirmAdmini/UnBindAccountToStaff?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/FirmAdmini/UnBindAccountToStaff?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeFirmAdminiGetAccountManagerToPage = <
@@ -4230,38 +3316,30 @@ export const postFirmCodeFirmAdminiGetAccountManagerToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_AccountManagerQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_AccountManagerPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/FirmAdmini/GetAccountManagerToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/FirmAdmini/GetAccountManagerToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeFirmAdminiGetAccountManager = <RNU extends (keyof AT_AccountManagerModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_AccountManagerModel, RNU>>>(
-		`/${FirmCode}/FirmAdmini/GetAccountManager?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/FirmAdmini/GetAccountManager?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowFlowBaseApiGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/FlowBaseApi/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/FlowBaseApi/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowFlowBaseApiGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/FlowBaseApi/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/FlowBaseApi/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -4273,11 +3351,9 @@ export const postFirmCodeFlowListGetFlowListToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowListQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_FlowListViewModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/FlowList/GetFlowListToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/FlowList/GetFlowListToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4288,11 +3364,9 @@ export const postFirmCodeFlowListGetFlowAuditingToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAuditingQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_FlowListViewModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/FlowList/GetFlowAuditingToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/FlowList/GetFlowAuditingToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4303,11 +3377,9 @@ export const postFirmCodeFlowListGetProxyFlowAuditingToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowAuditingQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_FlowListViewModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/FlowList/GetProxyFlowAuditingToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/FlowList/GetProxyFlowAuditingToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4318,11 +3390,9 @@ export const postFirmCodeFlowListGetMyRejectFlowListToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowListQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_FlowListViewModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/FlowList/GetMyRejectFlowListToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/FlowList/GetMyRejectFlowListToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4333,11 +3403,9 @@ export const postFirmCodeFlowListGetMyDraftFlowListToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowListQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_FlowListViewModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/FlowList/GetMyDraftFlowListToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/FlowList/GetMyDraftFlowListToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4345,16 +3413,14 @@ export const postFirmCodeFlowManagerMergeFlowType = <NUDATA extends (keyof AT_Fl
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTypeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/FlowManager/MergeFlowType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/FlowManager/MergeFlowType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeFlowManagerRemoveFlowType = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/FlowManager/RemoveFlowType?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/FlowManager/RemoveFlowType?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+	);
 };
 export const postFirmCodeFlowManagerGetFlowTypeToPage = <
 	RNU extends (keyof AT_FlowTypeViewModelIEnumerableInt32Tuple)[] = [],
@@ -4363,36 +3429,28 @@ export const postFirmCodeFlowManagerGetFlowTypeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTypeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_FlowTypeViewModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/FlowManager/GetFlowTypeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/FlowManager/GetFlowTypeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeFlowManagerGetFlowTypeInfo = <RNU extends (keyof AT_FlowTypeInfoModel)[] = []>(flowTypeId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowTypeInfoModel, RNU>>>(
-		`/${FirmCode}/FlowManager/GetFlowTypeInfo?${flowTypeId ? 'flowTypeId=' + flowTypeId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/FlowManager/GetFlowTypeInfo?${flowTypeId ? 'flowTypeId=' + flowTypeId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeFlowManagerGetFlowAuditObj = <RNU extends (keyof AT_KeyValueIntModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntModel, RNU>[]>>(
-		`/${FirmCode}/FlowManager/GetFlowAuditObj?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/FlowManager/GetFlowAuditObj?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeFlowManagerGetAllFlowAuditObj = <RNU extends (keyof AT_FlowAuditObjModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowAuditObjModel, RNU>[]>>(
-		`/${FirmCode}/FlowManager/GetAllFlowAuditObj?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/FlowManager/GetAllFlowAuditObj?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeFlowManagerFlowLinkPopup = <NUDATA extends (keyof AT_FlowPopupModel)[] = []>(
@@ -4400,11 +3458,9 @@ export const postFirmCodeFlowManagerFlowLinkPopup = <NUDATA extends (keyof AT_Fl
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowPopupModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/FlowManager/FlowLinkPopup?${routeId ? 'routeId=' + routeId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/FlowManager/FlowLinkPopup?${routeId ? 'routeId=' + routeId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4412,29 +3468,23 @@ export const getFirmCodeFlowManagerGetFlowLinkPopupByRouteId = <RNU extends (key
 	routeId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowLinkPopupViewModel, RNU>>>(
-		`/${FirmCode}/FlowManager/GetFlowLinkPopupByRouteId?${routeId ? 'routeId=' + routeId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/FlowManager/GetFlowLinkPopupByRouteId?${routeId ? 'routeId=' + routeId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeHelpNotesGetHelpNotesByComponent = <RNU extends (keyof AT_HelpNotesViewModel)[] = []>(component: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_HelpNotesViewModel, RNU>>>(
-		`/${FirmCode}/HelpNotes/GetHelpNotesByComponent?${component ? 'component=' + component : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/HelpNotes/GetHelpNotesByComponent?${component ? 'component=' + component : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeHelpNotesAddOrUpdateHelpNotes = <NUDATA extends (keyof AT_HelpNotesModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_HelpNotesModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/HelpNotes/AddOrUpdateHelpNotes?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/HelpNotes/AddOrUpdateHelpNotes?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeHolidayGetHolidayToPage = <
 	RNU extends (keyof AT_HolidayPageModelIEnumerableInt32Tuple)[] = [],
@@ -4443,11 +3493,9 @@ export const postFirmCodeHolidayGetHolidayToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_HolidayQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_HolidayPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Holiday/GetHolidayToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Holiday/GetHolidayToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4455,72 +3503,54 @@ export const postFirmCodeHolidayAddUpdateHoliday = <NUDATA extends (keyof AT_Hol
 	FirmCode: any,
 	data: U_I_NoNull<AT_HolidayModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Holiday/AddUpdateHoliday?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Holiday/AddUpdateHoliday?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeHolidayGetHolidayById = <RNU extends (keyof AT_HolidayViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_HolidayViewModel, RNU>>>(
-		`/${FirmCode}/Holiday/GetHolidayById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Holiday/GetHolidayById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeHomePageRollPicDeleteHomePageRollPic = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/HomePageRollPic/DeleteHomePageRollPic?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/HomePageRollPic/DeleteHomePageRollPic?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeHomePageRollPicGetAllHomePageRollPicById = <RNU extends (keyof AT_HomePageRollPicViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_HomePageRollPicViewModel, RNU>[]>>(
-		`/${FirmCode}/HomePageRollPic/GetAllHomePageRollPicById?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/HomePageRollPic/GetAllHomePageRollPicById?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeHomePageRollPicUpdateHomePageRollPic = <NUDATA extends (keyof AT_UpDateHomePageRollPicModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_UpDateHomePageRollPicModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/HomePageRollPic/UpdateHomePageRollPic?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/HomePageRollPic/UpdateHomePageRollPic?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeHotelAddHotel = <NUDATA extends (keyof AT_HotelModel)[] = []>(FirmCode: any, data: U_I_NoNull<AT_HotelModel, NUDATA>) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Hotel/AddHotel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Hotel/AddHotel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeHotelUpdateHotel = <NUDATA extends (keyof AT_HotelModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_HotelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Hotel/UpdateHotel?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Hotel/UpdateHotel?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeHotelRemoveHotel = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Hotel/RemoveHotel?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Hotel/RemoveHotel?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
 };
 export const getFirmCodeHotelGetHotelById = <RNU extends (keyof AT_HotelViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_HotelViewModel, RNU>>>(
-		`/${FirmCode}/Hotel/GetHotelById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Hotel/GetHotelById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeHotelGeHotelToPage = <
@@ -4530,11 +3560,9 @@ export const postFirmCodeHotelGeHotelToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_HotelQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_HotelPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Hotel/GeHotelToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Hotel/GeHotelToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4542,129 +3570,101 @@ export const postFirmCodeHotelBatchExportHotel = <NUDATA extends (keyof AT_Hotel
 	FirmCode: any,
 	data: U_I_NoNull<AT_HotelQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Hotel/BatchExportHotel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Hotel/BatchExportHotel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowInternshipUpGetInternshipUpByFlowId = <RNU extends (keyof AT_FlowModelInternshipUpDetailsModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelInternshipUpDetailsModelTuple, RNU>>>(
-		`/${FirmCode}/flow/InternshipUp/GetInternshipUpByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/InternshipUp/GetInternshipUpByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowInternshipUpGetInternshipUpByBarCode = <RNU extends (keyof AT_InternshipUpDetailsModel)[] = []>(
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InternshipUpDetailsModel, RNU>>>(
-		`/${FirmCode}/flow/InternshipUp/GetInternshipUpByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/InternshipUp/GetInternshipUpByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowInternshipUpUpdateTryoutPost = <NUDATA extends (keyof AT_TryoutPostModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_TryoutPostModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/InternshipUp/UpdateTryoutPost?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/InternshipUp/UpdateTryoutPost?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowInternshipUpDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowInternshipUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowInternshipUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/InternshipUp/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/InternshipUp/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowInternshipUpPendingAudit = <NUDATA extends (keyof AT_FlowInternshipUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowInternshipUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/InternshipUp/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/InternshipUp/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowInternshipUpRejectAudit = <NUDATA extends (keyof AT_FlowInternshipUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowInternshipUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/InternshipUp/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/InternshipUp/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowInternshipUpDynamicRejectAudit = <NUDATA extends (keyof AT_FlowInternshipUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowInternshipUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/InternshipUp/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/InternshipUp/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowInternshipUpResetAudit = <NUDATA extends (keyof AT_FlowInternshipUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowInternshipUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/InternshipUp/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/InternshipUp/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowInternshipUpSaveDraft = <NUDATA extends (keyof AT_FlowInternshipUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowInternshipUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/InternshipUp/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/InternshipUp/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowInternshipUpSubmitAudit = <NUDATA extends (keyof AT_FlowInternshipUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowInternshipUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/InternshipUp/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/InternshipUp/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowInternshipUpDeleteInternshipUp = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/InternshipUp/DeleteInternshipUp?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/InternshipUp/DeleteInternshipUp?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowInternshipUpGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/InternshipUp/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/InternshipUp/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowInternshipUpGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/InternshipUp/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/InternshipUp/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -4673,20 +3673,16 @@ export const postFirmCodeInterviewEvaluateMergeInterviewEvaluate = <NUDATA exten
 	FirmCode: any,
 	data: U_I_NoNull<AT_InterviewEvaluateModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/InterviewEvaluate/MergeInterviewEvaluate?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/InterviewEvaluate/MergeInterviewEvaluate?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeInterviewEvaluateGetInterviewEvaluateDemandByPostCode = <RNU extends (keyof AT_InterviewEvaluateDemandModel)[] = []>(
 	postCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InterviewEvaluateDemandModel, RNU>[]>>(
-		`/${FirmCode}/InterviewEvaluate/GetInterviewEvaluateDemandByPostCode?${postCode ? 'postCode=' + postCode : ''}&${
+		`/${FirmCodeURL}/InterviewEvaluate/GetInterviewEvaluateDemandByPostCode?${postCode ? 'postCode=' + postCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -4695,11 +3691,9 @@ export const getFirmCodeInterviewEvaluateGetInterviewPlanDepCodeList = <RNU exte
 	interviewId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/InterviewEvaluate/GetInterviewPlanDepCodeList?${interviewId ? 'interviewId=' + interviewId : ''}&${
+		`/${FirmCodeURL}/InterviewEvaluate/GetInterviewPlanDepCodeList?${interviewId ? 'interviewId=' + interviewId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -4709,11 +3703,9 @@ export const getFirmCodeInterviewEvaluateGetInterviewPlanPostCodeList = <RNU ext
 	depCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/InterviewEvaluate/GetInterviewPlanPostCodeList?${interviewId ? 'interviewId=' + interviewId : ''}&${
+		`/${FirmCodeURL}/InterviewEvaluate/GetInterviewPlanPostCodeList?${interviewId ? 'interviewId=' + interviewId : ''}&${
 			depCode ? 'depCode=' + depCode : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
@@ -4722,62 +3714,50 @@ export const getFirmCodeInterviewEvaluateGetInterviewEvaluateByInterviewId = <RN
 	interviewId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InterviewEvaluateViewModel, RNU>>>(
-		`/${FirmCode}/InterviewEvaluate/GetInterviewEvaluateByInterviewId?${interviewId ? 'interviewId=' + interviewId : ''}&${
+		`/${FirmCodeURL}/InterviewEvaluate/GetInterviewEvaluateByInterviewId?${interviewId ? 'interviewId=' + interviewId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeInterviewManegeGetInterviewById = <RNU extends (keyof AT_InterviewViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InterviewViewModel, RNU>>>(
-		`/${FirmCode}/InterviewManege/GetInterviewById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/InterviewManege/GetInterviewById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeInterviewManegeGetInterviewResultById = <RNU extends (keyof AT_InterviewResultViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InterviewResultViewModel, RNU>>>(
-		`/${FirmCode}/InterviewManege/GetInterviewResultById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/InterviewManege/GetInterviewResultById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeInterviewManegeInterviewResult = <NUDATA extends (keyof AT_InterviewResultModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_InterviewResultModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/InterviewManege/InterviewResult?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/InterviewManege/InterviewResult?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeInterviewManegeGetBackToTheById = <RNU extends (keyof AT_BackToTheViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_BackToTheViewModel, RNU>>>(
-		`/${FirmCode}/InterviewManege/GetBackToTheById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/InterviewManege/GetBackToTheById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeInterviewManegeBackToThe = <NUDATA extends (keyof AT_BackToTheModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_BackToTheModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/InterviewManege/BackToThe?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/InterviewManege/BackToThe?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeInterviewManegeRefuseEmploy = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/InterviewManege/RefuseEmploy?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/InterviewManege/RefuseEmploy?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+	);
 };
 export const postFirmCodeInterviewManegeGetInterviewManegeToPage = <
 	RNU extends (keyof AT_InterviewManegePageModelIEnumerableInt32Tuple)[] = [],
@@ -4786,11 +3766,9 @@ export const postFirmCodeInterviewManegeGetInterviewManegeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_InterviewManegeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_InterviewManegePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/InterviewManege/GetInterviewManegeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/InterviewManege/GetInterviewManegeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -4798,11 +3776,9 @@ export const getFirmCodeInterviewPlanGetInterviewPlanByInterviewId = <RNU extend
 	interviewId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InterviewPlanViewModel, RNU>>>(
-		`/${FirmCode}/InterviewPlan/GetInterviewPlanByInterviewId?${interviewId ? 'interviewId=' + interviewId : ''}&${
+		`/${FirmCodeURL}/InterviewPlan/GetInterviewPlanByInterviewId?${interviewId ? 'interviewId=' + interviewId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -4811,20 +3787,16 @@ export const postFirmCodeInterviewPlanMergeInterviewPlan = <NUDATA extends (keyo
 	FirmCode: any,
 	data: U_I_NoNull<AT_MergeInterviewPlanModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/InterviewPlan/MergeInterviewPlan?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/InterviewPlan/MergeInterviewPlan?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeInterviewPlanGetInterviewDetailsByInterviewId = <RNU extends (keyof AT_InterviewDetailsModel)[] = []>(
 	interviewId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InterviewDetailsModel, RNU>>>(
-		`/${FirmCode}/InterviewPlan/GetInterviewDetailsByInterviewId?${interviewId ? 'interviewId=' + interviewId : ''}&${
+		`/${FirmCodeURL}/InterviewPlan/GetInterviewDetailsByInterviewId?${interviewId ? 'interviewId=' + interviewId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -4833,11 +3805,9 @@ export const getFirmCodeInterviewTranscriptGetInterviewTranscriptByInterViewId =
 	InterViewId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InterviewTranscriptViewModel, RNU>>>(
-		`/${FirmCode}/InterviewTranscript/GetInterviewTranscriptByInterViewId?${InterViewId ? 'InterViewId=' + InterViewId : ''}&${
+		`/${FirmCodeURL}/InterviewTranscript/GetInterviewTranscriptByInterViewId?${InterViewId ? 'InterViewId=' + InterViewId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -4846,10 +3816,11 @@ export const postFirmCodeInterviewTranscriptMergeInterviewTranscript = <NUDATA e
 	FirmCode: any,
 	data: U_I_NoNull<AT_InterviewTranscriptModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/InterviewTranscript/MergeInterviewTranscript?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/InterviewTranscript/MergeInterviewTranscript?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		data
+	);
 };
 export const postFirmCodeflowLeaveGetLeaveToPage = <
 	RNU extends (keyof AT_LeavePageModelIEnumerableInt32Tuple)[] = [],
@@ -4858,99 +3829,77 @@ export const postFirmCodeflowLeaveGetLeaveToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_LeaveQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_LeavePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Leave/GetLeaveToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Leave/GetLeaveToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowLeaveGetLeaveByUser = <RNU extends (keyof AT_GetLeaveByUserModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetLeaveByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/Leave/GetLeaveByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Leave/GetLeaveByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowLeaveDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowLeaveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Leave/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Leave/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeavePendingAudit = <NUDATA extends (keyof AT_FlowLeaveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Leave/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Leave/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveRejectAudit = <NUDATA extends (keyof AT_FlowLeaveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Leave/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Leave/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveDynamicRejectAudit = <NUDATA extends (keyof AT_FlowLeaveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Leave/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Leave/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveResetAudit = <NUDATA extends (keyof AT_FlowLeaveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Leave/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Leave/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveSaveDraft = <NUDATA extends (keyof AT_FlowLeaveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Leave/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Leave/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveSubmitAudit = <NUDATA extends (keyof AT_FlowLeaveModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Leave/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Leave/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowLeaveGetLeaveByFlowId = <RNU extends (keyof AT_FlowModelLeaveViewModelTuple)[] = []>(flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelLeaveViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Leave/GetLeaveByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Leave/GetLeaveByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowLeaveGetLeaveById = <RNU extends (keyof AT_LeaveViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_LeaveViewModel, RNU>>>(
-		`/${FirmCode}/flow/Leave/GetLeaveById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Leave/GetLeaveById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowLeaveSearchHolidayTypeByApplyUser = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(
@@ -4958,69 +3907,55 @@ export const getFirmCodeflowLeaveSearchHolidayTypeByApplyUser = <RNU extends (ke
 	year: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/flow/Leave/SearchHolidayTypeByApplyUser?${applyUser ? 'applyUser=' + applyUser : ''}&${year ? 'year=' + year : ''}&${
+		`/${FirmCodeURL}/flow/Leave/SearchHolidayTypeByApplyUser?${applyUser ? 'applyUser=' + applyUser : ''}&${year ? 'year=' + year : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowLeaveSearchStaffInfoByDepCode = <RNU extends (keyof AT_StaffInfo)[] = []>(barCode: any, depCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffInfo, RNU>[]>>(
-		`/${FirmCode}/flow/Leave/SearchStaffInfoByDepCode?${barCode ? 'barCode=' + barCode : ''}&${depCode ? 'depCode=' + depCode : ''}&${
+		`/${FirmCodeURL}/flow/Leave/SearchStaffInfoByDepCode?${barCode ? 'barCode=' + barCode : ''}&${depCode ? 'depCode=' + depCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowLeaveGetCumulativeTimeout = (barCode: any, holidayId: any, duration: any, year: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/flow/Leave/GetCumulativeTimeout?${barCode ? 'barCode=' + barCode : ''}&${holidayId ? 'holidayId=' + holidayId : ''}&${
+		`/${FirmCodeURL}/flow/Leave/GetCumulativeTimeout?${barCode ? 'barCode=' + barCode : ''}&${holidayId ? 'holidayId=' + holidayId : ''}&${
 			duration ? 'duration=' + duration : ''
 		}&${year ? 'year=' + year : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowLeaveGetLeaveDuration = (holidayId: any, startTime: any, endTime: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/flow/Leave/GetLeaveDuration?${holidayId ? 'holidayId=' + holidayId : ''}&${startTime ? 'startTime=' + startTime : ''}&${
+		`/${FirmCodeURL}/flow/Leave/GetLeaveDuration?${holidayId ? 'holidayId=' + holidayId : ''}&${startTime ? 'startTime=' + startTime : ''}&${
 			endTime ? 'endTime=' + endTime : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowLeaveDeleteLeaveByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Leave/DeleteLeaveByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Leave/DeleteLeaveByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowLeaveGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Leave/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Leave/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowLeaveGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Leave/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Leave/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5029,100 +3964,78 @@ export const postFirmCodeflowLeaveDestroyDynamicSubmitAudit = <NUDATA extends (k
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveDestroyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LeaveDestroy/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LeaveDestroy/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveDestroyPendingAudit = <NUDATA extends (keyof AT_FlowLeaveDestroyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveDestroyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LeaveDestroy/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LeaveDestroy/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveDestroyRejectAudit = <NUDATA extends (keyof AT_FlowLeaveDestroyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveDestroyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LeaveDestroy/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LeaveDestroy/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveDestroyDynamicRejectAudit = <NUDATA extends (keyof AT_FlowLeaveDestroyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveDestroyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LeaveDestroy/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LeaveDestroy/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveDestroyResetAudit = <NUDATA extends (keyof AT_FlowLeaveDestroyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveDestroyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LeaveDestroy/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LeaveDestroy/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveDestroySaveDraft = <NUDATA extends (keyof AT_FlowLeaveDestroyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveDestroyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LeaveDestroy/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LeaveDestroy/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLeaveDestroySubmitAudit = <NUDATA extends (keyof AT_FlowLeaveDestroyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLeaveDestroyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LeaveDestroy/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LeaveDestroy/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowLeaveDestroyGetLeaveDestroyByFlowId = <RNU extends (keyof AT_FlowModelLeaveViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelLeaveViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/LeaveDestroy/GetLeaveDestroyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/LeaveDestroy/GetLeaveDestroyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowLeaveDestroyDeleteLeaveDestroyByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/LeaveDestroy/DeleteLeaveDestroyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/LeaveDestroy/DeleteLeaveDestroyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowLeaveDestroyGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/LeaveDestroy/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/LeaveDestroy/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowLeaveDestroyGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/LeaveDestroy/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/LeaveDestroy/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5132,21 +4045,17 @@ export const getFirmCodeflowLevelGetLevelByCode = <RNU extends (keyof AT_FlowMod
 	popupKey: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelLevelViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Level/GetLevelByCode?${levelCode ? 'levelCode=' + levelCode : ''}&${popupKey ? 'popupKey=' + popupKey : ''}&${
+		`/${FirmCodeURL}/flow/Level/GetLevelByCode?${levelCode ? 'levelCode=' + levelCode : ''}&${popupKey ? 'popupKey=' + popupKey : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowLevelGetLevelByFlowId = <RNU extends (keyof AT_FlowModelLevelViewModelTuple)[] = []>(flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelLevelViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Level/GetLevelByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Level/GetLevelByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowLevelGetLevelById = <RNU extends (keyof AT_FlowModelLevelViewModelTuple)[] = []>(
@@ -5154,75 +4063,61 @@ export const getFirmCodeflowLevelGetLevelById = <RNU extends (keyof AT_FlowModel
 	popupKey: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelLevelViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Level/GetLevelById?${id ? 'id=' + id : ''}&${popupKey ? 'popupKey=' + popupKey : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Level/GetLevelById?${id ? 'id=' + id : ''}&${popupKey ? 'popupKey=' + popupKey : ''}&${
+			FirmCode ? 'FirmCode=' + FirmCode : ''
+		}`
 	);
 };
 export const postFirmCodeflowLevelDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Level/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Level/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelPendingAudit = <NUDATA extends (keyof AT_FlowLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Level/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Level/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelRejectAudit = <NUDATA extends (keyof AT_FlowLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Level/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Level/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelDynamicRejectAudit = <NUDATA extends (keyof AT_FlowLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Level/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Level/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelSaveDraft = <NUDATA extends (keyof AT_FlowLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Level/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Level/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelSubmitAudit = <NUDATA extends (keyof AT_FlowLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Level/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Level/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelResetAudit = <NUDATA extends (keyof AT_FlowLevelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Level/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Level/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelGetLevelToPage = <
 	RNU extends (keyof AT_LevelPageModelIEnumerableInt32Tuple)[] = [],
@@ -5231,11 +4126,9 @@ export const postFirmCodeflowLevelGetLevelToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_LevelQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_LevelPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Level/GetLevelToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Level/GetLevelToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -5246,30 +4139,24 @@ export const postFirmCodeflowLevelGetCancelLevelToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_CancelLevelQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CancelLevelPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Level/GetCancelLevelToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Level/GetCancelLevelToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowLevelGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Level/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Level/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowLevelGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Level/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Level/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5281,11 +4168,9 @@ export const postFirmCodeflowLevelResetFlowGetLevelResetFlowToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_LevelResetFlowQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_LevelResetFlowPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/LevelResetFlow/GetLevelResetFlowToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/LevelResetFlow/GetLevelResetFlowToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -5293,100 +4178,78 @@ export const postFirmCodeflowLevelResetFlowDynamicSubmitAudit = <NUDATA extends 
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelResetFlowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LevelResetFlow/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LevelResetFlow/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelResetFlowPendingAudit = <NUDATA extends (keyof AT_FlowLevelResetFlowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelResetFlowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LevelResetFlow/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LevelResetFlow/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelResetFlowRejectAudit = <NUDATA extends (keyof AT_FlowLevelResetFlowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelResetFlowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LevelResetFlow/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LevelResetFlow/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelResetFlowDynamicRejectAudit = <NUDATA extends (keyof AT_FlowLevelResetFlowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelResetFlowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LevelResetFlow/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LevelResetFlow/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelResetFlowResetAudit = <NUDATA extends (keyof AT_FlowLevelResetFlowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelResetFlowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LevelResetFlow/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LevelResetFlow/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelResetFlowSaveDraft = <NUDATA extends (keyof AT_FlowLevelResetFlowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelResetFlowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LevelResetFlow/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LevelResetFlow/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowLevelResetFlowSubmitAudit = <NUDATA extends (keyof AT_FlowLevelResetFlowModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowLevelResetFlowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/LevelResetFlow/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/LevelResetFlow/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowLevelResetFlowGetLevelResetFlowByFlowId = <RNU extends (keyof AT_FlowModelLevelResetFlowViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelLevelResetFlowViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/LevelResetFlow/GetLevelResetFlowByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/LevelResetFlow/GetLevelResetFlowByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowLevelResetFlowDeleteLevelResetFlow = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/LevelResetFlow/DeleteLevelResetFlow?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/LevelResetFlow/DeleteLevelResetFlow?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowLevelResetFlowGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/LevelResetFlow/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/LevelResetFlow/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowLevelResetFlowGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/LevelResetFlow/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/LevelResetFlow/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5401,11 +4264,9 @@ export const postFirmCodeMasterCardBagGetMasterCardBagToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MasterCardBagQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MasterCardBagPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/MasterCardBag/GetMasterCardBagToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/MasterCardBag/GetMasterCardBagToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -5413,39 +4274,31 @@ export const postFirmCodeMasterCardBagSaveMasterCardBag = <NUDATA extends (keyof
 	FirmCode: any,
 	data: U_I_NoNull<AT_MasterCardBagModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/MasterCardBag/SaveMasterCardBag?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/MasterCardBag/SaveMasterCardBag?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeMasterCardBagGetMasterCardBagById = <RNU extends (keyof AT_MasterCardBagModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MasterCardBagModel, RNU>>>(
-		`/${FirmCode}/MasterCardBag/GetMasterCardBagById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/MasterCardBag/GetMasterCardBagById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeMasterCardBagGetMasterCardBagByCardCode = <RNU extends (keyof AT_MasterCardBagModel)[] = []>(
 	cardCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MasterCardBagModel, RNU>>>(
-		`/${FirmCode}/MasterCardBag/GetMasterCardBagByCardCode?${cardCode ? 'cardCode=' + cardCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/MasterCardBag/GetMasterCardBagByCardCode?${cardCode ? 'cardCode=' + cardCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeMasterCardBagSearchCardNoByCardType = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(
 	cardType: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/MasterCardBag/SearchCardNoByCardType?${cardType ? 'cardType=' + cardType : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/MasterCardBag/SearchCardNoByCardType?${cardType ? 'cardType=' + cardType : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMasterCardRechargeApplyGetMasterCardRechargeApplyToPage = <
@@ -5455,11 +4308,9 @@ export const postFirmCodeflowMasterCardRechargeApplyGetMasterCardRechargeApplyTo
 	FirmCode: any,
 	data: U_I_NoNull<AT_MasterCardRechargeApplyQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MasterCardRechargeApplyPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/MasterCardRechargeApply/GetMasterCardRechargeApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MasterCardRechargeApply/GetMasterCardRechargeApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -5469,11 +4320,9 @@ export const getFirmCodeflowMasterCardRechargeApplyGetMasterCardRechargeApplyByU
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetMasterCardRechargeApplyByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/MasterCardRechargeApply/GetMasterCardRechargeApplyByUser?${barCode ? 'barCode=' + barCode : ''}&${
+		`/${FirmCodeURL}/flow/MasterCardRechargeApply/GetMasterCardRechargeApplyByUser?${barCode ? 'barCode=' + barCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5482,11 +4331,9 @@ export const postFirmCodeflowMasterCardRechargeApplyDynamicSubmitAudit = <NUDATA
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMasterCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MasterCardRechargeApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MasterCardRechargeApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -5494,29 +4341,23 @@ export const postFirmCodeflowMasterCardRechargeApplyPendingAudit = <NUDATA exten
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMasterCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MasterCardRechargeApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MasterCardRechargeApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMasterCardRechargeApplyRejectAudit = <NUDATA extends (keyof AT_FlowMasterCardRechargeApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMasterCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MasterCardRechargeApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MasterCardRechargeApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMasterCardRechargeApplyDynamicRejectAudit = <NUDATA extends (keyof AT_FlowMasterCardRechargeApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMasterCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MasterCardRechargeApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MasterCardRechargeApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -5524,28 +4365,22 @@ export const postFirmCodeflowMasterCardRechargeApplyResetAudit = <NUDATA extends
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMasterCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MasterCardRechargeApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MasterCardRechargeApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMasterCardRechargeApplySaveDraft = <NUDATA extends (keyof AT_FlowMasterCardRechargeApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMasterCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MasterCardRechargeApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MasterCardRechargeApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMasterCardRechargeApplySubmitAudit = <NUDATA extends (keyof AT_FlowMasterCardRechargeApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMasterCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MasterCardRechargeApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MasterCardRechargeApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowMasterCardRechargeApplyGetMasterCardRechargeApplyByFlowId = <
 	RNU extends (keyof AT_FlowModelMasterCardRechargeApplyViewModelTuple)[] = [],
@@ -5553,11 +4388,9 @@ export const getFirmCodeflowMasterCardRechargeApplyGetMasterCardRechargeApplyByF
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelMasterCardRechargeApplyViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/MasterCardRechargeApply/GetMasterCardRechargeApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MasterCardRechargeApply/GetMasterCardRechargeApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5566,20 +4399,16 @@ export const postFirmCodeflowMasterCardRechargeApplySaveMasterCardRechargeFinish
 	FirmCode: any,
 	data: U_I_NoNull<AT_MasterCardRechargeFinishModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MasterCardRechargeApply/SaveMasterCardRechargeFinish?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MasterCardRechargeApply/SaveMasterCardRechargeFinish?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeflowMasterCardRechargeApplyDeleteMasterCardRechargeApply = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MasterCardRechargeApply/DeleteMasterCardRechargeApply?${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MasterCardRechargeApply/DeleteMasterCardRechargeApply?${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5589,11 +4418,9 @@ export const getFirmCodeflowMasterCardRechargeApplyGetFlowInfo = <RNU extends (k
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/MasterCardRechargeApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MasterCardRechargeApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5603,32 +4430,26 @@ export const getFirmCodeflowMasterCardRechargeApplyGetFlowChat = <RNU extends (k
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/MasterCardRechargeApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MasterCardRechargeApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeMaterialGetMaterialById = <RNU extends (keyof AT_MaterialViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialViewModel, RNU>>>(
-		`/${FirmCode}/Material/GetMaterialById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Material/GetMaterialById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeMaterialGetMaterialAttachmentByMaterialCode = <RNU extends (keyof AT_MaterialAttachmentModel)[] = []>(
 	materialCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialAttachmentModel, RNU>[]>>(
-		`/${FirmCode}/Material/GetMaterialAttachmentByMaterialCode?${materialCode ? 'materialCode=' + materialCode : ''}&${
+		`/${FirmCodeURL}/Material/GetMaterialAttachmentByMaterialCode?${materialCode ? 'materialCode=' + materialCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5637,10 +4458,8 @@ export const postFirmCodeMaterialSubmitMaterial = <NUDATA extends (keyof AT_Mate
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Material/SubmitMaterial?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Material/SubmitMaterial?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeMaterialGetMaterialToPage = <
 	RNU extends (keyof AT_MaterialPageModelIEnumerableInt32Tuple)[] = [],
@@ -5649,11 +4468,9 @@ export const postFirmCodeMaterialGetMaterialToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Material/GetMaterialToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Material/GetMaterialToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -5663,75 +4480,61 @@ export const getFirmCodeflowMaterialAllocationGetMaterialAllocationByFlowId = <
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelMaterialAllocationViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialAllocation/GetMaterialAllocationByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialAllocation/GetMaterialAllocationByFlowId?${flowId ? 'flowId=' + flowId : ''}&${
+			FirmCode ? 'FirmCode=' + FirmCode : ''
+		}`
 	);
 };
 export const postFirmCodeflowMaterialAllocationDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialAllocationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocation/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocation/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationPendingAudit = <NUDATA extends (keyof AT_FlowMaterialAllocationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocation/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocation/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationRejectAudit = <NUDATA extends (keyof AT_FlowMaterialAllocationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocation/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocation/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationDynamicRejectAudit = <NUDATA extends (keyof AT_FlowMaterialAllocationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocation/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocation/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationResetAudit = <NUDATA extends (keyof AT_FlowMaterialAllocationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocation/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocation/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationSaveDraft = <NUDATA extends (keyof AT_FlowMaterialAllocationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocation/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocation/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialAllocationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocation/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocation/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationGetMaterialAllocationToPage = <
 	RNU extends (keyof AT_MaterialAllocationPageModelIEnumerableInt32Tuple)[] = [],
@@ -5740,20 +4543,16 @@ export const postFirmCodeflowMaterialAllocationGetMaterialAllocationToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialAllocationQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialAllocationPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialAllocation/GetMaterialAllocationToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialAllocation/GetMaterialAllocationToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowMaterialAllocationGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/MaterialAllocation/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialAllocation/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5763,11 +4562,9 @@ export const getFirmCodeflowMaterialAllocationGetFlowChat = <RNU extends (keyof 
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/MaterialAllocation/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialAllocation/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5778,11 +4575,9 @@ export const getFirmCodeflowMaterialAllocationGrantGetMaterialAllocationGrantByF
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelMaterialAllocationGrantViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialAllocationGrant/GetMaterialAllocationGrantByFlowId?${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialAllocationGrant/GetMaterialAllocationGrantByFlowId?${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5791,11 +4586,9 @@ export const postFirmCodeflowMaterialAllocationGrantDynamicSubmitAudit = <NUDATA
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MaterialAllocationGrant/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialAllocationGrant/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -5803,29 +4596,23 @@ export const postFirmCodeflowMaterialAllocationGrantPendingAudit = <NUDATA exten
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocationGrant/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocationGrant/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationGrantRejectAudit = <NUDATA extends (keyof AT_FlowMaterialAllocationGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocationGrant/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocationGrant/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationGrantDynamicRejectAudit = <NUDATA extends (keyof AT_FlowMaterialAllocationGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MaterialAllocationGrant/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialAllocationGrant/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -5833,28 +4620,22 @@ export const postFirmCodeflowMaterialAllocationGrantResetAudit = <NUDATA extends
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocationGrant/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocationGrant/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationGrantSaveDraft = <NUDATA extends (keyof AT_FlowMaterialAllocationGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocationGrant/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocationGrant/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationGrantSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialAllocationGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialAllocationGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialAllocationGrant/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialAllocationGrant/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialAllocationGrantGetMaterialAllocationGrantToPage = <
 	RNU extends (keyof AT_MaterialAllocationGrantPageModelIEnumerableInt32Tuple)[] = [],
@@ -5863,11 +4644,9 @@ export const postFirmCodeflowMaterialAllocationGrantGetMaterialAllocationGrantTo
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialAllocationGrantQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialAllocationGrantPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialAllocationGrant/GetMaterialAllocationGrantToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialAllocationGrant/GetMaterialAllocationGrantToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -5876,11 +4655,9 @@ export const getFirmCodeflowMaterialAllocationGrantGetFlowInfo = <RNU extends (k
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/MaterialAllocationGrant/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialAllocationGrant/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5890,11 +4667,9 @@ export const getFirmCodeflowMaterialAllocationGrantGetFlowChat = <RNU extends (k
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/MaterialAllocationGrant/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialAllocationGrant/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -5903,100 +4678,78 @@ export const getFirmCodeflowMaterialApplyGetMaterialApplyByFlowId = <RNU extends
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelMaterialApplyViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialApply/GetMaterialApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialApply/GetMaterialApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowMaterialApplyGetMaterialApplyById = <RNU extends (keyof AT_MaterialApplyViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialApplyViewModel, RNU>>>(
-		`/${FirmCode}/flow/MaterialApply/GetMaterialApplyById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialApply/GetMaterialApplyById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialApplyDeleteMaterialApplyByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MaterialApply/DeleteMaterialApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialApply/DeleteMaterialApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialApplyMaterialApplyCancel = <NUDATA extends (keyof AT_MaterialApplyCancelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialApplyCancelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialApply/MaterialApplyCancel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialApply/MaterialApplyCancel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialApplyDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialApplyPendingAudit = <NUDATA extends (keyof AT_FlowMaterialApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialApplyRejectAudit = <NUDATA extends (keyof AT_FlowMaterialApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialApplyDynamicRejectAudit = <NUDATA extends (keyof AT_FlowMaterialApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialApplyResetAudit = <NUDATA extends (keyof AT_FlowMaterialApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialApplySaveDraft = <NUDATA extends (keyof AT_FlowMaterialApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialApplySubmitAudit = <NUDATA extends (keyof AT_FlowMaterialApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialApplyGetMaterialApplyToPage = <
 	RNU extends (keyof AT_MaterialApplyPageModelIEnumerableInt32Tuple)[] = [],
@@ -6005,11 +4758,9 @@ export const postFirmCodeflowMaterialApplyGetMaterialApplyToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialApplyQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialApplyPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialApply/GetMaterialApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialApply/GetMaterialApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -6017,52 +4768,42 @@ export const getFirmCodeflowMaterialApplyGetMaterialApplyByUser = <RNU extends (
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetMaterialApplyByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/MaterialApply/GetMaterialApplyByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialApply/GetMaterialApplyByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowMaterialApplyGetReviewMaterialApplyByUser = <RNU extends (keyof AT_MaterialApplySimpleModel)[] = []>(
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialApplySimpleModel, RNU>[]>>(
-		`/${FirmCode}/flow/MaterialApply/GetReviewMaterialApplyByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialApply/GetReviewMaterialApplyByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialApplySaveMaterialApplySelfPurchase = <NUDATA extends (keyof AT_MaterialApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MaterialApply/SaveMaterialApplySelfPurchase?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialApply/SaveMaterialApplySelfPurchase?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowMaterialApplyGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/MaterialApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowMaterialApplyGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/MaterialApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -6071,83 +4812,65 @@ export const getFirmCodeflowMaterialCheckGetMaterialCheckByFlowId = <RNU extends
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelMaterialCheckViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialCheck/GetMaterialCheckByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialCheck/GetMaterialCheckByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialCheckDeleteMaterialCheckByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MaterialCheck/DeleteMaterialCheckByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialCheck/DeleteMaterialCheckByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialCheckDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialCheckModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialCheckModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialCheck/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialCheck/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialCheckPendingAudit = <NUDATA extends (keyof AT_FlowMaterialCheckModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialCheckModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialCheck/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialCheck/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialCheckRejectAudit = <NUDATA extends (keyof AT_FlowMaterialCheckModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialCheckModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialCheck/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialCheck/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialCheckDynamicRejectAudit = <NUDATA extends (keyof AT_FlowMaterialCheckModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialCheckModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialCheck/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialCheck/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialCheckResetAudit = <NUDATA extends (keyof AT_FlowMaterialCheckModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialCheckModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialCheck/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialCheck/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialCheckSaveDraft = <NUDATA extends (keyof AT_FlowMaterialCheckModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialCheckModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialCheck/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialCheck/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialCheckSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialCheckModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialCheckModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialCheck/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialCheck/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialCheckGetMaterialCheckToPage = <
 	RNU extends (keyof AT_MaterialCheckPageModelIEnumerableInt32Tuple)[] = [],
@@ -6156,30 +4879,24 @@ export const postFirmCodeflowMaterialCheckGetMaterialCheckToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialCheckQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialCheckPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialCheck/GetMaterialCheckToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialCheck/GetMaterialCheckToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowMaterialCheckGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/MaterialCheck/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialCheck/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowMaterialCheckGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/MaterialCheck/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialCheck/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -6188,83 +4905,65 @@ export const getFirmCodeflowMaterialGrantGetMaterialGrantByFlowId = <RNU extends
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelMaterialGrantViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialGrant/GetMaterialGrantByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialGrant/GetMaterialGrantByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialGrantDeleteMaterialGrantByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MaterialGrant/DeleteMaterialGrantByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialGrant/DeleteMaterialGrantByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialGrantDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialGrant/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialGrant/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialGrantPendingAudit = <NUDATA extends (keyof AT_FlowMaterialGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialGrant/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialGrant/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialGrantRejectAudit = <NUDATA extends (keyof AT_FlowMaterialGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialGrant/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialGrant/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialGrantDynamicRejectAudit = <NUDATA extends (keyof AT_FlowMaterialGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialGrant/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialGrant/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialGrantResetAudit = <NUDATA extends (keyof AT_FlowMaterialGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialGrant/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialGrant/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialGrantSaveDraft = <NUDATA extends (keyof AT_FlowMaterialGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialGrant/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialGrant/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialGrantSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialGrantModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialGrantModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialGrant/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialGrant/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialGrantGetMaterialGrantToPage = <
 	RNU extends (keyof AT_MaterialGrantPageModelIEnumerableInt32Tuple)[] = [],
@@ -6273,11 +4972,9 @@ export const postFirmCodeflowMaterialGrantGetMaterialGrantToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialGrantQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialGrantPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialGrant/GetMaterialGrantToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialGrant/GetMaterialGrantToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -6285,10 +4982,8 @@ export const postFirmCodeflowMaterialGrantBatchMaterialGrant = <NUDATA extends (
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialGrantQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialGrant/BatchMaterialGrant?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialGrant/BatchMaterialGrant?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialGrantGetMaterialGrantSelfToPage = <
 	RNU extends (keyof AT_MaterialGrantSelfPageModelIEnumerableInt32Tuple)[] = [],
@@ -6297,30 +4992,24 @@ export const postFirmCodeflowMaterialGrantGetMaterialGrantSelfToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialGrantSelfQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialGrantSelfPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialGrant/GetMaterialGrantSelfToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialGrant/GetMaterialGrantSelfToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowMaterialGrantGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/MaterialGrant/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialGrant/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowMaterialGrantGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/MaterialGrant/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialGrant/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -6329,83 +5018,65 @@ export const getFirmCodeflowMaterialNeedGetMaterialNeedByFlowId = <RNU extends (
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelMaterialNeedViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialNeed/GetMaterialNeedByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialNeed/GetMaterialNeedByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialNeedDeleteMaterialNeedByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MaterialNeed/DeleteMaterialNeedByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialNeed/DeleteMaterialNeedByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialNeedDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialNeedModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialNeedModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialNeed/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialNeed/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialNeedPendingAudit = <NUDATA extends (keyof AT_FlowMaterialNeedModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialNeedModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialNeed/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialNeed/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialNeedRejectAudit = <NUDATA extends (keyof AT_FlowMaterialNeedModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialNeedModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialNeed/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialNeed/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialNeedDynamicRejectAudit = <NUDATA extends (keyof AT_FlowMaterialNeedModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialNeedModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialNeed/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialNeed/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialNeedResetAudit = <NUDATA extends (keyof AT_FlowMaterialNeedModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialNeedModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialNeed/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialNeed/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialNeedSaveDraft = <NUDATA extends (keyof AT_FlowMaterialNeedModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialNeedModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialNeed/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialNeed/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialNeedSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialNeedModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialNeedModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialNeed/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialNeed/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialNeedGetMaterialNeedToPage = <
 	RNU extends (keyof AT_MaterialNeedPageModelIEnumerableInt32Tuple)[] = [],
@@ -6414,30 +5085,24 @@ export const postFirmCodeflowMaterialNeedGetMaterialNeedToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialNeedQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialNeedPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialNeed/GetMaterialNeedToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialNeed/GetMaterialNeedToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowMaterialNeedGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/MaterialNeed/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialNeed/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowMaterialNeedGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/MaterialNeed/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialNeed/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -6446,83 +5111,67 @@ export const getFirmCodeflowMaterialPurchaseGetMaterialPurchaseByFlowId = <RNU e
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelMaterialPurchaseViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialPurchase/GetMaterialPurchaseByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialPurchase/GetMaterialPurchaseByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialPurchaseDeleteMaterialPurchaseByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MaterialPurchase/DeleteMaterialPurchaseByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialPurchase/DeleteMaterialPurchaseByFlowId?${flowId ? 'flowId=' + flowId : ''}&${
+			FirmCode ? 'FirmCode=' + FirmCode : ''
+		}`
 	);
 };
 export const postFirmCodeflowMaterialPurchaseDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialPurchase/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialPurchase/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialPurchasePendingAudit = <NUDATA extends (keyof AT_FlowMaterialPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialPurchase/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialPurchase/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialPurchaseRejectAudit = <NUDATA extends (keyof AT_FlowMaterialPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialPurchase/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialPurchase/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialPurchaseDynamicRejectAudit = <NUDATA extends (keyof AT_FlowMaterialPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialPurchase/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialPurchase/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialPurchaseResetAudit = <NUDATA extends (keyof AT_FlowMaterialPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialPurchase/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialPurchase/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialPurchaseSaveDraft = <NUDATA extends (keyof AT_FlowMaterialPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialPurchase/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialPurchase/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialPurchaseSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialPurchaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialPurchaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialPurchase/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialPurchase/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialPurchaseGetMaterialPurchaseToPage = <
 	RNU extends (keyof AT_MaterialPurchasePageModelIEnumerableInt32Tuple)[] = [],
@@ -6531,20 +5180,16 @@ export const postFirmCodeflowMaterialPurchaseGetMaterialPurchaseToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialPurchaseQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialPurchasePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialPurchase/GetMaterialPurchaseToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialPurchase/GetMaterialPurchaseToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowMaterialPurchaseGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/MaterialPurchase/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialPurchase/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -6554,11 +5199,9 @@ export const getFirmCodeflowMaterialPurchaseGetFlowChat = <RNU extends (keyof AT
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/MaterialPurchase/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialPurchase/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -6567,17 +5210,13 @@ export const postFirmCodeMaterialPurposeSubmitMaterialPurpose = <NUDATA extends 
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialPurposeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/MaterialPurpose/SubmitMaterialPurpose?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/MaterialPurpose/SubmitMaterialPurpose?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeMaterialPurposeGetMaterialPurposeById = <RNU extends (keyof AT_MaterialPurposeModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialPurposeModel, RNU>>>(
-		`/${FirmCode}/MaterialPurpose/GetMaterialPurposeById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/MaterialPurpose/GetMaterialPurposeById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeMaterialPurposeGetMaterialPurposeToPage = <
@@ -6587,11 +5226,9 @@ export const postFirmCodeMaterialPurposeGetMaterialPurposeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialPurposeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialPurposePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/MaterialPurpose/GetMaterialPurposeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/MaterialPurpose/GetMaterialPurposeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -6599,83 +5236,65 @@ export const getFirmCodeflowMaterialReturnGetMaterialReturnByFlowId = <RNU exten
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelMaterialReturnViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialReturn/GetMaterialReturnByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialReturn/GetMaterialReturnByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialReturnDeleteMaterialReturnByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/MaterialReturn/DeleteMaterialReturnByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/MaterialReturn/DeleteMaterialReturnByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMaterialReturnDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialReturnModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialReturnModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialReturn/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialReturn/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialReturnPendingAudit = <NUDATA extends (keyof AT_FlowMaterialReturnModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialReturnModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialReturn/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialReturn/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialReturnRejectAudit = <NUDATA extends (keyof AT_FlowMaterialReturnModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialReturnModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialReturn/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialReturn/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialReturnDynamicRejectAudit = <NUDATA extends (keyof AT_FlowMaterialReturnModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialReturnModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialReturn/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialReturn/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialReturnResetAudit = <NUDATA extends (keyof AT_FlowMaterialReturnModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialReturnModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialReturn/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialReturn/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialReturnSaveDraft = <NUDATA extends (keyof AT_FlowMaterialReturnModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialReturnModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialReturn/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialReturn/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialReturnSubmitAudit = <NUDATA extends (keyof AT_FlowMaterialReturnModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMaterialReturnModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/MaterialReturn/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/MaterialReturn/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMaterialReturnGetMaterialReturnToPage = <
 	RNU extends (keyof AT_MaterialReturnPageModelIEnumerableInt32Tuple)[] = [],
@@ -6684,30 +5303,24 @@ export const postFirmCodeflowMaterialReturnGetMaterialReturnToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialReturnQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialReturnPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/MaterialReturn/GetMaterialReturnToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/MaterialReturn/GetMaterialReturnToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowMaterialReturnGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/MaterialReturn/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialReturn/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowMaterialReturnGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/MaterialReturn/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/MaterialReturn/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -6719,11 +5332,9 @@ export const postFirmCodeMaterialShoppingGetMaterialShoppingToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialShoppingQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialShoppingPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/MaterialShopping/GetMaterialShoppingToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/MaterialShopping/GetMaterialShoppingToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -6731,11 +5342,9 @@ export const getFirmCodeMaterialStockGetMaterialStockBatchNo = <RNU extends (key
 	materialCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialStockBatchNoModel, RNU>[]>>(
-		`/${FirmCode}/MaterialStock/GetMaterialStockBatchNo?${materialCode ? 'materialCode=' + materialCode : ''}&${
+		`/${FirmCodeURL}/MaterialStock/GetMaterialStockBatchNo?${materialCode ? 'materialCode=' + materialCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -6747,11 +5356,9 @@ export const postFirmCodeMaterialStockGetMaterialStockToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialStockQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialStockPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/MaterialStock/GetMaterialStockToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/MaterialStock/GetMaterialStockToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -6762,11 +5369,9 @@ export const postFirmCodeMaterialStockGetMaterialStockInOutToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialStockInOutQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialStockInOutPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/MaterialStock/GetMaterialStockInOutToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/MaterialStock/GetMaterialStockInOutToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -6774,21 +5379,17 @@ export const getFirmCodeMaterialSupplierGetMaterialSupplierById = <RNU extends (
 	id: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialSupplierViewModel, RNU>>>(
-		`/${FirmCode}/MaterialSupplier/GetMaterialSupplierById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/MaterialSupplier/GetMaterialSupplierById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeMaterialSupplierSubmitMaterialSupplier = <NUDATA extends (keyof AT_MaterialSupplierModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialSupplierModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/MaterialSupplier/SubmitMaterialSupplier?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/MaterialSupplier/SubmitMaterialSupplier?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeMaterialSupplierGetMaterialSupplierToPage = <
 	RNU extends (keyof AT_MaterialSupplierPageModelIEnumerableInt32Tuple)[] = [],
@@ -6797,11 +5398,9 @@ export const postFirmCodeMaterialSupplierGetMaterialSupplierToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialSupplierQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialSupplierPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/MaterialSupplier/GetMaterialSupplierToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/MaterialSupplier/GetMaterialSupplierToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -6809,17 +5408,13 @@ export const postFirmCodeMaterialTypeSubmitMaterialType = <NUDATA extends (keyof
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialTypeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/MaterialType/SubmitMaterialType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/MaterialType/SubmitMaterialType?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeMaterialTypeGetMaterialTypeById = <RNU extends (keyof AT_MaterialTypeModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MaterialTypeModel, RNU>>>(
-		`/${FirmCode}/MaterialType/GetMaterialTypeById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/MaterialType/GetMaterialTypeById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeMaterialTypeGetMaterialTypeToPage = <
@@ -6829,28 +5424,22 @@ export const postFirmCodeMaterialTypeGetMaterialTypeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MaterialTypeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MaterialTypePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/MaterialType/GetMaterialTypeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/MaterialType/GetMaterialTypeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowMeetGetMeetByFlowId = <RNU extends (keyof AT_FlowModelMeetViewModelTuple)[] = []>(flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelMeetViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Meet/GetMeetByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Meet/GetMeetByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMeetDeleteMeetFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Meet/DeleteMeetFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Meet/DeleteMeetFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowMeetGetHandleMeetSchedule = <
@@ -6860,11 +5449,9 @@ export const postFirmCodeflowMeetGetHandleMeetSchedule = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_ScheduleQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MeetScheduleViewModel, RNU>[]>>(
-		`/${FirmCode}/flow/Meet/GetHandleMeetSchedule?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Meet/GetHandleMeetSchedule?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -6875,11 +5462,9 @@ export const postFirmCodeflowMeetGetMeetSchedule = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_ScheduleQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MeetSimpleModel, RNU>[]>>(
-		`/${FirmCode}/flow/Meet/GetMeetSchedule?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Meet/GetMeetSchedule?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -6887,82 +5472,64 @@ export const postFirmCodeflowMeetMeetFollow = <NUDATA extends (keyof AT_MeetFoll
 	FirmCode: any,
 	data: U_I_NoNull<AT_MeetFollowModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Meet/MeetFollow?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Meet/MeetFollow?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMeetMeetCancel = <NUDATA extends (keyof AT_MeetCancelModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_MeetCancelModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Meet/MeetCancel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Meet/MeetCancel?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMeetDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowMeetModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMeetModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Meet/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Meet/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMeetPendingAudit = <NUDATA extends (keyof AT_FlowMeetModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMeetModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Meet/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Meet/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMeetRejectAudit = <NUDATA extends (keyof AT_FlowMeetModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMeetModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Meet/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Meet/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMeetDynamicRejectAudit = <NUDATA extends (keyof AT_FlowMeetModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMeetModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Meet/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Meet/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMeetSaveDraft = <NUDATA extends (keyof AT_FlowMeetModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMeetModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Meet/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Meet/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMeetSubmitAudit = <NUDATA extends (keyof AT_FlowMeetModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMeetModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Meet/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Meet/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMeetResetAudit = <NUDATA extends (keyof AT_FlowMeetModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowMeetModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Meet/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Meet/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowMeetGetMeetToPage = <
 	RNU extends (keyof AT_MeetPageModelIEnumerableInt32Tuple)[] = [],
@@ -6971,50 +5538,40 @@ export const postFirmCodeflowMeetGetMeetToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MeetQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MeetPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Meet/GetMeetToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Meet/GetMeetToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowMeetGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Meet/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Meet/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowMeetGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Meet/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Meet/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeMeetRoomGetMeetRoomById = <RNU extends (keyof AT_MeetViewRoomModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_MeetViewRoomModel, RNU>>>(
-		`/${FirmCode}/MeetRoom/GetMeetRoomById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/MeetRoom/GetMeetRoomById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeMeetRoomSubmitMeetRoom = <NUDATA extends (keyof AT_MeetRoomModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_MeetRoomModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/MeetRoom/SubmitMeetRoom?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/MeetRoom/SubmitMeetRoom?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeMeetRoomGetMeetRoomToPage = <
 	RNU extends (keyof AT_MeetRoomPageModelIEnumerableInt32Tuple)[] = [],
@@ -7023,11 +5580,9 @@ export const postFirmCodeMeetRoomGetMeetRoomToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_MeetRoomQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_MeetRoomPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/MeetRoom/GetMeetRoomToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/MeetRoom/GetMeetRoomToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7035,36 +5590,30 @@ export const postFirmCodeNewsletterAddNewsletter = <NUDATA extends (keyof AT_New
 	FirmCode: any,
 	data: U_I_NoNull<AT_NewsletterModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Newsletter/AddNewsletter?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Newsletter/AddNewsletter?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeNewsletterUpdateNewsletter = <NUDATA extends (keyof AT_NewsletterModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_NewsletterModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Newsletter/UpdateNewsletter?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Newsletter/UpdateNewsletter?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeNewsletterRemoveNewsletter = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Newsletter/RemoveNewsletter?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/Newsletter/RemoveNewsletter?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+	);
 };
 export const getFirmCodeNewsletterGetNewsletterById = <RNU extends (keyof AT_NewsletterViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_NewsletterViewModel, RNU>>>(
-		`/${FirmCode}/Newsletter/GetNewsletterById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Newsletter/GetNewsletterById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeNewsletterGetNewsletterToPage = <
@@ -7074,11 +5623,9 @@ export const postFirmCodeNewsletterGetNewsletterToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_NewsletterQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_NewsletterPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Newsletter/GetNewsletterToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Newsletter/GetNewsletterToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7089,11 +5636,9 @@ export const postFirmCodeflowNoticeGetNoticeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_NoticeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_NoticePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Notice/GetNoticeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Notice/GetNoticeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7101,115 +5646,89 @@ export const postFirmCodeflowNoticeDynamicSubmitAudit = <NUDATA extends (keyof A
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowNoticeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Notice/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Notice/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowNoticePendingAudit = <NUDATA extends (keyof AT_FlowNoticeModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowNoticeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Notice/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Notice/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowNoticeRejectAudit = <NUDATA extends (keyof AT_FlowNoticeModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowNoticeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Notice/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Notice/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowNoticeDynamicRejectAudit = <NUDATA extends (keyof AT_FlowNoticeModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowNoticeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Notice/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Notice/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowNoticeResetAudit = <NUDATA extends (keyof AT_FlowNoticeModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowNoticeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Notice/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Notice/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowNoticeSaveDraft = <NUDATA extends (keyof AT_FlowNoticeModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowNoticeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Notice/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Notice/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowNoticeSubmitAudit = <NUDATA extends (keyof AT_FlowNoticeModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowNoticeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Notice/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Notice/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowNoticeGetNoticeByFlowId = <RNU extends (keyof AT_FlowModelNoticesViewModelTuple)[] = []>(flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelNoticesViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Notice/GetNoticeByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Notice/GetNoticeByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowNoticeSaveNotice = <NUDATA extends (keyof AT_SaveNoticeModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_SaveNoticeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Notice/SaveNotice?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Notice/SaveNotice?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowNoticePublishNotice = <NUDATA extends (keyof AT_SaveNoticeModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_SaveNoticeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Notice/PublishNotice?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Notice/PublishNotice?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowNoticeDeleteNotice = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Notice/DeleteNotice?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Notice/DeleteNotice?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowNoticeGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Notice/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Notice/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowNoticeGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Notice/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Notice/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -7221,11 +5740,9 @@ export const postFirmCodePersonalIncomeTaxGetPersonalIncomeTaxToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_PersonalIncomeTaxQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_PersonalIncomeTaxPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/PersonalIncomeTax/GetPersonalIncomeTaxToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/PersonalIncomeTax/GetPersonalIncomeTaxToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7233,28 +5750,22 @@ export const postFirmCodePersonalIncomeTaxSavePersonalIncomeTax = <NUDATA extend
 	FirmCode: any,
 	data: U_I_NoNull<AT_PersonalIncomeTaxModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/PersonalIncomeTax/SavePersonalIncomeTax?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/PersonalIncomeTax/SavePersonalIncomeTax?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodePersonalIncomeTaxDeletePersonalIncomeTax = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/PersonalIncomeTax/DeletePersonalIncomeTax?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/PersonalIncomeTax/DeletePersonalIncomeTax?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodePersonalIncomeTaxGetPersonalIncomeTaxById = <RNU extends (keyof AT_PersonalIncomeTaxModel)[] = []>(
 	id: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PersonalIncomeTaxModel, RNU>>>(
-		`/${FirmCode}/PersonalIncomeTax/GetPersonalIncomeTaxById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/PersonalIncomeTax/GetPersonalIncomeTaxById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodePersonalReceiptGetPersonalReceiptToPage = <
@@ -7264,11 +5775,9 @@ export const postFirmCodePersonalReceiptGetPersonalReceiptToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_PersonalReceiptQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_PersonalReceiptPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/PersonalReceipt/GetPersonalReceiptToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/PersonalReceipt/GetPersonalReceiptToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7276,17 +5785,13 @@ export const postFirmCodePersonalReceiptAddPersonalReceipt = <NUDATA extends (ke
 	FirmCode: any,
 	data: U_I_NoNull<AT_PersonalModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/PersonalReceipt/AddPersonalReceipt?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/PersonalReceipt/AddPersonalReceipt?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodePersonalReceiptRemovePersonalReceipt = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/PersonalReceipt/RemovePersonalReceipt?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/PersonalReceipt/RemovePersonalReceipt?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodePersonSalaryRecordGetPersonSalaryRecord = <
@@ -7296,80 +5801,62 @@ export const postFirmCodePersonSalaryRecordGetPersonSalaryRecord = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryRecordQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RowToColumnPageModel, RNU>>>(
-		`/${FirmCode}/PersonSalaryRecord/GetPersonSalaryRecord?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/PersonSalaryRecord/GetPersonSalaryRecord?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodePersonSalaryRecordCheckSalaryCypher = (passWord: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/PersonSalaryRecord/CheckSalaryCypher?${passWord ? 'passWord=' + passWord : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/PersonSalaryRecord/CheckSalaryCypher?${passWord ? 'passWord=' + passWord : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodePersonSalaryRecordUpdateSalaryCypher = (idCard: any, newPassWord: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/PersonSalaryRecord/UpdateSalaryCypher?${idCard ? 'idCard=' + idCard : ''}&${newPassWord ? 'newPassWord=' + newPassWord : ''}&${
+		`/${FirmCodeURL}/PersonSalaryRecord/UpdateSalaryCypher?${idCard ? 'idCard=' + idCard : ''}&${newPassWord ? 'newPassWord=' + newPassWord : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodePersonSalaryRecordCheckSalaryCypherIsExist = (FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/PersonSalaryRecord/CheckSalaryCypherIsExist?${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/PersonSalaryRecord/CheckSalaryCypherIsExist?${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
 };
 export const postFirmCodePersonSalaryRecordAddSalaryCypher = (passWord: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/PersonSalaryRecord/AddSalaryCypher?${passWord ? 'passWord=' + passWord : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/PersonSalaryRecord/AddSalaryCypher?${passWord ? 'passWord=' + passWord : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodePopupGetPopup = <RNU extends (keyof AT_PopupViewModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PopupViewModel, RNU>[]>>(
-		`/${FirmCode}/Popup/GetPopup?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Popup/GetPopup?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodePopupGetBirthdayPopup = <RNU extends (keyof AT_PopupViewModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_PopupViewModel, RNU>>>(
-		`/${FirmCode}/Popup/GetBirthdayPopup?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Popup/GetBirthdayPopup?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodePopupPopupRead = <NUDATA extends (keyof AT_PopupReadModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_PopupReadModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Popup/PopupRead?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Popup/PopupRead?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowPositionGetPositionByFlowId = <RNU extends (keyof AT_FlowModelPositionViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelPositionViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Position/GetPositionByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Position/GetPositionByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowPositionGetPositionByCode = <RNU extends (keyof AT_FlowModelPositionViewModelTuple)[] = []>(
@@ -7377,13 +5864,11 @@ export const getFirmCodeflowPositionGetPositionByCode = <RNU extends (keyof AT_F
 	popupKey: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelPositionViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Position/GetPositionByCode?${positionCode ? 'positionCode=' + positionCode : ''}&${popupKey ? 'popupKey=' + popupKey : ''}&${
-			FirmCode ? 'FirmCode=' + FirmCode : ''
-		}`
+		`/${FirmCodeURL}/flow/Position/GetPositionByCode?${positionCode ? 'positionCode=' + positionCode : ''}&${
+			popupKey ? 'popupKey=' + popupKey : ''
+		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowPositionDynamicSubmitAudit = <
@@ -7393,11 +5878,9 @@ export const postFirmCodeflowPositionDynamicSubmitAudit = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ReturnMessage, RNU>>>(
-		`/${FirmCode}/flow/Position/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Position/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7405,11 +5888,9 @@ export const postFirmCodeflowPositionPendingAudit = <RNU extends (keyof AT_Retur
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ReturnMessage, RNU>>>(
-		`/${FirmCode}/flow/Position/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Position/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7417,11 +5898,9 @@ export const postFirmCodeflowPositionRejectAudit = <RNU extends (keyof AT_Return
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ReturnMessage, RNU>>>(
-		`/${FirmCode}/flow/Position/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Position/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7432,11 +5911,9 @@ export const postFirmCodeflowPositionDynamicRejectAudit = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ReturnMessage, RNU>>>(
-		`/${FirmCode}/flow/Position/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Position/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7444,11 +5921,9 @@ export const postFirmCodeflowPositionSaveDraft = <RNU extends (keyof AT_ReturnMe
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ReturnMessage, RNU>>>(
-		`/${FirmCode}/flow/Position/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Position/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7456,11 +5931,9 @@ export const postFirmCodeflowPositionSubmitAudit = <RNU extends (keyof AT_Return
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ReturnMessage, RNU>>>(
-		`/${FirmCode}/flow/Position/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Position/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7469,11 +5942,9 @@ export const postFirmCodeflowPositionResetAudit = <RNU extends (keyof AT_ReturnM
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowPositionModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ReturnMessage, RNU>>>(
-		`/${FirmCode}/flow/Position/ResetAudit?${positionCode ? 'positionCode=' + positionCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Position/ResetAudit?${positionCode ? 'positionCode=' + positionCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7484,11 +5955,9 @@ export const postFirmCodeflowPositionGetPositionToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_PositionQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_PositionPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Position/GetPositionToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Position/GetPositionToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7499,30 +5968,24 @@ export const postFirmCodeflowPositionGetCancelPositionToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_CancelPositionQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_CancelPositionPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Position/GetCancelPositionToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Position/GetCancelPositionToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowPositionGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Position/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Position/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowPositionGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Position/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Position/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -7534,11 +5997,9 @@ export const postFirmCodeProvidentFundGetProvidentFundToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_ProvidentFundQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ProvidentFundPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/ProvidentFund/GetProvidentFundToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/ProvidentFund/GetProvidentFundToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7546,57 +6007,45 @@ export const postFirmCodeProvidentFundAddProvidentFund = <NUDATA extends (keyof 
 	FirmCode: any,
 	data: U_I_NoNull<AT_ProvidentFundModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/ProvidentFund/AddProvidentFund?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/ProvidentFund/AddProvidentFund?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeProvidentFundUpdateProvidentFund = <NUDATA extends (keyof AT_ProvidentFundModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_ProvidentFundModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/ProvidentFund/UpdateProvidentFund?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/ProvidentFund/UpdateProvidentFund?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeProvidentFundUpdateProvidentFundState = (id: any, state: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/ProvidentFund/UpdateProvidentFundState?${id ? 'id=' + id : ''}&${state ? 'state=' + state : ''}&${
+		`/${FirmCodeURL}/ProvidentFund/UpdateProvidentFundState?${id ? 'id=' + id : ''}&${state ? 'state=' + state : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeProvidentFundBatchUpdateProvidentFundState = (state: any, FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/ProvidentFund/BatchUpdateProvidentFundState?${state ? 'state=' + state : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/ProvidentFund/BatchUpdateProvidentFundState?${state ? 'state=' + state : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeProvidentFundGetProvidentFundById = <RNU extends (keyof AT_ProvidentFundViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_ProvidentFundViewModel, RNU>>>(
-		`/${FirmCode}/ProvidentFund/GetProvidentFundById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/ProvidentFund/GetProvidentFundById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeProvidentFundSearchAllOnJobStaffProvidentFund = <RNU extends (keyof AT_StaffInfo)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffInfo, RNU>[]>>(
-		`/${FirmCode}/ProvidentFund/SearchAllOnJobStaffProvidentFund?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/ProvidentFund/SearchAllOnJobStaffProvidentFund?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeRecruitCommissionerGetRecruitCommissionerToPage = <
@@ -7606,11 +6055,9 @@ export const postFirmCodeRecruitCommissionerGetRecruitCommissionerToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_RecruitCommissionerQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RecruitCommissionerPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/RecruitCommissioner/GetRecruitCommissionerToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/RecruitCommissioner/GetRecruitCommissionerToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7618,55 +6065,43 @@ export const postFirmCodeRecruitCommissionerSaveRecruitCommissioner = <NUDATA ex
 	FirmCode: any,
 	data: U_I_NoNull<AT_RecruitCommissionerModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/RecruitCommissioner/SaveRecruitCommissioner?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/RecruitCommissioner/SaveRecruitCommissioner?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeRecruitCommissionerGetRecruitCommissionerById = <RNU extends (keyof AT_RecruitCommissionerViewModel)[] = []>(
 	id: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_RecruitCommissionerViewModel, RNU>>>(
-		`/${FirmCode}/RecruitCommissioner/GetRecruitCommissionerById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/RecruitCommissioner/GetRecruitCommissionerById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeRecruitCommissionerDeleteRecruitCommissioner = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/RecruitCommissioner/DeleteRecruitCommissioner?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/RecruitCommissioner/DeleteRecruitCommissioner?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeRecruitCommissionerGetRecruitCommissioner = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/RecruitCommissioner/GetRecruitCommissioner?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/RecruitCommissioner/GetRecruitCommissioner?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowRecruitmentGetRecruitmentByFlowId = <RNU extends (keyof AT_FlowModelRecruitViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelRecruitViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Recruitment/GetRecruitmentByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Recruitment/GetRecruitmentByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowRecruitmentGetRecruitmentById = <RNU extends (keyof AT_RecruitViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_RecruitViewModel, RNU>>>(
-		`/${FirmCode}/flow/Recruitment/GetRecruitmentById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Recruitment/GetRecruitmentById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowRecruitmentGetRecruitmentByDepPost = <RNU extends (keyof AT_RecruitViewModel)[] = []>(
@@ -7674,11 +6109,9 @@ export const getFirmCodeflowRecruitmentGetRecruitmentByDepPost = <RNU extends (k
 	postCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_RecruitViewModel, RNU>>>(
-		`/${FirmCode}/flow/Recruitment/GetRecruitmentByDepPost?${depCode ? 'depCode=' + depCode : ''}&${postCode ? 'postCode=' + postCode : ''}&${
+		`/${FirmCodeURL}/flow/Recruitment/GetRecruitmentByDepPost?${depCode ? 'depCode=' + depCode : ''}&${postCode ? 'postCode=' + postCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -7687,81 +6120,63 @@ export const postFirmCodeflowRecruitmentDynamicSubmitAudit = <NUDATA extends (ke
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRecruitmentDemandModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Recruitment/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Recruitment/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRecruitmentPendingAudit = <NUDATA extends (keyof AT_FlowRecruitmentDemandModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRecruitmentDemandModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Recruitment/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Recruitment/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRecruitmentRejectAudit = <NUDATA extends (keyof AT_FlowRecruitmentDemandModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRecruitmentDemandModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Recruitment/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Recruitment/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRecruitmentDynamicRejectAudit = <NUDATA extends (keyof AT_FlowRecruitmentDemandModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRecruitmentDemandModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Recruitment/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Recruitment/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRecruitmentResetAudit = <NUDATA extends (keyof AT_FlowRecruitmentDemandModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRecruitmentDemandModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Recruitment/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Recruitment/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRecruitmentSaveDraft = <NUDATA extends (keyof AT_FlowRecruitmentDemandModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRecruitmentDemandModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Recruitment/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Recruitment/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRecruitmentSubmitAudit = <NUDATA extends (keyof AT_FlowRecruitmentDemandModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRecruitmentDemandModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Recruitment/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Recruitment/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRecruitmentInitiateRecruitment = (flowId: any, commissioner: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Recruitment/InitiateRecruitment?${flowId ? 'flowId=' + flowId : ''}&${commissioner ? 'commissioner=' + commissioner : ''}&${
+		`/${FirmCodeURL}/flow/Recruitment/InitiateRecruitment?${flowId ? 'flowId=' + flowId : ''}&${commissioner ? 'commissioner=' + commissioner : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeflowRecruitmentImplementCompleted = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Recruitment/ImplementCompleted?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Recruitment/ImplementCompleted?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRecruitmentGetRecruitmentToPage = <
@@ -7771,11 +6186,9 @@ export const postFirmCodeflowRecruitmentGetRecruitmentToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_RecruitmentQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RecruitmentPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Recruitment/GetRecruitmentToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Recruitment/GetRecruitmentToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7786,11 +6199,9 @@ export const postFirmCodeflowRecruitmentGetJobRecruitmentToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_RecruitmentQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RecruitmentPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Recruitment/GetJobRecruitmentToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Recruitment/GetJobRecruitmentToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7801,85 +6212,67 @@ export const postFirmCodeflowRecruitmentGetRecruitmentCompletedToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_RecruitmentQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RecruitmentPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Recruitment/GetRecruitmentCompletedToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Recruitment/GetRecruitmentCompletedToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeflowRecruitmentCheckRecruitmentDemandByDepCodePostCode = (depCode: any, postCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Recruitment/CheckRecruitmentDemandByDepCodePostCode?${depCode ? 'depCode=' + depCode : ''}&${
+		`/${FirmCodeURL}/flow/Recruitment/CheckRecruitmentDemandByDepCodePostCode?${depCode ? 'depCode=' + depCode : ''}&${
 			postCode ? 'postCode=' + postCode : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRecruitmentCompleteRecruitmentByDepCodePostCode = (depCode: any, postCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Recruitment/CompleteRecruitmentByDepCodePostCode?${depCode ? 'depCode=' + depCode : ''}&${
+		`/${FirmCodeURL}/flow/Recruitment/CompleteRecruitmentByDepCodePostCode?${depCode ? 'depCode=' + depCode : ''}&${
 			postCode ? 'postCode=' + postCode : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRecruitmentDeleteRecruiMent = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Recruitment/DeleteRecruiMent?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Recruitment/DeleteRecruiMent?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRecruitmentStopRecruit = <NUDATA extends (keyof AT_StopRecruitModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_StopRecruitModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Recruitment/StopRecruit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Recruitment/StopRecruit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRecruitmentContinueRecruit = (recruitId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Recruitment/ContinueRecruit?${recruitId ? 'recruitId=' + recruitId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Recruitment/ContinueRecruit?${recruitId ? 'recruitId=' + recruitId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowRecruitmentGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Recruitment/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Recruitment/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowRecruitmentGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Recruitment/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Recruitment/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowRegulationGetNewRegulationList = <RNU extends (keyof AT_RegulationSimpleModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_RegulationSimpleModel, RNU>[]>>(
-		`/${FirmCode}/flow/Regulation/GetNewRegulationList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Regulation/GetNewRegulationList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRegulationGetRegulationToPage = <
@@ -7889,11 +6282,9 @@ export const postFirmCodeflowRegulationGetRegulationToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_RegulationQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RegulationPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Regulation/GetRegulationToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Regulation/GetRegulationToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -7901,210 +6292,164 @@ export const postFirmCodeflowRegulationDynamicSubmitAudit = <NUDATA extends (key
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRegulationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Regulation/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Regulation/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRegulationPendingAudit = <NUDATA extends (keyof AT_FlowRegulationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRegulationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Regulation/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Regulation/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRegulationRejectAudit = <NUDATA extends (keyof AT_FlowRegulationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRegulationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Regulation/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Regulation/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRegulationDynamicRejectAudit = <NUDATA extends (keyof AT_FlowRegulationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRegulationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Regulation/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Regulation/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRegulationResetAudit = <NUDATA extends (keyof AT_FlowRegulationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRegulationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Regulation/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Regulation/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRegulationSaveDraft = <NUDATA extends (keyof AT_FlowRegulationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRegulationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Regulation/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Regulation/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRegulationSubmitAudit = <NUDATA extends (keyof AT_FlowRegulationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRegulationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Regulation/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Regulation/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowRegulationGetRegulationByFlowId = <RNU extends (keyof AT_FlowModelRegulationViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelRegulationViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Regulation/GetRegulationByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Regulation/GetRegulationByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRegulationSaveRegulation = <NUDATA extends (keyof AT_SaveRegulationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_SaveRegulationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Regulation/SaveRegulation?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Regulation/SaveRegulation?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRegulationPublishRegulation = <NUDATA extends (keyof AT_SaveRegulationModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_SaveRegulationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Regulation/PublishRegulation?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Regulation/PublishRegulation?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRegulationChangeIsPublic = (id: any, isPublic: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Regulation/ChangeIsPublic?${id ? 'id=' + id : ''}&${isPublic ? 'isPublic=' + isPublic : ''}&${
+		`/${FirmCodeURL}/flow/Regulation/ChangeIsPublic?${id ? 'id=' + id : ''}&${isPublic ? 'isPublic=' + isPublic : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeflowRegulationDeleteRegulation = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Regulation/DeleteRegulation?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Regulation/DeleteRegulation?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowRegulationGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Regulation/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Regulation/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowRegulationGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Regulation/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Regulation/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowRentGetRentByFlowId = <RNU extends (keyof AT_FlowModelRentViewModelTuple)[] = []>(flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelRentViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Rent/GetRentByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Rent/GetRentByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRentDeleteRentFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Rent/DeleteRentFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Rent/DeleteRentFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRentDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowRentModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Rent/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Rent/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentPendingAudit = <NUDATA extends (keyof AT_FlowRentModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Rent/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Rent/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentRejectAudit = <NUDATA extends (keyof AT_FlowRentModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Rent/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Rent/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentDynamicRejectAudit = <NUDATA extends (keyof AT_FlowRentModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Rent/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Rent/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentSaveDraft = <NUDATA extends (keyof AT_FlowRentModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Rent/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Rent/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentSubmitAudit = <NUDATA extends (keyof AT_FlowRentModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Rent/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Rent/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentResetAudit = <NUDATA extends (keyof AT_FlowRentModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Rent/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Rent/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentGetRentToPage = <
 	RNU extends (keyof AT_RentPageModelIEnumerableInt32Tuple)[] = [],
@@ -8113,11 +6458,9 @@ export const postFirmCodeflowRentGetRentToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_RentQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RentPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Rent/GetRentToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Rent/GetRentToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -8128,11 +6471,9 @@ export const postFirmCodeflowRentGetRentApplyRecordToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_RentApplyRecordQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RentApplyRecordPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Rent/GetRentApplyRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Rent/GetRentApplyRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -8140,29 +6481,23 @@ export const getFirmCodeflowRentGetRentApplyRecordByUser = <RNU extends (keyof A
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_RentApplyRecordByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/Rent/GetRentApplyRecordByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Rent/GetRentApplyRecordByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowRentGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Rent/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Rent/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowRentGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Rent/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Rent/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -8171,100 +6506,78 @@ export const getFirmCodeflowRentApplyGetRentApplyByFlowId = <RNU extends (keyof 
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelRentApplyViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/RentApply/GetRentApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/RentApply/GetRentApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRentApplyDeleteRentApplyFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/RentApply/DeleteRentApplyFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/RentApply/DeleteRentApplyFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRentApplyDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowRentApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentApplyPendingAudit = <NUDATA extends (keyof AT_FlowRentApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentApplyRejectAudit = <NUDATA extends (keyof AT_FlowRentApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentApplyDynamicRejectAudit = <NUDATA extends (keyof AT_FlowRentApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentApplySaveDraft = <NUDATA extends (keyof AT_FlowRentApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentApplySubmitAudit = <NUDATA extends (keyof AT_FlowRentApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentApplyResetAudit = <NUDATA extends (keyof AT_FlowRentApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowRentApplyGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/RentApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/RentApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowRentApplyGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/RentApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/RentApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -8273,100 +6586,78 @@ export const getFirmCodeflowRentOutGetRentOutByFlowId = <RNU extends (keyof AT_F
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelRentOutViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/RentOut/GetRentOutByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/RentOut/GetRentOutByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRentOutDeleteRentOutFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/RentOut/DeleteRentOutFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/RentOut/DeleteRentOutFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRentOutDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowRentOutModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentOutModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentOut/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentOut/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentOutPendingAudit = <NUDATA extends (keyof AT_FlowRentOutModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentOutModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentOut/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentOut/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentOutRejectAudit = <NUDATA extends (keyof AT_FlowRentOutModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentOutModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentOut/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentOut/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentOutDynamicRejectAudit = <NUDATA extends (keyof AT_FlowRentOutModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentOutModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentOut/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentOut/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentOutSaveDraft = <NUDATA extends (keyof AT_FlowRentOutModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentOutModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentOut/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentOut/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentOutSubmitAudit = <NUDATA extends (keyof AT_FlowRentOutModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentOutModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentOut/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentOut/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRentOutResetAudit = <NUDATA extends (keyof AT_FlowRentOutModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRentOutModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/RentOut/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/RentOut/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowRentOutGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/RentOut/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/RentOut/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowRentOutGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/RentOut/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/RentOut/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -8378,11 +6669,9 @@ export const postFirmCodeflowResignGetResignToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResignQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ResignPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Resign/GetResignToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Resign/GetResignToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -8390,97 +6679,75 @@ export const postFirmCodeflowResignDynamicSubmitAudit = <NUDATA extends (keyof A
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Resign/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Resign/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignPendingAudit = <NUDATA extends (keyof AT_FlowResignModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Resign/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Resign/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignRejectAudit = <NUDATA extends (keyof AT_FlowResignModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Resign/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Resign/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignDynamicRejectAudit = <NUDATA extends (keyof AT_FlowResignModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Resign/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Resign/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignResetAudit = <NUDATA extends (keyof AT_FlowResignModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Resign/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Resign/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignSaveDraft = <NUDATA extends (keyof AT_FlowResignModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Resign/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Resign/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignSubmitAudit = <NUDATA extends (keyof AT_FlowResignModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Resign/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Resign/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowResignGetResignByFlowId = <RNU extends (keyof AT_FlowModelResignViewModelTuple)[] = []>(flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelResignViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Resign/GetResignByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Resign/GetResignByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowResignDeleteResign = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Resign/DeleteResign?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Resign/DeleteResign?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowResignGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Resign/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Resign/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowResignGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Resign/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Resign/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -8489,100 +6756,78 @@ export const postFirmCodeflowResignComplexDynamicSubmitAudit = <NUDATA extends (
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignComplexModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignComplex/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignComplex/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignComplexPendingAudit = <NUDATA extends (keyof AT_FlowResignComplexModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignComplexModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignComplex/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignComplex/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignComplexRejectAudit = <NUDATA extends (keyof AT_FlowResignComplexModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignComplexModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignComplex/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignComplex/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignComplexDynamicRejectAudit = <NUDATA extends (keyof AT_FlowResignComplexModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignComplexModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignComplex/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignComplex/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignComplexResetAudit = <NUDATA extends (keyof AT_FlowResignComplexModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignComplexModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignComplex/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignComplex/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignComplexSaveDraft = <NUDATA extends (keyof AT_FlowResignComplexModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignComplexModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignComplex/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignComplex/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignComplexSubmitAudit = <NUDATA extends (keyof AT_FlowResignComplexModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignComplexModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignComplex/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignComplex/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowResignComplexGetResignComplexByFlowId = <RNU extends (keyof AT_FlowModelResignComplexViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelResignComplexViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/ResignComplex/GetResignComplexByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/ResignComplex/GetResignComplexByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowResignComplexDeleteResignComplex = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/ResignComplex/DeleteResignComplex?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/ResignComplex/DeleteResignComplex?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowResignComplexGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/ResignComplex/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/ResignComplex/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowResignComplexGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/ResignComplex/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/ResignComplex/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -8591,100 +6836,78 @@ export const postFirmCodeflowResignDepDynamicSubmitAudit = <NUDATA extends (keyo
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignDep/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignDep/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignDepPendingAudit = <NUDATA extends (keyof AT_FlowResignDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignDep/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignDep/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignDepRejectAudit = <NUDATA extends (keyof AT_FlowResignDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignDep/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignDep/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignDepDynamicRejectAudit = <NUDATA extends (keyof AT_FlowResignDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignDep/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignDep/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignDepResetAudit = <NUDATA extends (keyof AT_FlowResignDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignDep/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignDep/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignDepSaveDraft = <NUDATA extends (keyof AT_FlowResignDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignDep/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignDep/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignDepSubmitAudit = <NUDATA extends (keyof AT_FlowResignDepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignDepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignDep/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignDep/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowResignDepGetResignDepByFlowId = <RNU extends (keyof AT_FlowModelResignDepViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelResignDepViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/ResignDep/GetResignDepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/ResignDep/GetResignDepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowResignDepDeleteResignDep = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/ResignDep/DeleteResignDep?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/ResignDep/DeleteResignDep?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowResignDepGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/ResignDep/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/ResignDep/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowResignDepGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/ResignDep/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/ResignDep/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -8693,100 +6916,78 @@ export const postFirmCodeflowResignFinanceDynamicSubmitAudit = <NUDATA extends (
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignFinanceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignFinance/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignFinance/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignFinancePendingAudit = <NUDATA extends (keyof AT_FlowResignFinanceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignFinanceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignFinance/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignFinance/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignFinanceRejectAudit = <NUDATA extends (keyof AT_FlowResignFinanceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignFinanceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignFinance/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignFinance/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignFinanceDynamicRejectAudit = <NUDATA extends (keyof AT_FlowResignFinanceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignFinanceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignFinance/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignFinance/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignFinanceResetAudit = <NUDATA extends (keyof AT_FlowResignFinanceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignFinanceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignFinance/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignFinance/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignFinanceSaveDraft = <NUDATA extends (keyof AT_FlowResignFinanceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignFinanceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignFinance/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignFinance/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignFinanceSubmitAudit = <NUDATA extends (keyof AT_FlowResignFinanceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignFinanceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignFinance/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignFinance/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowResignFinanceGetResignFinanceByFlowId = <RNU extends (keyof AT_FlowModelResignFinanceViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelResignFinanceViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/ResignFinance/GetResignFinanceByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/ResignFinance/GetResignFinanceByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowResignFinanceDeleteResignFinance = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/ResignFinance/DeleteResignFinance?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/ResignFinance/DeleteResignFinance?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowResignFinanceGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/ResignFinance/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/ResignFinance/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowResignFinanceGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/ResignFinance/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/ResignFinance/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -8795,100 +6996,78 @@ export const postFirmCodeflowResignInfoDynamicSubmitAudit = <NUDATA extends (key
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignInfoModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignInfo/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignInfo/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignInfoPendingAudit = <NUDATA extends (keyof AT_FlowResignInfoModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignInfoModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignInfo/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignInfo/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignInfoRejectAudit = <NUDATA extends (keyof AT_FlowResignInfoModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignInfoModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignInfo/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignInfo/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignInfoDynamicRejectAudit = <NUDATA extends (keyof AT_FlowResignInfoModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignInfoModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignInfo/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignInfo/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignInfoResetAudit = <NUDATA extends (keyof AT_FlowResignInfoModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignInfoModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignInfo/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignInfo/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignInfoSaveDraft = <NUDATA extends (keyof AT_FlowResignInfoModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignInfoModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignInfo/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignInfo/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowResignInfoSubmitAudit = <NUDATA extends (keyof AT_FlowResignInfoModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowResignInfoModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/ResignInfo/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/ResignInfo/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowResignInfoGetResignInfoByFlowId = <RNU extends (keyof AT_FlowModelResignInfoViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelResignInfoViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/ResignInfo/GetResignInfoByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/ResignInfo/GetResignInfoByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowResignInfoDeleteResignInfo = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/ResignInfo/DeleteResignInfo?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/ResignInfo/DeleteResignInfo?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowResignInfoGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/ResignInfo/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/ResignInfo/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowResignInfoGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/ResignInfo/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/ResignInfo/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -8898,11 +7077,9 @@ export const postFirmCodeResumeSubmitResumeBasicInfo = <NUDATA extends (keyof AT
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeBasicInfoModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/SubmitResumeBasicInfo?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Resume/SubmitResumeBasicInfo?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -8911,11 +7088,9 @@ export const postFirmCodeResumeSubmitResumePurpose = <NUDATA extends (keyof AT_R
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumePurposeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/SubmitResumePurpose?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Resume/SubmitResumePurpose?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -8924,11 +7099,9 @@ export const postFirmCodeResumeUpdateResumePurpose = <NUDATA extends (keyof AT_R
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumePurposeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/UpdateResumePurpose?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Resume/UpdateResumePurpose?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -8938,11 +7111,9 @@ export const postFirmCodeResumeBatchAddResumeWork = <NUDATA extends (keyof AT_Re
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeWorkModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/BatchAddResumeWork?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${isHistory ? 'isHistory=' + isHistory : ''}&${
+		`/${FirmCodeURL}/Resume/BatchAddResumeWork?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${isHistory ? 'isHistory=' + isHistory : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`,
 		data
@@ -8954,11 +7125,9 @@ export const postFirmCodeResumeBatchAddResumeStudy = <NUDATA extends (keyof AT_R
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeStudyModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/BatchAddResumeStudy?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${isHistory ? 'isHistory=' + isHistory : ''}&${
+		`/${FirmCodeURL}/Resume/BatchAddResumeStudy?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${isHistory ? 'isHistory=' + isHistory : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`,
 		data
@@ -8970,11 +7139,9 @@ export const postFirmCodeResumeSubmitResumeAttachment = <NUDATA extends (keyof A
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeAttachmentSubmitModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/SubmitResumeAttachment?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
+		`/${FirmCodeURL}/Resume/SubmitResumeAttachment?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
 			updateType ? 'updateType=' + updateType : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
@@ -8985,36 +7152,28 @@ export const postFirmCodeResumeBatchAddResumeAttachment = <NUDATA extends (keyof
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeAttachmentModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/BatchAddResumeAttachment?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Resume/BatchAddResumeAttachment?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeResumeRemoveResumeAttachment = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/RemoveResumeAttachment?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/RemoveResumeAttachment?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeResumeGetResumeAttachments = <RNU extends (keyof AT_ResumeAttachmentViewModel)[] = []>(resumeHoldId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_ResumeAttachmentViewModel, RNU>[]>>(
-		`/${FirmCode}/Resume/GetResumeAttachments?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/GetResumeAttachments?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeResumeGetResumeWorks = <RNU extends (keyof AT_ResumeWorkViewModel)[] = []>(resumeHoldId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ResumeWorkViewModel, RNU>[]>>(
-		`/${FirmCode}/Resume/GetResumeWorks?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/GetResumeWorks?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeResumeUpdateResumeWork = <NUDATA extends (keyof AT_ResumeWorkModel)[] = []>(
@@ -9023,22 +7182,18 @@ export const postFirmCodeResumeUpdateResumeWork = <NUDATA extends (keyof AT_Resu
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeWorkModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/UpdateResumeWork?${id ? 'id=' + id : ''}&${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
+		`/${FirmCodeURL}/Resume/UpdateResumeWork?${id ? 'id=' + id : ''}&${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`,
 		data
 	);
 };
 export const postFirmCodeResumeGetResumeStudys = <RNU extends (keyof AT_ResumeStudyViewModel)[] = []>(resumeHoldId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ResumeStudyViewModel, RNU>[]>>(
-		`/${FirmCode}/Resume/GetResumeStudys?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/GetResumeStudys?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeResumeUpdateResumeStudy = <NUDATA extends (keyof AT_ResumeStudyModel)[] = []>(
@@ -9047,32 +7202,26 @@ export const postFirmCodeResumeUpdateResumeStudy = <NUDATA extends (keyof AT_Res
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeStudyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/UpdateResumeStudy?${id ? 'id=' + id : ''}&${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
+		`/${FirmCodeURL}/Resume/UpdateResumeStudy?${id ? 'id=' + id : ''}&${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`,
 		data
 	);
 };
 export const postFirmCodeResumeRemoveResumeWork = (id: any, resumeHoldId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/RemoveResumeWork?${id ? 'id=' + id : ''}&${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
+		`/${FirmCodeURL}/Resume/RemoveResumeWork?${id ? 'id=' + id : ''}&${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeResumeRemoveResumeStudy = (id: any, resumeHoldId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/RemoveResumeStudy?${id ? 'id=' + id : ''}&${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
+		`/${FirmCodeURL}/Resume/RemoveResumeStudy?${id ? 'id=' + id : ''}&${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -9084,11 +7233,9 @@ export const postFirmCodeResumeCheckResume = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeCheckModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RetrunResumeCheckModel, RNU>>>(
-		`/${FirmCode}/Resume/CheckResume?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Resume/CheckResume?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -9096,17 +7243,13 @@ export const postFirmCodeResumeTalentNoteHandle = <NUDATA extends (keyof AT_Resu
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeTalentNoteModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Resume/TalentNoteHandle?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Resume/TalentNoteHandle?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeResumeGetResumeTalentNote = <RNU extends (keyof AT_ResumeTalentNoteViewModel)[] = []>(resumeHoldId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_ResumeTalentNoteViewModel, RNU>>>(
-		`/${FirmCode}/Resume/GetResumeTalentNote?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/GetResumeTalentNote?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeResumeGetResumeFeedback = <RNU extends (keyof AT_ResumeFeedbackViewModel)[] = []>(
@@ -9114,11 +7257,9 @@ export const getFirmCodeResumeGetResumeFeedback = <RNU extends (keyof AT_ResumeF
 	key: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_ResumeFeedbackViewModel, RNU>>>(
-		`/${FirmCode}/Resume/GetResumeFeedback?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${key ? 'key=' + key : ''}&${
+		`/${FirmCodeURL}/Resume/GetResumeFeedback?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${key ? 'key=' + key : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -9127,83 +7268,67 @@ export const postFirmCodeResumeLinkUp = <NUDATA extends (keyof AT_ResumeInteract
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeInteractModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Resume/LinkUp?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Resume/LinkUp?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeResumeGetResumeLinkUp = <RNU extends (keyof AT_ResumeInteractModel)[] = []>(
 	resumeHoldId: any,
 	tableKey: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_ResumeInteractModel, RNU>>>(
-		`/${FirmCode}/Resume/GetResumeLinkUp?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${tableKey ? 'tableKey=' + tableKey : ''}&${
+		`/${FirmCodeURL}/Resume/GetResumeLinkUp?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${tableKey ? 'tableKey=' + tableKey : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeResumeToInterview = (resumeHoldId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/ToInterview?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/ToInterview?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeResumeGetResumeShareToUsers = <RNU extends (keyof AT_StaffInfo)[] = []>(resumeHoldId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffInfo, RNU>[]>>(
-		`/${FirmCode}/Resume/GetResumeShareToUsers?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/GetResumeShareToUsers?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeResumeResumeShareRead = (resumeShareId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Resume/ResumeShareRead?${resumeShareId ? 'resumeShareId=' + resumeShareId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/ResumeShareRead?${resumeShareId ? 'resumeShareId=' + resumeShareId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeResumeResumeHold = <NUDATA extends (keyof AT_ResumeHoldModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeHoldModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Resume/ResumeHold?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Resume/ResumeHold?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeResumeGetResumeHoldFirm = <RNU extends (keyof AT_FirmSimpleModel)[] = []>(resumeId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FirmSimpleModel, RNU>[]>>(
-		`/${FirmCode}/Resume/GetResumeHoldFirm?${resumeId ? 'resumeId=' + resumeId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/GetResumeHoldFirm?${resumeId ? 'resumeId=' + resumeId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeResumeGetResumeHoldSynthesizeInfo = <RNU extends (keyof AT_ResumeSynthesizeModel)[] = []>(
 	resumeHoldId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_ResumeSynthesizeModel, RNU>>>(
-		`/${FirmCode}/Resume/GetResumeHoldSynthesizeInfo?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/GetResumeHoldSynthesizeInfo?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${
+			FirmCode ? 'FirmCode=' + FirmCode : ''
+		}`
 	);
 };
 export const getFirmCodeResumeGetResumeById = <RNU extends (keyof AT_ResumeViewModel)[] = []>(resumeHoldId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_ResumeViewModel, RNU>>>(
-		`/${FirmCode}/Resume/GetResumeById?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/GetResumeById?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeResumeGetResumeToPage = <
@@ -9213,28 +7338,22 @@ export const postFirmCodeResumeGetResumeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_ResumeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ResumePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Resume/GetResumeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Resume/GetResumeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeResumeGetResumeTimeline = <RNU extends (keyof AT_TimelineModel)[] = []>(resumeHoldId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_TimelineModel, RNU>[]>>(
-		`/${FirmCode}/Resume/GetResumeTimeline?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Resume/GetResumeTimeline?${resumeHoldId ? 'resumeHoldId=' + resumeHoldId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeResumeResumeImport = <RNU extends (keyof AT_ResumeModel)[] = []>(FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_ResumeModel, RNU>>>(
-		`/${FirmCode}/Resume/ResumeImport?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Resume/ResumeImport?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -9242,11 +7361,9 @@ export const getFirmCodeResumeGetBehindSurveyInfoByInterViewId = <RNU extends (k
 	interViewId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_BehindSurveyInfo, RNU>>>(
-		`/${FirmCode}/Resume/GetBehindSurveyInfoByInterViewId?${interViewId ? 'interViewId=' + interViewId : ''}&${
+		`/${FirmCodeURL}/Resume/GetBehindSurveyInfoByInterViewId?${interViewId ? 'interViewId=' + interViewId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -9258,117 +7375,91 @@ export const postFirmCodeflowRewardGetRewardToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_RewardQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RewardPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Reward/GetRewardToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Reward/GetRewardToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowRewardGetRewardByUser = <RNU extends (keyof AT_GetRewardByUserModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetRewardByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/Reward/GetRewardByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Reward/GetRewardByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRewardDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowRewardModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRewardModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Reward/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Reward/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRewardPendingAudit = <NUDATA extends (keyof AT_FlowRewardModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRewardModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Reward/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Reward/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRewardRejectAudit = <NUDATA extends (keyof AT_FlowRewardModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRewardModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Reward/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Reward/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRewardDynamicRejectAudit = <NUDATA extends (keyof AT_FlowRewardModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRewardModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Reward/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Reward/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRewardResetAudit = <NUDATA extends (keyof AT_FlowRewardModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRewardModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Reward/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Reward/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRewardSaveDraft = <NUDATA extends (keyof AT_FlowRewardModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRewardModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Reward/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Reward/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowRewardSubmitAudit = <NUDATA extends (keyof AT_FlowRewardModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowRewardModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Reward/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Reward/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowRewardGetRewardByFlowId = <RNU extends (keyof AT_FlowModelRewardViewModelTuple)[] = []>(flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelRewardViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Reward/GetRewardByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Reward/GetRewardByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowRewardDeleteReward = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Reward/DeleteReward?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Reward/DeleteReward?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowRewardGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Reward/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Reward/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowRewardGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Reward/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Reward/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -9380,11 +7471,9 @@ export const postFirmCodeRewardSubjectGetRewardSubjectToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_RewardSubjectQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RewardSubjectPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/RewardSubject/GetRewardSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/RewardSubject/GetRewardSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -9392,94 +7481,74 @@ export const postFirmCodeRewardSubjectSaveRewardSubject = <NUDATA extends (keyof
 	FirmCode: any,
 	data: U_I_NoNull<AT_RewardSubjectModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/RewardSubject/SaveRewardSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/RewardSubject/SaveRewardSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeRewardSubjectDeleteRewardSubject = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/RewardSubject/DeleteRewardSubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/RewardSubject/DeleteRewardSubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeRewardSubjectGetRewardSubjectById = <RNU extends (keyof AT_RewardSubjectModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_RewardSubjectModel, RNU>>>(
-		`/${FirmCode}/RewardSubject/GetRewardSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/RewardSubject/GetRewardSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeRoleAddRole = <NUDATA extends (keyof AT_RoleModel)[] = []>(FirmCode: any, data: U_I_NoNull<AT_RoleModel, NUDATA>) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Role/AddRole?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Role/AddRole?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeRoleRemoveRole = (roleId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Role/RemoveRole?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/Role/RemoveRole?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+	);
 };
 export const postFirmCodeRoleUpdateRole = <NUDATA extends (keyof AT_RoleModel)[] = []>(
 	roleId: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_RoleModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Role/UpdateRole?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Role/UpdateRole?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeRoleGetRoleById = <RNU extends (keyof AT_RoleViewModel)[] = []>(roleId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_RoleViewModel, RNU>>>(
-		`/${FirmCode}/Role/GetRoleById?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Role/GetRoleById?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeRoleGetRoleList = <RNU extends (keyof AT_RoleViewModel)[] = []>(roleName: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_RoleViewModel, RNU>[]>>(
-		`/${FirmCode}/Role/GetRoleList?${roleName ? 'roleName=' + roleName : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Role/GetRoleList?${roleName ? 'roleName=' + roleName : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeRoleDispatchRole = <NUDATA extends (keyof AT_DispatchRoleModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_DispatchRoleModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Role/DispatchRole?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Role/DispatchRole?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeRoleGetRoleStaff = <RNU extends (keyof AT_RoleUserViewModel)[] = []>(roleId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_RoleUserViewModel, RNU>>>(
-		`/${FirmCode}/Role/GetRoleStaff?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Role/GetRoleStaff?${roleId ? 'roleId=' + roleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowSalaryConfirmGetSalaryConfirmListBySalaryCalculateIds = <RNU extends (keyof AT_SalaryConfirmModel)[] = []>(
 	FirmCode: any,
 	data: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SalaryConfirmModel, RNU>>>(
-		`/${FirmCode}/flow/SalaryConfirm/GetSalaryConfirmListBySalaryCalculateIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/SalaryConfirm/GetSalaryConfirmListBySalaryCalculateIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -9487,100 +7556,78 @@ export const postFirmCodeflowSalaryConfirmDynamicSubmitAudit = <NUDATA extends (
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryConfirmModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryConfirm/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryConfirm/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryConfirmPendingAudit = <NUDATA extends (keyof AT_FlowSalaryConfirmModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryConfirmModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryConfirm/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryConfirm/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryConfirmRejectAudit = <NUDATA extends (keyof AT_FlowSalaryConfirmModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryConfirmModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryConfirm/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryConfirm/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryConfirmDynamicRejectAudit = <NUDATA extends (keyof AT_FlowSalaryConfirmModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryConfirmModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryConfirm/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryConfirm/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryConfirmResetAudit = <NUDATA extends (keyof AT_FlowSalaryConfirmModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryConfirmModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryConfirm/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryConfirm/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryConfirmSaveDraft = <NUDATA extends (keyof AT_FlowSalaryConfirmModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryConfirmModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryConfirm/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryConfirm/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryConfirmSubmitAudit = <NUDATA extends (keyof AT_FlowSalaryConfirmModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryConfirmModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryConfirm/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryConfirm/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowSalaryConfirmGetSalaryConfirmByFlowId = <RNU extends (keyof AT_FlowModelSalaryConfirmModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelSalaryConfirmModelTuple, RNU>>>(
-		`/${FirmCode}/flow/SalaryConfirm/GetSalaryConfirmByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/SalaryConfirm/GetSalaryConfirmByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowSalaryConfirmDeleteSalaryCalculate = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/SalaryConfirm/DeleteSalaryCalculate?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/SalaryConfirm/DeleteSalaryCalculate?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowSalaryConfirmGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/SalaryConfirm/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SalaryConfirm/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowSalaryConfirmGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/SalaryConfirm/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SalaryConfirm/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -9592,11 +7639,9 @@ export const postFirmCodeSalaryDeductGetSalaryDeductToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryDeductQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SalaryDeductPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/SalaryDeduct/GetSalaryDeductToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SalaryDeduct/GetSalaryDeductToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -9604,48 +7649,38 @@ export const postFirmCodeSalaryDeductAddUpdateSalaryDeduct = <NUDATA extends (ke
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryDeductModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SalaryDeduct/AddUpdateSalaryDeduct?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SalaryDeduct/AddUpdateSalaryDeduct?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeSalaryDeductGetSalaryDeductByDetailsId = <RNU extends (keyof AT_SalaryDeductViewModel)[] = []>(
 	detailsId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SalaryDeductViewModel, RNU>>>(
-		`/${FirmCode}/SalaryDeduct/GetSalaryDeductByDetailsId?${detailsId ? 'detailsId=' + detailsId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SalaryDeduct/GetSalaryDeductByDetailsId?${detailsId ? 'detailsId=' + detailsId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSalaryDeductGetSalaryDeductById = <RNU extends (keyof AT_SalaryDeductViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SalaryDeductViewModel, RNU>>>(
-		`/${FirmCode}/SalaryDeduct/GetSalaryDeductById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SalaryDeduct/GetSalaryDeductById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSalaryDeductGetSalaryCustomGrantDropDownListByBarCode = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/SalaryDeduct/GetSalaryCustomGrantDropDownListByBarCode?${barCode ? 'barCode=' + barCode : ''}&${
+		`/${FirmCodeURL}/SalaryDeduct/GetSalaryCustomGrantDropDownListByBarCode?${barCode ? 'barCode=' + barCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeSalaryDeductConfirmDetailsState = (FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SalaryDeduct/ConfirmDetailsState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SalaryDeduct/ConfirmDetailsState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeSalaryDeductGetSalaryDeductDetails = <RNU extends (keyof AT_SalaryDeductDetailsModel)[] = []>(
 	barCode: any,
@@ -9653,11 +7688,9 @@ export const getFirmCodeSalaryDeductGetSalaryDeductDetails = <RNU extends (keyof
 	ItemType: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SalaryDeductDetailsModel, RNU>[]>>(
-		`/${FirmCode}/SalaryDeduct/GetSalaryDeductDetails?${barCode ? 'barCode=' + barCode : ''}&${Month ? 'Month=' + Month : ''}&${
+		`/${FirmCodeURL}/SalaryDeduct/GetSalaryDeductDetails?${barCode ? 'barCode=' + barCode : ''}&${Month ? 'Month=' + Month : ''}&${
 			ItemType ? 'ItemType=' + ItemType : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
@@ -9669,11 +7702,9 @@ export const postFirmCodeSalaryFixedRecordGetSalaryFixedRecordToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryFixedRecordQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SalaryFixedRecordPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/SalaryFixedRecord/GetSalaryFixedRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SalaryFixedRecord/GetSalaryFixedRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -9681,82 +7712,64 @@ export const postFirmCodeflowSalaryKeepDeductDynamicSubmitAudit = <NUDATA extend
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryKeepDeductModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryKeepDeduct/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryKeepDeduct/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryKeepDeductPendingAudit = <NUDATA extends (keyof AT_FlowSalaryKeepDeductModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryKeepDeductModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryKeepDeduct/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryKeepDeduct/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryKeepDeductRejectAudit = <NUDATA extends (keyof AT_FlowSalaryKeepDeductModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryKeepDeductModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryKeepDeduct/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryKeepDeduct/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryKeepDeductDynamicRejectAudit = <NUDATA extends (keyof AT_FlowSalaryKeepDeductModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryKeepDeductModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryKeepDeduct/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryKeepDeduct/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryKeepDeductResetAudit = <NUDATA extends (keyof AT_FlowSalaryKeepDeductModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryKeepDeductModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryKeepDeduct/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryKeepDeduct/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryKeepDeductSaveDraft = <NUDATA extends (keyof AT_FlowSalaryKeepDeductModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryKeepDeductModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryKeepDeduct/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryKeepDeduct/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryKeepDeductSubmitAudit = <NUDATA extends (keyof AT_FlowSalaryKeepDeductModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryKeepDeductModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryKeepDeduct/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryKeepDeduct/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowSalaryKeepDeductGetSalaryKeepDeductByFlowId = <RNU extends (keyof AT_FlowModelSalaryKeepDeductViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelSalaryKeepDeductViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/SalaryKeepDeduct/GetSalaryKeepDeductByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/SalaryKeepDeduct/GetSalaryKeepDeductByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowSalaryKeepDeductGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/SalaryKeepDeduct/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SalaryKeepDeduct/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -9766,11 +7779,9 @@ export const getFirmCodeflowSalaryKeepDeductGetFlowChat = <RNU extends (keyof AT
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/SalaryKeepDeduct/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SalaryKeepDeduct/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -9782,11 +7793,9 @@ export const postFirmCodeSalaryKeepRecordGetSalaryKeepRecordToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryKeepRecordQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SalaryKeepRecordPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/SalaryKeepRecord/GetSalaryKeepRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SalaryKeepRecord/GetSalaryKeepRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -9794,20 +7803,18 @@ export const postFirmCodeSalaryKeepRecordDistributeReservedSalary = <NUDATA exte
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryKeepGrantRecordModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SalaryKeepRecord/DistributeReservedSalary?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SalaryKeepRecord/DistributeReservedSalary?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeSalaryKeepRecordGetSalaryReserveRecordByBarCode = <RNU extends (keyof AT_SalaryReserveViewModel)[] = []>(
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SalaryReserveViewModel, RNU>>>(
-		`/${FirmCode}/SalaryKeepRecord/GetSalaryReserveRecordByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SalaryKeepRecord/GetSalaryReserveRecordByBarCode?${barCode ? 'barCode=' + barCode : ''}&${
+			FirmCode ? 'FirmCode=' + FirmCode : ''
+		}`
 	);
 };
 export const postFirmCodeSalaryRecordGetSalaryRecordToPage = <
@@ -9817,11 +7824,9 @@ export const postFirmCodeSalaryRecordGetSalaryRecordToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryRecordQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RowToColumnPageModel, RNU>>>(
-		`/${FirmCode}/SalaryRecord/GetSalaryRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SalaryRecord/GetSalaryRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -9829,20 +7834,16 @@ export const postFirmCodeSalaryRecordGetPrintSalaryRecordBySalaryCalculateGrantI
 	FirmCode: any,
 	data: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RowToColumnPageModel, RNU>>>(
-		`/${FirmCode}/SalaryRecord/GetPrintSalaryRecordBySalaryCalculateGrantId?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SalaryRecord/GetPrintSalaryRecordBySalaryCalculateGrantId?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeSalaryRecordChangePrintStateBySalaryCalculateGrantIdCode = (FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SalaryRecord/ChangePrintStateBySalaryCalculateGrantIdCode?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SalaryRecord/ChangePrintStateBySalaryCalculateGrantIdCode?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -9850,17 +7851,13 @@ export const postFirmCodeSalaryRecordBatchExportSalaryRecord = <NUDATA extends (
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryRecordQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SalaryRecord/BatchExportSalaryRecord?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SalaryRecord/BatchExportSalaryRecord?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeSalaryRecordGetSalaryRecordGrantCso = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/SalaryRecord/GetSalaryRecordGrantCso?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SalaryRecord/GetSalaryRecordGrantCso?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowSalaryStaffGetSalaryStaffToPage = <
@@ -9870,11 +7867,9 @@ export const postFirmCodeflowSalaryStaffGetSalaryStaffToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryStaffQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RowToColumnPageModel, RNU>>>(
-		`/${FirmCode}/flow/SalaryStaff/GetSalaryStaffToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/SalaryStaff/GetSalaryStaffToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -9882,174 +7877,139 @@ export const postFirmCodeflowSalaryStaffDynamicSubmitAudit = <NUDATA extends (ke
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryStaffModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryStaff/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryStaff/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryStaffPendingAudit = <NUDATA extends (keyof AT_FlowSalaryStaffModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryStaffModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryStaff/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryStaff/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryStaffRejectAudit = <NUDATA extends (keyof AT_FlowSalaryStaffModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryStaffModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryStaff/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryStaff/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryStaffDynamicRejectAudit = <NUDATA extends (keyof AT_FlowSalaryStaffModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryStaffModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryStaff/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryStaff/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryStaffResetAudit = <NUDATA extends (keyof AT_FlowSalaryStaffModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryStaffModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryStaff/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryStaff/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryStaffSaveDraft = <NUDATA extends (keyof AT_FlowSalaryStaffModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryStaffModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryStaff/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryStaff/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryStaffSubmitAudit = <NUDATA extends (keyof AT_FlowSalaryStaffModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSalaryStaffModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryStaff/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryStaff/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowSalaryStaffGetSalaryStaffById = <RNU extends (keyof AT_SalaryStaffViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SalaryStaffViewModel, RNU>>>(
-		`/${FirmCode}/flow/SalaryStaff/GetSalaryStaffById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/SalaryStaff/GetSalaryStaffById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowSalaryStaffGetSalaryStaffByFlowId = <RNU extends (keyof AT_FlowModelSalaryStaffViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelSalaryStaffViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/SalaryStaff/GetSalaryStaffByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/SalaryStaff/GetSalaryStaffByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowSalaryStaffGetUserAuditPower = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/SalaryStaff/GetUserAuditPower?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/SalaryStaff/GetUserAuditPower?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowSalaryStaffUpdateSalaryStaffState = <NUDATA extends (keyof AT_SalaryStaffStateModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryStaffStateModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryStaff/UpdateSalaryStaffState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryStaff/UpdateSalaryStaffState?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryStaffMergeSalaryCustomGrant = <NUDATA extends (keyof AT_MergeSalaryPaymentMethodModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_MergeSalaryPaymentMethodModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryStaff/MergeSalaryCustomGrant?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SalaryStaff/MergeSalaryCustomGrant?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSalaryStaffStopProvideSalaryBySalaryIds = (FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SalaryStaff/StopProvideSalaryBySalaryIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/flow/SalaryStaff/StopProvideSalaryBySalaryIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		data
+	);
 };
 export const postFirmCodeflowSalaryStaffGetSalaryKeepByBarCode = (barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/SalaryStaff/GetSalaryKeepByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/SalaryStaff/GetSalaryKeepByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowSalaryStaffGetSalaryStaffDetailsBySalaryId = <RNU extends (keyof AT_SalaryStaffDetailsViewModel)[] = []>(
 	salaryId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SalaryStaffDetailsViewModel, RNU>[]>>(
-		`/${FirmCode}/flow/SalaryStaff/GetSalaryStaffDetailsBySalaryId?${salaryId ? 'salaryId=' + salaryId : ''}&${
+		`/${FirmCodeURL}/flow/SalaryStaff/GetSalaryStaffDetailsBySalaryId?${salaryId ? 'salaryId=' + salaryId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeflowSalaryStaffDeleteSalaryById = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/SalaryStaff/DeleteSalaryById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/SalaryStaff/DeleteSalaryById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowSalaryStaffGetSocialInsuranceProvidentFundByBarCode = <RNU extends (keyof AT_SocialInsuranceProvidentFundModel)[] = []>(
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SocialInsuranceProvidentFundModel, RNU>>>(
-		`/${FirmCode}/flow/SalaryStaff/GetSocialInsuranceProvidentFundByBarCode?${barCode ? 'barCode=' + barCode : ''}&${
+		`/${FirmCodeURL}/flow/SalaryStaff/GetSocialInsuranceProvidentFundByBarCode?${barCode ? 'barCode=' + barCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowSalaryStaffGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/SalaryStaff/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SalaryStaff/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowSalaryStaffGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/SalaryStaff/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SalaryStaff/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -10061,11 +8021,9 @@ export const postFirmCodeSalarySubjectGetSalarySubjectToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalarySubjectQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SalarySubjectPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/SalarySubject/GetSalarySubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SalarySubject/GetSalarySubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10073,25 +8031,19 @@ export const postFirmCodeSalarySubjectSaveSalarySubject = <NUDATA extends (keyof
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalarySubjectModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SalarySubject/SaveSalarySubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SalarySubject/SaveSalarySubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeSalarySubjectDeleteSalarySubject = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SalarySubject/DeleteSalarySubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SalarySubject/DeleteSalarySubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSalarySubjectGetSalarySubjectById = <RNU extends (keyof AT_SalarySubjectModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SalarySubjectModel, RNU>>>(
-		`/${FirmCode}/SalarySubject/GetSalarySubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SalarySubject/GetSalarySubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeSalaryVerifyGetSalaryVerifyToPage = <
@@ -10101,11 +8053,9 @@ export const postFirmCodeSalaryVerifyGetSalaryVerifyToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryVerifyQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SalaryVerifyPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/SalaryVerify/GetSalaryVerifyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SalaryVerify/GetSalaryVerifyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10116,51 +8066,39 @@ export const postFirmCodeSalaryVerifyGetSalaryVerifySalaryStaffToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SalaryStaffQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RowToColumnPageModel, RNU>>>(
-		`/${FirmCode}/SalaryVerify/GetSalaryVerifySalaryStaffToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SalaryVerify/GetSalaryVerifySalaryStaffToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeSalaryVerifyBatchSalaryConfirm = (FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SalaryVerify/BatchSalaryConfirm?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SalaryVerify/BatchSalaryConfirm?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeSalaryVerifyBatchSalaryVerify = (paymentDays: any, FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SalaryVerify/BatchSalaryVerify?${paymentDays ? 'paymentDays=' + paymentDays : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SalaryVerify/BatchSalaryVerify?${paymentDays ? 'paymentDays=' + paymentDays : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeSalaryVerifyGetSalaryAdvancePaymentById = <RNU extends (keyof AT_SalaryStaffViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SalaryStaffViewModel, RNU>>>(
-		`/${FirmCode}/SalaryVerify/GetSalaryAdvancePaymentById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SalaryVerify/GetSalaryAdvancePaymentById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSalaryVerifyGetSalaryVerifyGrantCso = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/SalaryVerify/GetSalaryVerifyGrantCso?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SalaryVerify/GetSalaryVerifyGrantCso?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSalaryVerifyGetSalaryCalculateGrantPersonalIncomeMoney = (id: any, barcode: any, days: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/SalaryVerify/GetSalaryCalculateGrantPersonalIncomeMoney?${id ? 'id=' + id : ''}&${barcode ? 'barcode=' + barcode : ''}&${
+		`/${FirmCodeURL}/SalaryVerify/GetSalaryCalculateGrantPersonalIncomeMoney?${id ? 'id=' + id : ''}&${barcode ? 'barcode=' + barcode : ''}&${
 			days ? 'days=' + days : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
@@ -10172,11 +8110,9 @@ export const postFirmCodeSlaveCardBagGetSlaveCardBagToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SlaveCardBagQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SlaveCardBagPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/SlaveCardBag/GetSlaveCardBagToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SlaveCardBag/GetSlaveCardBagToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10184,42 +8120,32 @@ export const postFirmCodeSlaveCardBagBatchExportSlaveCardRecharge = <NUDATA exte
 	FirmCode: any,
 	data: U_I_NoNull<AT_SlaveCardBagQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SlaveCardBag/BatchExportSlaveCardRecharge?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SlaveCardBag/BatchExportSlaveCardRecharge?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeSlaveCardBagSaveSlaveCardBag = <NUDATA extends (keyof AT_SlaveCardBagModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_SlaveCardBagModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SlaveCardBag/SaveSlaveCardBag?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SlaveCardBag/SaveSlaveCardBag?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeSlaveCardBagGetSlaveCardBagById = <RNU extends (keyof AT_SlaveCardBagModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SlaveCardBagModel, RNU>>>(
-		`/${FirmCode}/SlaveCardBag/GetSlaveCardBagById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SlaveCardBag/GetSlaveCardBagById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSlaveCardBagGetSlaveCardBagByCardCode = <RNU extends (keyof AT_SlaveCardBagModel)[] = []>(cardCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SlaveCardBagModel, RNU>>>(
-		`/${FirmCode}/SlaveCardBag/GetSlaveCardBagByCardCode?${cardCode ? 'cardCode=' + cardCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SlaveCardBag/GetSlaveCardBagByCardCode?${cardCode ? 'cardCode=' + cardCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeSlaveCardBagChangeSlaveCardBagState = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SlaveCardBag/ChangeSlaveCardBagState?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SlaveCardBag/ChangeSlaveCardBagState?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowSlaveCardRechargeApplyGetSlaveCardRechargeApplyToPage = <
@@ -10229,11 +8155,9 @@ export const postFirmCodeflowSlaveCardRechargeApplyGetSlaveCardRechargeApplyToPa
 	FirmCode: any,
 	data: U_I_NoNull<AT_SlaveCardRechargeApplyQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SlaveCardRechargeApplyPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/GetSlaveCardRechargeApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/GetSlaveCardRechargeApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10244,20 +8168,16 @@ export const postFirmCodeflowSlaveCardRechargeApplyGetSelfRechargeApplyToPage = 
 	FirmCode: any,
 	data: U_I_NoNull<AT_SelfRechargeApplyQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SelfRechargeApplyPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/GetSelfRechargeApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/GetSelfRechargeApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeflowSlaveCardRechargeApplyBatchExportSlaveCardRechargeApply = (FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/BatchExportSlaveCardRechargeApply?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/BatchExportSlaveCardRechargeApply?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10265,75 +8185,65 @@ export const postFirmCodeflowSlaveCardRechargeApplyDynamicSubmitAudit = <NUDATA 
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSlaveCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SlaveCardRechargeApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		data
+	);
 };
 export const postFirmCodeflowSlaveCardRechargeApplyPendingAudit = <NUDATA extends (keyof AT_FlowSlaveCardRechargeApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSlaveCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SlaveCardRechargeApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SlaveCardRechargeApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSlaveCardRechargeApplyRejectAudit = <NUDATA extends (keyof AT_FlowSlaveCardRechargeApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSlaveCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SlaveCardRechargeApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SlaveCardRechargeApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSlaveCardRechargeApplyDynamicRejectAudit = <NUDATA extends (keyof AT_FlowSlaveCardRechargeApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSlaveCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SlaveCardRechargeApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		data
+	);
 };
 export const postFirmCodeflowSlaveCardRechargeApplyResetAudit = <NUDATA extends (keyof AT_FlowSlaveCardRechargeApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSlaveCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SlaveCardRechargeApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SlaveCardRechargeApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSlaveCardRechargeApplySaveDraft = <NUDATA extends (keyof AT_FlowSlaveCardRechargeApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSlaveCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SlaveCardRechargeApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SlaveCardRechargeApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowSlaveCardRechargeApplySubmitAudit = <NUDATA extends (keyof AT_FlowSlaveCardRechargeApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowSlaveCardRechargeApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SlaveCardRechargeApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SlaveCardRechargeApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowSlaveCardRechargeApplySearchAllSlaveCardBag = <RNU extends (keyof AT_KeyValueStringViewModel)[] = []>(
 	cardType: any,
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueStringViewModel, RNU>>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/SearchAllSlaveCardBag?${cardType ? 'cardType=' + cardType : ''}&${
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/SearchAllSlaveCardBag?${cardType ? 'cardType=' + cardType : ''}&${
 			barCode ? 'barCode=' + barCode : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
@@ -10344,11 +8254,9 @@ export const getFirmCodeflowSlaveCardRechargeApplyGetSlaveCardRechargeApplyByFlo
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelSlaveCardRechargeApplyViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/GetSlaveCardRechargeApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/GetSlaveCardRechargeApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -10357,11 +8265,9 @@ export const postFirmCodeflowSlaveCardRechargeApplySaveSlaveCardRechargeFinish =
 	FirmCode: any,
 	data: U_I_NoNull<AT_SlaveCardRechargeFinishModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/SaveSlaveCardRechargeFinish?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/SaveSlaveCardRechargeFinish?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10371,11 +8277,9 @@ export const postFirmCodeflowSlaveCardRechargeApplyGetBatchSlaveCardRechargeFini
 	FirmCode: any,
 	data: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SlaveCardRechargeApplyViewModel, RNU>[]>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/GetBatchSlaveCardRechargeFinishByFlowIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/GetBatchSlaveCardRechargeFinishByFlowIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10385,31 +8289,25 @@ export const getFirmCodeflowSlaveCardRechargeApplyGetSlaveCardRechargeApplyByUse
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetSlaveCardRechargeApplyByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/GetSlaveCardRechargeApplyByUser?${barCode ? 'barCode=' + barCode : ''}&${
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/GetSlaveCardRechargeApplyByUser?${barCode ? 'barCode=' + barCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowSlaveCardRechargeApplyGetOilCardByCardCode = (cardCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<any>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/GetOilCardByCardCode?${cardCode ? 'cardCode=' + cardCode : ''}&${
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/GetOilCardByCardCode?${cardCode ? 'cardCode=' + cardCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeflowSlaveCardRechargeApplyDeleteSlaveCardRechargeApply = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/DeleteSlaveCardRechargeApply?${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/DeleteSlaveCardRechargeApply?${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -10419,11 +8317,9 @@ export const getFirmCodeflowSlaveCardRechargeApplyGetFlowInfo = <RNU extends (ke
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -10433,11 +8329,9 @@ export const getFirmCodeflowSlaveCardRechargeApplyGetFlowChat = <RNU extends (ke
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/SlaveCardRechargeApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SlaveCardRechargeApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -10449,11 +8343,9 @@ export const postFirmCodeSocialInsuranceGetSocialInsuranceToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SocialInsurancePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/SocialInsurance/GetSocialInsuranceToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsurance/GetSocialInsuranceToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10461,11 +8353,9 @@ export const getFirmCodeSocialInsuranceGetSocialInsuranceByUser = <RNU extends (
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetSocialInsuranceByUserModel, RNU>[]>>(
-		`/${FirmCode}/SocialInsurance/GetSocialInsuranceByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SocialInsurance/GetSocialInsuranceByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeSocialInsuranceGetSocialInsuranceRecordToPage = <
@@ -10475,39 +8365,31 @@ export const postFirmCodeSocialInsuranceGetSocialInsuranceRecordToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceRecordQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SocialInsuranceRecordPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/SocialInsurance/GetSocialInsuranceRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsurance/GetSocialInsuranceRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeSocialInsuranceBatchExport = (FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SocialInsurance/BatchExport?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SocialInsurance/BatchExport?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeSocialInsuranceAddSocialInsurance = <NUDATA extends (keyof AT_SocialInsuranceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SocialInsurance/AddSocialInsurance?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SocialInsurance/AddSocialInsurance?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeSocialInsuranceUpdateSocialInsurance = <NUDATA extends (keyof AT_SocialInsuranceModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SocialInsurance/UpdateSocialInsurance?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsurance/UpdateSocialInsurance?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10519,11 +8401,9 @@ export const postFirmCodeSocialInsuranceGetSocialInsuranceDetailsMoney = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceDetailsModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SocialInsuranceDetailsModel, RNU>>>(
-		`/${FirmCode}/SocialInsurance/GetSocialInsuranceDetailsMoney?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsurance/GetSocialInsuranceDetailsMoney?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10532,50 +8412,40 @@ export const postFirmCodeSocialInsuranceGetTotalMoneyByBarCodeAndSchemeId = <RNU
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_TotalMoneyModel, RNU>>>(
-		`/${FirmCode}/SocialInsurance/GetTotalMoneyByBarCodeAndSchemeId?${schemeId ? 'schemeId=' + schemeId : ''}&${
+		`/${FirmCodeURL}/SocialInsurance/GetTotalMoneyByBarCodeAndSchemeId?${schemeId ? 'schemeId=' + schemeId : ''}&${
 			barCode ? 'barCode=' + barCode : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSocialInsuranceGetSocialInsuranceById = <RNU extends (keyof AT_SocialInsuranceViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SocialInsuranceViewModel, RNU>>>(
-		`/${FirmCode}/SocialInsurance/GetSocialInsuranceById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SocialInsurance/GetSocialInsuranceById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSocialInsuranceGetSocialInsuranceRecordById = <RNU extends (keyof AT_SocialInsuranceRecordViewModel)[] = []>(
 	id: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SocialInsuranceRecordViewModel, RNU>>>(
-		`/${FirmCode}/SocialInsurance/GetSocialInsuranceRecordById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SocialInsurance/GetSocialInsuranceRecordById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeSocialInsuranceChangeInsuranceState = (id: any, insuranceState: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SocialInsurance/ChangeInsuranceState?${id ? 'id=' + id : ''}&${insuranceState ? 'insuranceState=' + insuranceState : ''}&${
+		`/${FirmCodeURL}/SocialInsurance/ChangeInsuranceState?${id ? 'id=' + id : ''}&${insuranceState ? 'insuranceState=' + insuranceState : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeSocialInsuranceBatchChangeInsuranceState = (insuranceState: any, FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SocialInsurance/BatchChangeInsuranceState?${insuranceState ? 'insuranceState=' + insuranceState : ''}&${
+		`/${FirmCodeURL}/SocialInsurance/BatchChangeInsuranceState?${insuranceState ? 'insuranceState=' + insuranceState : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`,
 		data
@@ -10585,17 +8455,16 @@ export const postFirmCodeSocialInsuranceBatchAddSocialInsuranceDetails = <NUDATA
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceDetailsModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SocialInsurance/BatchAddSocialInsuranceDetails?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/SocialInsurance/BatchAddSocialInsuranceDetails?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		data
+	);
 };
 export const postFirmCodeSocialInsuranceBatchDeleteSocialInsuranceDetails = (SubjectId: any, FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SocialInsurance/BatchDeleteSocialInsuranceDetails?${SubjectId ? 'SubjectId=' + SubjectId : ''}&${
+		`/${FirmCodeURL}/SocialInsurance/BatchDeleteSocialInsuranceDetails?${SubjectId ? 'SubjectId=' + SubjectId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`,
 		data
@@ -10609,11 +8478,11 @@ export const postFirmCodeSocialInsuranceCalculationSocialInsuranceDetails = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceDetailsModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_TotalMoneyModel, RNU>>>(
-		`/${FirmCode}/SocialInsurance/CalculationSocialInsuranceDetails?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsurance/CalculationSocialInsuranceDetails?${barCode ? 'barCode=' + barCode : ''}&${
+			FirmCode ? 'FirmCode=' + FirmCode : ''
+		}`,
 		data
 	);
 };
@@ -10621,22 +8490,18 @@ export const getFirmCodeSocialInsuranceGetPersonSocialInsuranceByUser = <RNU ext
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetPersonSocialInsuranceByUserModel, RNU>[]>>(
-		`/${FirmCode}/SocialInsurance/GetPersonSocialInsuranceByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SocialInsurance/GetPersonSocialInsuranceByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeSocialInsuranceCheckIsExistSocialInsuranceDetails = <NUDATA extends (keyof AT_CheckIsExsistSocialInsuranceDetails)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_CheckIsExsistSocialInsuranceDetails, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SocialInsurance/CheckIsExistSocialInsuranceDetails?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsurance/CheckIsExistSocialInsuranceDetails?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10647,11 +8512,9 @@ export const postFirmCodeflowSocialInsurancePayGetSocialInsurancePayToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsurancePayQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_RowToColumnPageModel, RNU>>>(
-		`/${FirmCode}/flow/SocialInsurancePay/GetSocialInsurancePayToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/SocialInsurancePay/GetSocialInsurancePayToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10659,11 +8522,9 @@ export const postFirmCodeflowSocialInsurancePayBatchExportSocialInsurancePay = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsurancePayQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/SocialInsurancePay/BatchExportSocialInsurancePay?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/SocialInsurancePay/BatchExportSocialInsurancePay?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10671,11 +8532,9 @@ export const postFirmCodeflowSocialInsurancePayGetSocialInsurancePayListByIds = 
 	FirmCode: any,
 	data: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SocialInsurancePayViewModel, RNU>>>(
-		`/${FirmCode}/flow/SocialInsurancePay/GetSocialInsurancePayListByIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/SocialInsurancePay/GetSocialInsurancePayListByIds?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10683,17 +8542,13 @@ export const postFirmCodeflowSocialInsurancePaySocialInsurancePay = <NUDATA exte
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsurancePayModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/SocialInsurancePay/SocialInsurancePay?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/SocialInsurancePay/SocialInsurancePay?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowSocialInsurancePayGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/SocialInsurancePay/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SocialInsurancePay/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -10703,11 +8558,9 @@ export const getFirmCodeflowSocialInsurancePayGetFlowChat = <RNU extends (keyof 
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/SocialInsurancePay/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/SocialInsurancePay/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -10719,11 +8572,9 @@ export const postFirmCodeSocialInsuranceSchemeGetSocialInsuranceSchemeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceSchemeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SocialInsuranceSchemePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/SocialInsuranceScheme/GetSocialInsuranceSchemeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsuranceScheme/GetSocialInsuranceSchemeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10731,21 +8582,20 @@ export const postFirmCodeSocialInsuranceSchemeAddSocialInsuranceScheme = <NUDATA
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceSchemeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SocialInsuranceScheme/AddSocialInsuranceScheme?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/SocialInsuranceScheme/AddSocialInsuranceScheme?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		data
+	);
 };
 export const postFirmCodeSocialInsuranceSchemeUpdateSocialInsuranceScheme = <NUDATA extends (keyof AT_SocialInsuranceSchemeModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceSchemeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SocialInsuranceScheme/UpdateSocialInsuranceScheme?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsuranceScheme/UpdateSocialInsuranceScheme?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10753,19 +8603,15 @@ export const getFirmCodeSocialInsuranceSchemeGetSocialInsuranceSchemeById = <RNU
 	id: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SocialInsuranceSchemeViewModel, RNU>>>(
-		`/${FirmCode}/SocialInsuranceScheme/GetSocialInsuranceSchemeById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SocialInsuranceScheme/GetSocialInsuranceSchemeById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeSocialInsuranceSchemeDeleteSocialInsuranceScheme = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SocialInsuranceScheme/DeleteSocialInsuranceScheme?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SocialInsuranceScheme/DeleteSocialInsuranceScheme?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeSocialInsuranceSchemeInitializeSocialInsuranceScheme = <
@@ -10774,11 +8620,9 @@ export const postFirmCodeSocialInsuranceSchemeInitializeSocialInsuranceScheme = 
 	FirmCode: any,
 	data: U_I_NoNull<AT_InitializeSocialInsuranceSchemeModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SocialInsuranceScheme/InitializeSocialInsuranceScheme?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsuranceScheme/InitializeSocialInsuranceScheme?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10789,11 +8633,9 @@ export const postFirmCodeSocialInsuranceSubjectGetSocialInsuranceSubjectToPage =
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceSubjectQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_SocialInsuranceSubjectPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/SocialInsuranceSubject/GetSocialInsuranceSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsuranceSubject/GetSocialInsuranceSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10801,11 +8643,9 @@ export const postFirmCodeSocialInsuranceSubjectSaveSocialInsuranceSubject = <NUD
 	FirmCode: any,
 	data: U_I_NoNull<AT_SocialInsuranceSubjectModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SocialInsuranceSubject/SaveSocialInsuranceSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/SocialInsuranceSubject/SaveSocialInsuranceSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10813,27 +8653,21 @@ export const getFirmCodeSocialInsuranceSubjectGetSocialInsuranceSubjectById = <R
 	id: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SocialInsuranceSubjectModel, RNU>>>(
-		`/${FirmCode}/SocialInsuranceSubject/GetSocialInsuranceSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SocialInsuranceSubject/GetSocialInsuranceSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeSocialInsuranceSubjectDeleteSocialInsuranceSubject = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/SocialInsuranceSubject/DeleteSocialInsuranceSubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SocialInsuranceSubject/DeleteSocialInsuranceSubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeStaffDetailsGetStaffDetailsByBarCode = <RNU extends (keyof AT_StaffDetailsViewModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffDetailsViewModel, RNU>>>(
-		`/${FirmCode}/StaffDetails/GetStaffDetailsByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/StaffDetails/GetStaffDetailsByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeStaffDetailsDiscriminateIdCard = <
@@ -10843,11 +8677,9 @@ export const postFirmCodeStaffDetailsDiscriminateIdCard = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_DiscriminateIdQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_IdCardInfoModel, RNU>>>(
-		`/${FirmCode}/StaffDetails/DiscriminateIdCard?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/DiscriminateIdCard?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10856,11 +8688,9 @@ export const postFirmCodeStaffDetailsUpdateStaffBasicInfo = <NUDATA extends (key
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffDetailsModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/StaffDetails/UpdateStaffBasicInfo?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/UpdateStaffBasicInfo?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10869,11 +8699,9 @@ export const postFirmCodeStaffDetailsUpdateStaffCareerInfo = <NUDATA extends (ke
 	FirmCode: any,
 	data: U_I_NoNull<AT_CareerInfoUpdateModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/StaffDetails/UpdateStaffCareerInfo?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/UpdateStaffCareerInfo?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10881,30 +8709,24 @@ export const postFirmCodeStaffDetailsUpdateStaffSelfEvaluation = <NUDATA extends
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffSelfEvaluationModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/UpdateStaffSelfEvaluation?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/StaffDetails/UpdateStaffSelfEvaluation?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeStaffDetailsUpdateStaffHonor = <NUDATA extends (keyof AT_StaffHonorModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffHonorModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/UpdateStaffHonor?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/StaffDetails/UpdateStaffHonor?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeStaffDetailsBatchAddFamilyInfo = <NUDATA extends (keyof AT_EntryFamilyInfoModel)[] = []>(
 	barCode: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_EntryFamilyInfoModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/StaffDetails/BatchAddFamilyInfo?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/BatchAddFamilyInfo?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10912,25 +8734,19 @@ export const postFirmCodeStaffDetailsUpdateFamilyInfo = <NUDATA extends (keyof A
 	FirmCode: any,
 	data: U_I_NoNull<AT_EntryFamilyInfoModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/UpdateFamilyInfo?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/StaffDetails/UpdateFamilyInfo?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeStaffDetailsRemoveFamilyInfo = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/StaffDetails/RemoveFamilyInfo?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/StaffDetails/RemoveFamilyInfo?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeStaffDetailsGetFamilyInfoList = <RNU extends (keyof AT_EntryFamilyInfoModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_EntryFamilyInfoModel, RNU>[]>>(
-		`/${FirmCode}/StaffDetails/GetFamilyInfoList?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/StaffDetails/GetFamilyInfoList?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeStaffDetailsBatchAddStaffBank = <NUDATA extends (keyof AT_StaffBankModel)[] = []>(
@@ -10938,11 +8754,9 @@ export const postFirmCodeStaffDetailsBatchAddStaffBank = <NUDATA extends (keyof 
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffBankModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/StaffDetails/BatchAddStaffBank?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/BatchAddStaffBank?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10950,23 +8764,19 @@ export const postFirmCodeStaffDetailsUpdateStaffBank = <NUDATA extends (keyof AT
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffBankModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/UpdateStaffBank?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/StaffDetails/UpdateStaffBank?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeStaffDetailsRemoveStaffBank = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/RemoveStaffBank?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/StaffDetails/RemoveStaffBank?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+	);
 };
 export const getFirmCodeStaffDetailsGetStaffBankList = <RNU extends (keyof AT_StaffBankModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffBankModel, RNU>[]>>(
-		`/${FirmCode}/StaffDetails/GetStaffBankList?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/StaffDetails/GetStaffBankList?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeStaffDetailsBatchAddAttachment = <NUDATA extends (keyof AT_InductionAttachmentModel)[] = []>(
@@ -10974,11 +8784,9 @@ export const postFirmCodeStaffDetailsBatchAddAttachment = <NUDATA extends (keyof
 	FirmCode: any,
 	data: U_I_NoNull<AT_InductionAttachmentModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/StaffDetails/BatchAddAttachment?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/BatchAddAttachment?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -10986,25 +8794,19 @@ export const postFirmCodeStaffDetailsUpdateAttachment = <NUDATA extends (keyof A
 	FirmCode: any,
 	data: U_I_NoNull<AT_InductionAttachmentModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/UpdateAttachment?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/StaffDetails/UpdateAttachment?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeStaffDetailsRemoveAttachment = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/StaffDetails/RemoveAttachment?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/StaffDetails/RemoveAttachment?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeStaffDetailsGetAttachmentList = <RNU extends (keyof AT_InductionAttachmentModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InductionAttachmentModel, RNU>[]>>(
-		`/${FirmCode}/StaffDetails/GetAttachmentList?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/StaffDetails/GetAttachmentList?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeStaffDetailsBatchAddStudy = <NUDATA extends (keyof AT_InductionStudyModel)[] = []>(
@@ -11012,11 +8814,9 @@ export const postFirmCodeStaffDetailsBatchAddStudy = <NUDATA extends (keyof AT_I
 	FirmCode: any,
 	data: U_I_NoNull<AT_InductionStudyModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/StaffDetails/BatchAddStudy?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/BatchAddStudy?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11024,23 +8824,17 @@ export const postFirmCodeStaffDetailsUpdateStudy = <NUDATA extends (keyof AT_Ind
 	FirmCode: any,
 	data: U_I_NoNull<AT_InductionStudyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/UpdateStudy?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/StaffDetails/UpdateStudy?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeStaffDetailsRemoveStudy = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/RemoveStudy?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/StaffDetails/RemoveStudy?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
 };
 export const getFirmCodeStaffDetailsGetStudyList = <RNU extends (keyof AT_InductionStudyModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InductionStudyModel, RNU>[]>>(
-		`/${FirmCode}/StaffDetails/GetStudyList?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/StaffDetails/GetStudyList?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeStaffDetailsBatchAddWork = <NUDATA extends (keyof AT_InductionWorkModel)[] = []>(
@@ -11048,11 +8842,9 @@ export const postFirmCodeStaffDetailsBatchAddWork = <NUDATA extends (keyof AT_In
 	FirmCode: any,
 	data: U_I_NoNull<AT_InductionWorkModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/StaffDetails/BatchAddWork?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/BatchAddWork?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11060,39 +8852,29 @@ export const postFirmCodeStaffDetailsUpdateWork = <NUDATA extends (keyof AT_Indu
 	FirmCode: any,
 	data: U_I_NoNull<AT_InductionWorkModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/UpdateWork?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/StaffDetails/UpdateWork?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeStaffDetailsRemoveWork = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/RemoveWork?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/StaffDetails/RemoveWork?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
 };
 export const getFirmCodeStaffDetailsGetWorkList = <RNU extends (keyof AT_InductionWorkModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_InductionWorkModel, RNU>[]>>(
-		`/${FirmCode}/StaffDetails/GetWorkList?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/StaffDetails/GetWorkList?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeStaffDetailsGetNewEmployee = <RNU extends (keyof AT_NewEmployeeModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_NewEmployeeModel, RNU>[]>>(
-		`/${FirmCode}/StaffDetails/GetNewEmployee?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/StaffDetails/GetNewEmployee?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeStaffDetailsUpdateProfilePicture = (barcode: any, profilePicture: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/StaffDetails/UpdateProfilePicture?${barcode ? 'barcode=' + barcode : ''}&${
+		`/${FirmCodeURL}/StaffDetails/UpdateProfilePicture?${barcode ? 'barcode=' + barcode : ''}&${
 			profilePicture ? 'profilePicture=' + profilePicture : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
@@ -11104,11 +8886,9 @@ export const postFirmCodeStaffDetailsGetNewEmployeeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_NewEmployeeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_NewEmployeePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/StaffDetails/GetNewEmployeeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/GetNewEmployeeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11119,11 +8899,9 @@ export const postFirmCodeStaffDetailsGetStaffDetailsToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffDetailsQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_StaffDetailsPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/StaffDetails/GetStaffDetailsToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/GetStaffDetailsToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11131,10 +8909,8 @@ export const postFirmCodeStaffDetailsExportStaffDetailsList = <NUDATA extends (k
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffDetailsQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/ExportStaffDetailsList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/StaffDetails/ExportStaffDetailsList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeStaffDetailsGetDimissionStaffDetailsToPage = <
 	RNU extends (keyof AT_StaffDetailsPageModelIEnumerableInt32Tuple)[] = [],
@@ -11143,11 +8919,9 @@ export const postFirmCodeStaffDetailsGetDimissionStaffDetailsToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffDetailsQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_StaffDetailsPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/StaffDetails/GetDimissionStaffDetailsToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/GetDimissionStaffDetailsToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11155,10 +8929,11 @@ export const postFirmCodeStaffDetailsExportDimissionStaffDetailsList = <NUDATA e
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffDetailsQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/StaffDetails/ExportDimissionStaffDetailsList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/StaffDetails/ExportDimissionStaffDetailsList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		data
+	);
 };
 export const postFirmCodeStaffDetailsGetStaffChangeToPage = <
 	RNU extends (keyof AT_StaffChangePageModelIEnumerableInt32Tuple)[] = [],
@@ -11167,11 +8942,9 @@ export const postFirmCodeStaffDetailsGetStaffChangeToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffChangeQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_StaffChangePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/StaffDetails/GetStaffChangeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffDetails/GetStaffChangeToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11185,11 +8958,9 @@ export const getFirmCodeStaffGrowGetStaffGrowDetailsByResult = <
 	postCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_StaffGrowDetailsModel, RNU>>>(
-		`/${FirmCode}/StaffGrow/GetStaffGrowDetailsByResult?${staffGrowState ? 'staffGrowState=' + staffGrowState : ''}&${
+		`/${FirmCodeURL}/StaffGrow/GetStaffGrowDetailsByResult?${staffGrowState ? 'staffGrowState=' + staffGrowState : ''}&${
 			barCode ? 'barCode=' + barCode : ''
 		}&${depCode ? 'depCode=' + depCode : ''}&${postCode ? 'postCode=' + postCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
@@ -11201,11 +8972,9 @@ export const postFirmCodeStaffGrowGetStaffGrowToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffGrowQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_StaffGrowPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/StaffGrow/GetStaffGrowToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffGrow/GetStaffGrowToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11216,11 +8985,9 @@ export const postFirmCodeStaffModifyRecordGetStaffModifyRecordToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffModifyRecordQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_StaffModifyRecordPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/StaffModifyRecord/GetStaffModifyRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/StaffModifyRecord/GetStaffModifyRecordToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11344,10 +9111,8 @@ export const postFirmCodeSysConfigMergeSysConfig = <NUDATA extends (keyof AT_Use
 	FirmCode: any,
 	data: U_I_NoNull<AT_UserConfigModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/SysConfig/MergeSysConfig?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/SysConfig/MergeSysConfig?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeSysConfigGeSysConfig = <RNU extends (keyof AT_UserConfigViewModel)[] = [], NU0 extends (keyof AT_PageType)[] = []>(
 	pageType: U_I_NoNull<AT_PageType, NU0>,
@@ -11355,53 +9120,41 @@ export const getFirmCodeSysConfigGeSysConfig = <RNU extends (keyof AT_UserConfig
 	optionType: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_UserConfigViewModel, RNU>>>(
-		`/${FirmCode}/SysConfig/GeSysConfig?${pageType ? 'pageType=' + pageType : ''}&${pageKey ? 'pageKey=' + pageKey : ''}&${
+		`/${FirmCodeURL}/SysConfig/GeSysConfig?${pageType ? 'pageType=' + pageType : ''}&${pageKey ? 'pageKey=' + pageKey : ''}&${
 			optionType ? 'optionType=' + optionType : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSysRouteGetSysPopupRouteById = <RNU extends (keyof AT_SysPopupRouteViewModel)[] = []>(popupRoutId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SysPopupRouteViewModel, RNU>>>(
-		`/${FirmCode}/SysRoute/GetSysPopupRouteById?${popupRoutId ? 'popupRoutId=' + popupRoutId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SysRoute/GetSysPopupRouteById?${popupRoutId ? 'popupRoutId=' + popupRoutId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSysRouteGetAllSysPopup = <RNU extends (keyof AT_SysPopupRouteViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SysPopupRouteViewModel, RNU>[]>>(
-		`/${FirmCode}/SysRoute/GetAllSysPopup?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SysRoute/GetAllSysPopup?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSysRouteGetAllFlowSysPopup = <RNU extends (keyof AT_SysPopupRouteViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SysPopupRouteViewModel, RNU>[]>>(
-		`/${FirmCode}/SysRoute/GetAllFlowSysPopup?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SysRoute/GetAllFlowSysPopup?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSysRouteGetAllSysPage = <RNU extends (keyof AT_SysPageRouteViewModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SysPageRouteViewModel, RNU>[]>>(
-		`/${FirmCode}/SysRoute/GetAllSysPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SysRoute/GetAllSysPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeSysRouteGetAllSysTreeList = <RNU extends (keyof AT_SysPageRouteTreeListModel)[] = []>(FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_SysPageRouteTreeListModel, RNU>[]>>(
-		`/${FirmCode}/SysRoute/GetAllSysTreeList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/SysRoute/GetAllSysTreeList?${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowTaxCreditApplyGetTaxCreditApplyToPage = <
@@ -11411,11 +9164,9 @@ export const postFirmCodeflowTaxCreditApplyGetTaxCreditApplyToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_TaxCreditApplyQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_TaxCreditApplyPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/TaxCreditApply/GetTaxCreditApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/TaxCreditApply/GetTaxCreditApplyToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11423,92 +9174,72 @@ export const postFirmCodeflowTaxCreditApplyDynamicSubmitAudit = <NUDATA extends 
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTaxCreditApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TaxCreditApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TaxCreditApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTaxCreditApplyPendingAudit = <NUDATA extends (keyof AT_FlowTaxCreditApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTaxCreditApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TaxCreditApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TaxCreditApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTaxCreditApplyRejectAudit = <NUDATA extends (keyof AT_FlowTaxCreditApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTaxCreditApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TaxCreditApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TaxCreditApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTaxCreditApplyDynamicRejectAudit = <NUDATA extends (keyof AT_FlowTaxCreditApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTaxCreditApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TaxCreditApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TaxCreditApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTaxCreditApplyResetAudit = <NUDATA extends (keyof AT_FlowTaxCreditApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTaxCreditApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TaxCreditApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TaxCreditApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTaxCreditApplySaveDraft = <NUDATA extends (keyof AT_FlowTaxCreditApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTaxCreditApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TaxCreditApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TaxCreditApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTaxCreditApplySubmitAudit = <NUDATA extends (keyof AT_FlowTaxCreditApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTaxCreditApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TaxCreditApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TaxCreditApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowTaxCreditApplyGetTaxCreditApplyByFlowId = <RNU extends (keyof AT_FlowModelTaxCreditApplyViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelTaxCreditApplyViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/TaxCreditApply/GetTaxCreditApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/TaxCreditApply/GetTaxCreditApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowTaxCreditApplyGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/TaxCreditApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/TaxCreditApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowTaxCreditApplyGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/TaxCreditApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/TaxCreditApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -11520,11 +9251,9 @@ export const postFirmCodeTaxCreditSubjectGetTaxCreditSubjectToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_TaxCreditSubjectQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_TaxCreditSubjectPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/TaxCreditSubject/GetTaxCreditSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/TaxCreditSubject/GetTaxCreditSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11532,54 +9261,42 @@ export const postFirmCodeTaxCreditSubjectSaveTaxCreditSubject = <NUDATA extends 
 	FirmCode: any,
 	data: U_I_NoNull<AT_TaxCreditSubjectModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/TaxCreditSubject/SaveTaxCreditSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/TaxCreditSubject/SaveTaxCreditSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeTaxCreditSubjectDeleteTaxCreditSubject = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/TaxCreditSubject/DeleteTaxCreditSubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/TaxCreditSubject/DeleteTaxCreditSubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeTaxCreditSubjectGetTaxCreditSubjectById = <RNU extends (keyof AT_TaxCreditSubjectModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_TaxCreditSubjectModel, RNU>>>(
-		`/${FirmCode}/TaxCreditSubject/GetTaxCreditSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/TaxCreditSubject/GetTaxCreditSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeTeachingGetTeachingById = <RNU extends (keyof AT_TeachingViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_TeachingViewModel, RNU>>>(
-		`/${FirmCode}/Teaching/GetTeachingById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Teaching/GetTeachingById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeTeachingAddTeaching = <NUDATA extends (keyof AT_TeachingModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_TeachingModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Teaching/AddTeaching?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Teaching/AddTeaching?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeTeachingUpdateTeaching = <NUDATA extends (keyof AT_TeachingModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_TeachingModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Teaching/UpdateTeaching?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Teaching/UpdateTeaching?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11590,38 +9307,32 @@ export const postFirmCodeTeachingGetTeachingToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_TeachingQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_TeachingPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Teaching/GetTeachingToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Teaching/GetTeachingToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeTeachingDetailsStartTeaching = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/TeachingDetails/StartTeaching?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/TeachingDetails/StartTeaching?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeTeachingDetailsEndTeaching = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/TeachingDetails/EndTeaching?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/TeachingDetails/EndTeaching?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+	);
 };
 export const postFirmCodeTeachingDetailsFaceTalk = <NUDATA extends (keyof AT_FaceTalkModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_FaceTalkModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/TeachingDetails/FaceTalk?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/TeachingDetails/FaceTalk?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11629,11 +9340,9 @@ export const getFirmCodeTeachingDetailsGetTeachingDetailsAttachment = <RNU exten
 	id: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_TeachingDetailsAttachmentModel, RNU>[]>>(
-		`/${FirmCode}/TeachingDetails/GetTeachingDetailsAttachment?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/TeachingDetails/GetTeachingDetailsAttachment?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeTeachingDetailsGetTeachingDetailsToPage = <
@@ -11643,11 +9352,9 @@ export const postFirmCodeTeachingDetailsGetTeachingDetailsToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_TeachingDetailsQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_TeachingDetailsPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/TeachingDetails/GetTeachingDetailsToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/TeachingDetails/GetTeachingDetailsToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11655,19 +9362,15 @@ export const getFirmCodeTeachingDetailsGetTeachingDetailsByUser = <RNU extends (
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetTeachingDetailsByUserModel, RNU>[]>>(
-		`/${FirmCode}/TeachingDetails/GetTeachingDetailsByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/TeachingDetails/GetTeachingDetailsByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeTeachTemplateGetTeachById = <RNU extends (keyof AT_TeachTemplateViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_TeachTemplateViewModel, RNU>>>(
-		`/${FirmCode}/TeachTemplate/GetTeachById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/TeachTemplate/GetTeachById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeTeachTemplateGetTeachByDepAndPost = <RNU extends (keyof AT_TeachTemplateViewModel)[] = []>(
@@ -11675,11 +9378,9 @@ export const getFirmCodeTeachTemplateGetTeachByDepAndPost = <RNU extends (keyof 
 	postCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_TeachTemplateViewModel, RNU>>>(
-		`/${FirmCode}/TeachTemplate/GetTeachByDepAndPost?${depCode ? 'depCode=' + depCode : ''}&${postCode ? 'postCode=' + postCode : ''}&${
+		`/${FirmCodeURL}/TeachTemplate/GetTeachByDepAndPost?${depCode ? 'depCode=' + depCode : ''}&${postCode ? 'postCode=' + postCode : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -11688,30 +9389,24 @@ export const postFirmCodeTeachTemplateAddTeachTemplate = <NUDATA extends (keyof 
 	FirmCode: any,
 	data: U_I_NoNull<AT_TeachTemplateModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/TeachTemplate/AddTeachTemplate?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/TeachTemplate/AddTeachTemplate?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeTeachTemplateUpdateTeachTemplate = <NUDATA extends (keyof AT_TeachTemplateModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_TeachTemplateModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/TeachTemplate/UpdateTeachTemplate?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/TeachTemplate/UpdateTeachTemplate?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const postFirmCodeTeachTemplateRemoveTeachByFlowId = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/TeachTemplate/RemoveTeachByFlowId?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/TeachTemplate/RemoveTeachByFlowId?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeTeachTemplateGetTeachTemplateToPage = <
@@ -11721,11 +9416,9 @@ export const postFirmCodeTeachTemplateGetTeachTemplateToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_TeachTemplateQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_TeachTemplatePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/TeachTemplate/GetTeachTemplateToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/TeachTemplate/GetTeachTemplateToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11733,37 +9426,29 @@ export const postFirmCodeTrademarkAddTrademark = <NUDATA extends (keyof AT_Trade
 	FirmCode: any,
 	data: U_I_NoNull<AT_TrademarkModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Trademark/AddTrademark?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Trademark/AddTrademark?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeTrademarkUpdateTrademark = <NUDATA extends (keyof AT_TrademarkModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_TrademarkModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Trademark/UpdateTrademark?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Trademark/UpdateTrademark?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeTrademarkGetTrademarkById = <RNU extends (keyof AT_TrademarkViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_TrademarkViewModel, RNU>>>(
-		`/${FirmCode}/Trademark/GetTrademarkById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Trademark/GetTrademarkById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeTrademarkRemoveTrademark = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Trademark/RemoveTrademark?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Trademark/RemoveTrademark?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`);
 };
 export const postFirmCodeTrademarkGetTrademarkToPage = <
 	RNU extends (keyof AT_TrademarkPageModelIEnumerableInt32Tuple)[] = [],
@@ -11772,11 +9457,9 @@ export const postFirmCodeTrademarkGetTrademarkToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_TrademarkQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_TrademarkPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Trademark/GetTrademarkToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Trademark/GetTrademarkToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11787,140 +9470,110 @@ export const postFirmCodeflowTransferGetTransferToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_TransferQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_TransferPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Transfer/GetTransferToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Transfer/GetTransferToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowTransferGetTransfer = <RNU extends (keyof AT_TransferByBarCodeModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_TransferByBarCodeModel, RNU>[]>>(
-		`/${FirmCode}/flow/Transfer/GetTransfer?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Transfer/GetTransfer?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowTransferDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowTransferModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTransferModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Transfer/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Transfer/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTransferPendingAudit = <NUDATA extends (keyof AT_FlowTransferModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTransferModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Transfer/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Transfer/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTransferRejectAudit = <NUDATA extends (keyof AT_FlowTransferModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTransferModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Transfer/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Transfer/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTransferDynamicRejectAudit = <NUDATA extends (keyof AT_FlowTransferModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTransferModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Transfer/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Transfer/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTransferResetAudit = <NUDATA extends (keyof AT_FlowTransferModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTransferModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Transfer/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Transfer/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTransferSaveDraft = <NUDATA extends (keyof AT_FlowTransferModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTransferModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Transfer/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Transfer/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTransferSubmitAudit = <NUDATA extends (keyof AT_FlowTransferModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTransferModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Transfer/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Transfer/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowTransferGetTransferByFlowId = <RNU extends (keyof AT_FlowModelTransferViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelTransferViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Transfer/GetTransferByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Transfer/GetTransferByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowTransferCheckTransferUserIsInFlow = (barCode: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Transfer/CheckTransferUserIsInFlow?${barCode ? 'barCode=' + barCode : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Transfer/CheckTransferUserIsInFlow?${barCode ? 'barCode=' + barCode : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeflowTransferCheckIsExistDepPost = (barCode: any, depCode: any, postCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Transfer/CheckIsExistDepPost?${barCode ? 'barCode=' + barCode : ''}&${depCode ? 'depCode=' + depCode : ''}&${
+		`/${FirmCodeURL}/flow/Transfer/CheckIsExistDepPost?${barCode ? 'barCode=' + barCode : ''}&${depCode ? 'depCode=' + depCode : ''}&${
 			postCode ? 'postCode=' + postCode : ''
 		}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowTransferDeleteTransfer = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Transfer/DeleteTransfer?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Transfer/DeleteTransfer?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowTransferGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Transfer/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Transfer/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowTransferGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Transfer/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Transfer/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -11932,11 +9585,9 @@ export const postFirmCodeTransferStaffGetTransferStaffToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_TransferStaffQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_TransferStaffPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/TransferStaff/GetTransferStaffToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/TransferStaff/GetTransferStaffToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -11944,134 +9595,104 @@ export const postFirmCodeTransferStaffAddTransferStaff = <NUDATA extends (keyof 
 	FirmCode: any,
 	data: U_I_NoNull<AT_TransferStaffModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/TransferStaff/AddTransferStaff?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/TransferStaff/AddTransferStaff?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeTransferStaffGetTransferStaffById = <RNU extends (keyof AT_TransferStaffViewModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_TransferStaffViewModel, RNU>>>(
-		`/${FirmCode}/TransferStaff/GetTransferStaffById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/TransferStaff/GetTransferStaffById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowTryoutUpGetTryoutUpByFlowId = <RNU extends (keyof AT_FlowModelTryoutUpViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelTryoutUpViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/TryoutUp/GetTryoutUpByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/TryoutUp/GetTryoutUpByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowTryoutUpGetTryoutUpByBarCode = <RNU extends (keyof AT_TryoutUpViewModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_TryoutUpViewModel, RNU>>>(
-		`/${FirmCode}/flow/TryoutUp/GetTryoutUpByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/TryoutUp/GetTryoutUpByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowTryoutUpDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowTryoutUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTryoutUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TryoutUp/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TryoutUp/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTryoutUpPendingAudit = <NUDATA extends (keyof AT_FlowTryoutUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTryoutUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TryoutUp/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TryoutUp/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTryoutUpRejectAudit = <NUDATA extends (keyof AT_FlowTryoutUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTryoutUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TryoutUp/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TryoutUp/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTryoutUpDynamicRejectAudit = <NUDATA extends (keyof AT_FlowTryoutUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTryoutUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TryoutUp/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TryoutUp/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTryoutUpResetAudit = <NUDATA extends (keyof AT_FlowTryoutUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTryoutUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TryoutUp/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TryoutUp/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTryoutUpSaveDraft = <NUDATA extends (keyof AT_FlowTryoutUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTryoutUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TryoutUp/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TryoutUp/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTryoutUpSubmitAudit = <NUDATA extends (keyof AT_FlowTryoutUpModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowTryoutUpModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TryoutUp/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TryoutUp/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowTryoutUpDeleteTryoutUp = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/TryoutUp/DeleteTryoutUp?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/TryoutUp/DeleteTryoutUp?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowTryoutUpAddStaffGrowAttachment = <NUDATA extends (keyof AT_StaffGrowAttachmentModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_StaffGrowAttachmentModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/TryoutUp/AddStaffGrowAttachment?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/TryoutUp/AddStaffGrowAttachment?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowTryoutUpGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/TryoutUp/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/TryoutUp/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowTryoutUpGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/TryoutUp/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/TryoutUp/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -12083,11 +9704,9 @@ export const postFirmCodeVehicleGetVehicleToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_VehicleQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_VehiclePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/Vehicle/GetVehicleToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Vehicle/GetVehicleToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -12095,31 +9714,28 @@ export const postFirmCodeVehicleAddVehicle = <NUDATA extends (keyof AT_VehicleMo
 	FirmCode: any,
 	data: U_I_NoNull<AT_VehicleModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Vehicle/AddVehicle?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Vehicle/AddVehicle?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeVehicleUpdateVehicle = <NUDATA extends (keyof AT_VehicleModel)[] = []>(
 	id: any,
 	FirmCode: any,
 	data: U_I_NoNull<AT_VehicleModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Vehicle/UpdateVehicle?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(
+		`/${FirmCodeURL}/Vehicle/UpdateVehicle?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		data
+	);
 };
 export const getFirmCodeVehicleGetVehicleByVehicleHoldIdAndId = <RNU extends (keyof AT_VehicleViewModel)[] = []>(
 	vehicleHoldId: any,
 	id: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_VehicleViewModel, RNU>>>(
-		`/${FirmCode}/Vehicle/GetVehicleByVehicleHoldIdAndId?${vehicleHoldId ? 'vehicleHoldId=' + vehicleHoldId : ''}&${id ? 'id=' + id : ''}&${
+		`/${FirmCodeURL}/Vehicle/GetVehicleByVehicleHoldIdAndId?${vehicleHoldId ? 'vehicleHoldId=' + vehicleHoldId : ''}&${id ? 'id=' + id : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -12128,134 +9744,104 @@ export const postFirmCodeVehicleBlockVehicle = <NUDATA extends (keyof AT_BlockVe
 	FirmCode: any,
 	data: U_I_NoNull<AT_BlockVehicleModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/Vehicle/BlockVehicle?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/Vehicle/BlockVehicle?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeVehicleGetBlockVehicle = <RNU extends (keyof AT_BlockVehicleModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_BlockVehicleModel, RNU>>>(
-		`/${FirmCode}/Vehicle/GetBlockVehicle?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Vehicle/GetBlockVehicle?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeVehicleBatchVehicleHoldShare = (vehicleId: any, FirmCode: any, data: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/Vehicle/BatchVehicleHoldShare?${vehicleId ? 'vehicleId=' + vehicleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/Vehicle/BatchVehicleHoldShare?${vehicleId ? 'vehicleId=' + vehicleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeVehicleGetVehicleHoldByVehicleId = <RNU extends (keyof AT_VehicleHoldModel)[] = []>(vehicleId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_VehicleHoldModel, RNU>[]>>(
-		`/${FirmCode}/Vehicle/GetVehicleHoldByVehicleId?${vehicleId ? 'vehicleId=' + vehicleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/Vehicle/GetVehicleHoldByVehicleId?${vehicleId ? 'vehicleId=' + vehicleId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowVehicleApplyDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowVehicleApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleApply/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleApplyPendingAudit = <NUDATA extends (keyof AT_FlowVehicleApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleApply/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleApplyRejectAudit = <NUDATA extends (keyof AT_FlowVehicleApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleApply/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleApplyDynamicRejectAudit = <NUDATA extends (keyof AT_FlowVehicleApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleApply/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleApplyResetAudit = <NUDATA extends (keyof AT_FlowVehicleApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleApply/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleApplySaveDraft = <NUDATA extends (keyof AT_FlowVehicleApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleApply/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleApplySubmitAudit = <NUDATA extends (keyof AT_FlowVehicleApplyModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleApplyModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleApply/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowVehicleApplyGetVehicleApplyByFlowId = <RNU extends (keyof AT_FlowModelVehicleApplyViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelVehicleApplyViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/VehicleApply/GetVehicleApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VehicleApply/GetVehicleApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowVehicleApplyDeleteVehicleApplyByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/VehicleApply/DeleteVehicleApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VehicleApply/DeleteVehicleApplyByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowVehicleApplyGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/VehicleApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleApply/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowVehicleApplyGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/VehicleApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleApply/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -12264,82 +9850,66 @@ export const postFirmCodeflowVehicleInsuranceDynamicSubmitAudit = <NUDATA extend
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleInsuranceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleInsurance/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleInsurance/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleInsurancePendingAudit = <NUDATA extends (keyof AT_FlowVehicleInsuranceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleInsuranceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleInsurance/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleInsurance/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleInsuranceRejectAudit = <NUDATA extends (keyof AT_FlowVehicleInsuranceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleInsuranceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleInsurance/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleInsurance/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleInsuranceDynamicRejectAudit = <NUDATA extends (keyof AT_FlowVehicleInsuranceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleInsuranceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleInsurance/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleInsurance/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleInsuranceResetAudit = <NUDATA extends (keyof AT_FlowVehicleInsuranceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleInsuranceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleInsurance/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleInsurance/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleInsuranceSaveDraft = <NUDATA extends (keyof AT_FlowVehicleInsuranceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleInsuranceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleInsurance/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleInsurance/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleInsuranceSubmitAudit = <NUDATA extends (keyof AT_FlowVehicleInsuranceModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleInsuranceModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleInsurance/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleInsurance/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowVehicleInsuranceGetVehicleInsuranceByFlowId = <RNU extends (keyof AT_FlowModelVehicleInsuranceViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelVehicleInsuranceViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/VehicleInsurance/GetVehicleInsuranceByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VehicleInsurance/GetVehicleInsuranceByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowVehicleInsuranceDeleteVehicleInsuranceByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/VehicleInsurance/DeleteVehicleInsuranceByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VehicleInsurance/DeleteVehicleInsuranceByFlowId?${flowId ? 'flowId=' + flowId : ''}&${
+			FirmCode ? 'FirmCode=' + FirmCode : ''
+		}`
 	);
 };
 export const postFirmCodeflowVehicleInsuranceMergeVehicleAttachments = <NUDATA extends (keyof AT_VehicleAttachmentModel)[] = []>(
@@ -12347,22 +9917,18 @@ export const postFirmCodeflowVehicleInsuranceMergeVehicleAttachments = <NUDATA e
 	FirmCode: any,
 	data: U_I_NoNull<AT_VehicleAttachmentModel, NUDATA>[]
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/VehicleInsurance/MergeVehicleAttachments?${vehicleInsuranceId ? 'vehicleInsuranceId=' + vehicleInsuranceId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleInsurance/MergeVehicleAttachments?${vehicleInsuranceId ? 'vehicleInsuranceId=' + vehicleInsuranceId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`,
 		data
 	);
 };
 export const getFirmCodeflowVehicleInsuranceGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/VehicleInsurance/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleInsurance/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -12372,11 +9938,9 @@ export const getFirmCodeflowVehicleInsuranceGetFlowChat = <RNU extends (keyof AT
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/VehicleInsurance/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleInsurance/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -12385,101 +9949,79 @@ export const getFirmCodeflowVehicleLeaseGetVehicleLeaseByFlowId = <RNU extends (
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelVehicleLeaseViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/VehicleLease/GetVehicleLeaseByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VehicleLease/GetVehicleLeaseByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowVehicleLeaseDeleteVehicleLeaseByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/VehicleLease/DeleteVehicleLeaseByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VehicleLease/DeleteVehicleLeaseByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowVehicleLeaseVehicleLeaseCost = <NUDATA extends (keyof AT_VehicleLeaseCostModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_VehicleLeaseCostModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleLease/VehicleLeaseCost?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleLease/VehicleLeaseCost?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleLeaseVehicleLeaseReturn = <NUDATA extends (keyof AT_VehicleLeaseReturnModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_VehicleLeaseReturnModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleLease/VehicleLeaseReturn?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleLease/VehicleLeaseReturn?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleLeaseDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowVehicleLeaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleLeaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleLease/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleLease/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleLeasePendingAudit = <NUDATA extends (keyof AT_FlowVehicleLeaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleLeaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleLease/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleLease/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleLeaseRejectAudit = <NUDATA extends (keyof AT_FlowVehicleLeaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleLeaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleLease/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleLease/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleLeaseDynamicRejectAudit = <NUDATA extends (keyof AT_FlowVehicleLeaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleLeaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleLease/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleLease/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleLeaseResetAudit = <NUDATA extends (keyof AT_FlowVehicleLeaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleLeaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleLease/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleLease/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleLeaseSaveDraft = <NUDATA extends (keyof AT_FlowVehicleLeaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleLeaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleLease/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleLease/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleLeaseSubmitAudit = <NUDATA extends (keyof AT_FlowVehicleLeaseModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleLeaseModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleLease/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleLease/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleLeaseGetVehicleLeaseToPage = <
 	RNU extends (keyof AT_VehicleLeasePageModelIEnumerableInt32Tuple)[] = [],
@@ -12488,11 +10030,9 @@ export const postFirmCodeflowVehicleLeaseGetVehicleLeaseToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_VehicleLeaseQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_VehicleLeasePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/VehicleLease/GetVehicleLeaseToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/VehicleLease/GetVehicleLeaseToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -12500,31 +10040,25 @@ export const getFirmCodeflowVehicleLeaseGetVehicleLeaseMoneyBack = <RNU extends 
 	vehicleLeaseId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_VehicleLeaseMoneyBackModel, RNU>[]>>(
-		`/${FirmCode}/flow/VehicleLease/GetVehicleLeaseMoneyBack?${vehicleLeaseId ? 'vehicleLeaseId=' + vehicleLeaseId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleLease/GetVehicleLeaseMoneyBack?${vehicleLeaseId ? 'vehicleLeaseId=' + vehicleLeaseId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowVehicleLeaseGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/VehicleLease/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleLease/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowVehicleLeaseGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/VehicleLease/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleLease/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -12533,100 +10067,78 @@ export const postFirmCodeflowVehicleRepairDynamicSubmitAudit = <NUDATA extends (
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleRepairModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleRepair/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleRepair/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleRepairPendingAudit = <NUDATA extends (keyof AT_FlowVehicleRepairModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleRepairModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleRepair/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleRepair/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleRepairRejectAudit = <NUDATA extends (keyof AT_FlowVehicleRepairModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleRepairModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleRepair/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleRepair/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleRepairDynamicRejectAudit = <NUDATA extends (keyof AT_FlowVehicleRepairModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleRepairModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleRepair/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleRepair/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleRepairResetAudit = <NUDATA extends (keyof AT_FlowVehicleRepairModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleRepairModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleRepair/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleRepair/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleRepairSaveDraft = <NUDATA extends (keyof AT_FlowVehicleRepairModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleRepairModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleRepair/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleRepair/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleRepairSubmitAudit = <NUDATA extends (keyof AT_FlowVehicleRepairModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleRepairModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleRepair/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleRepair/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowVehicleRepairGetVehicleRepairByFlowId = <RNU extends (keyof AT_FlowModelVehicleRepairViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelVehicleRepairViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/VehicleRepair/GetVehicleRepairByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VehicleRepair/GetVehicleRepairByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowVehicleRepairDeleteVehicleRepairByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/VehicleRepair/DeleteVehicleRepairByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VehicleRepair/DeleteVehicleRepairByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowVehicleRepairGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/VehicleRepair/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleRepair/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowVehicleRepairGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/VehicleRepair/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleRepair/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -12635,100 +10147,78 @@ export const postFirmCodeflowVehicleUpkeepDynamicSubmitAudit = <NUDATA extends (
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleUpkeepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleUpkeep/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleUpkeep/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleUpkeepPendingAudit = <NUDATA extends (keyof AT_FlowVehicleUpkeepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleUpkeepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleUpkeep/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleUpkeep/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleUpkeepRejectAudit = <NUDATA extends (keyof AT_FlowVehicleUpkeepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleUpkeepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleUpkeep/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleUpkeep/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleUpkeepDynamicRejectAudit = <NUDATA extends (keyof AT_FlowVehicleUpkeepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleUpkeepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleUpkeep/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleUpkeep/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleUpkeepResetAudit = <NUDATA extends (keyof AT_FlowVehicleUpkeepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleUpkeepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleUpkeep/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleUpkeep/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleUpkeepSaveDraft = <NUDATA extends (keyof AT_FlowVehicleUpkeepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleUpkeepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleUpkeep/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleUpkeep/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVehicleUpkeepSubmitAudit = <NUDATA extends (keyof AT_FlowVehicleUpkeepModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVehicleUpkeepModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VehicleUpkeep/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VehicleUpkeep/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowVehicleUpkeepGetVehicleUpkeepByFlowId = <RNU extends (keyof AT_FlowModelVehicleUpkeepViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelVehicleUpkeepViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/VehicleUpkeep/GetVehicleUpkeepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VehicleUpkeep/GetVehicleUpkeepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowVehicleUpkeepDeleteVehicleUpkeepByFlowId = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/VehicleUpkeep/DeleteVehicleUpkeepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VehicleUpkeep/DeleteVehicleUpkeepByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowVehicleUpkeepGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/VehicleUpkeep/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleUpkeep/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowVehicleUpkeepGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/VehicleUpkeep/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VehicleUpkeep/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -12740,125 +10230,99 @@ export const postFirmCodeflowVirtueFundGetVirtueFundToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_VirtueFundQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_VirtueFundPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/VirtueFund/GetVirtueFundToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/VirtueFund/GetVirtueFundToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
 export const getFirmCodeflowVirtueFundGetVirtueFundByUser = <RNU extends (keyof AT_GetVirtueFundByUserModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetVirtueFundByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/VirtueFund/GetVirtueFundByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VirtueFund/GetVirtueFundByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowVirtueFundBatchExportVirtueFund = <NUDATA extends (keyof AT_VirtueFundQueryModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_VirtueFundQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VirtueFund/BatchExportVirtueFund?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VirtueFund/BatchExportVirtueFund?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowVirtueFundSearchAllFamilyInfoByBarCode = <RNU extends (keyof AT_KeyValueIntViewModel)[] = []>(
 	barCode: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_KeyValueIntViewModel, RNU>>>(
-		`/${FirmCode}/flow/VirtueFund/SearchAllFamilyInfoByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VirtueFund/SearchAllFamilyInfoByBarCode?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowVirtueFundDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowVirtueFundModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVirtueFundModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VirtueFund/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VirtueFund/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVirtueFundPendingAudit = <NUDATA extends (keyof AT_FlowVirtueFundModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVirtueFundModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VirtueFund/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VirtueFund/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVirtueFundRejectAudit = <NUDATA extends (keyof AT_FlowVirtueFundModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVirtueFundModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VirtueFund/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VirtueFund/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVirtueFundDynamicRejectAudit = <NUDATA extends (keyof AT_FlowVirtueFundModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVirtueFundModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VirtueFund/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VirtueFund/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVirtueFundResetAudit = <NUDATA extends (keyof AT_FlowVirtueFundModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVirtueFundModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VirtueFund/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VirtueFund/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVirtueFundSaveDraft = <NUDATA extends (keyof AT_FlowVirtueFundModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVirtueFundModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VirtueFund/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VirtueFund/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowVirtueFundSubmitAudit = <NUDATA extends (keyof AT_FlowVirtueFundModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowVirtueFundModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/VirtueFund/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/VirtueFund/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowVirtueFundGetVirtueFundByFlowId = <RNU extends (keyof AT_FlowModelVirtueFundViewModelTuple)[] = []>(
 	flowId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelVirtueFundViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/VirtueFund/GetVirtueFundByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VirtueFund/GetVirtueFundByFlowId?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowVirtueFundGetSomeStaffInfoByVirtueSubject = <RNU extends (keyof AT_VirtueFundDetailsModel)[] = []>(
 	subjectId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_VirtueFundDetailsModel, RNU>[]>>(
-		`/${FirmCode}/flow/VirtueFund/GetSomeStaffInfoByVirtueSubject?${subjectId ? 'subjectId=' + subjectId : ''}&${
+		`/${FirmCodeURL}/flow/VirtueFund/GetSomeStaffInfoByVirtueSubject?${subjectId ? 'subjectId=' + subjectId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -12868,40 +10332,32 @@ export const postFirmCodeflowVirtueFundGetVirtueFundDetailsByBarCode = <RNU exte
 	FirmCode: any,
 	data: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_VirtueFundDetailsModel, RNU>[]>>(
-		`/${FirmCode}/flow/VirtueFund/GetVirtueFundDetailsByBarCode?${subjectId ? 'subjectId=' + subjectId : ''}&${
+		`/${FirmCodeURL}/flow/VirtueFund/GetVirtueFundDetailsByBarCode?${subjectId ? 'subjectId=' + subjectId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`,
 		data
 	);
 };
 export const postFirmCodeflowVirtueFundDeleteVirtueFund = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/VirtueFund/DeleteVirtueFund?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/VirtueFund/DeleteVirtueFund?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowVirtueFundGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/VirtueFund/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VirtueFund/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowVirtueFundGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/VirtueFund/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/VirtueFund/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -12913,11 +10369,9 @@ export const postFirmCodeVirtueSubjectGetVirtueSubjectToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_VirtueSubjectQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_VirtueSubjectPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/VirtueSubject/GetVirtueSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/VirtueSubject/GetVirtueSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -12925,38 +10379,30 @@ export const postFirmCodeVirtueSubjectSaveVirtueSubject = <NUDATA extends (keyof
 	FirmCode: any,
 	data: U_I_NoNull<AT_VirtueSubjectModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/VirtueSubject/SaveVirtueSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/VirtueSubject/SaveVirtueSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeVirtueSubjectGetVirtueSubjectById = <RNU extends (keyof AT_VirtueSubjectModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_VirtueSubjectModel, RNU>>>(
-		`/${FirmCode}/VirtueSubject/GetVirtueSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/VirtueSubject/GetVirtueSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeVirtueSubjectSearchAllVirtueSubject = <RNU extends (keyof AT_VirtueSubjectModel)[] = []>(
 	isNotBirthday: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_VirtueSubjectModel, RNU>[]>>(
-		`/${FirmCode}/VirtueSubject/SearchAllVirtueSubject?${isNotBirthday ? 'isNotBirthday=' + isNotBirthday : ''}&${
+		`/${FirmCodeURL}/VirtueSubject/SearchAllVirtueSubject?${isNotBirthday ? 'isNotBirthday=' + isNotBirthday : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeVirtueSubjectDeleteVirtueSubject = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/VirtueSubject/DeleteVirtueSubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/VirtueSubject/DeleteVirtueSubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowWelfareGetWelfareToPage = <
@@ -12966,11 +10412,9 @@ export const postFirmCodeflowWelfareGetWelfareToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_WelfareQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_WelfarePageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/flow/Welfare/GetWelfareToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/flow/Welfare/GetWelfareToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -12978,120 +10422,94 @@ export const postFirmCodeflowWelfareBatchExportWelfare = <NUDATA extends (keyof 
 	FirmCode: any,
 	data: U_I_NoNull<AT_WelfareQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Welfare/BatchExportWelfare?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Welfare/BatchExportWelfare?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowWelfareGetWelfareByUser = <RNU extends (keyof AT_GetWelfareByUserModel)[] = []>(barCode: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_GetWelfareByUserModel, RNU>[]>>(
-		`/${FirmCode}/flow/Welfare/GetWelfareByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Welfare/GetWelfareByUser?${barCode ? 'barCode=' + barCode : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const postFirmCodeflowWelfareDynamicSubmitAudit = <NUDATA extends (keyof AT_FlowWelfareModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowWelfareModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Welfare/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Welfare/DynamicSubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowWelfarePendingAudit = <NUDATA extends (keyof AT_FlowWelfareModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowWelfareModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Welfare/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Welfare/PendingAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowWelfareRejectAudit = <NUDATA extends (keyof AT_FlowWelfareModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowWelfareModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Welfare/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Welfare/RejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowWelfareDynamicRejectAudit = <NUDATA extends (keyof AT_FlowWelfareModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowWelfareModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Welfare/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Welfare/DynamicRejectAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowWelfareResetAudit = <NUDATA extends (keyof AT_FlowWelfareModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowWelfareModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Welfare/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Welfare/ResetAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowWelfareSaveDraft = <NUDATA extends (keyof AT_FlowWelfareModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowWelfareModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Welfare/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Welfare/SaveDraft?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeflowWelfareSubmitAudit = <NUDATA extends (keyof AT_FlowWelfareModel)[] = []>(
 	FirmCode: any,
 	data: U_I_NoNull<AT_FlowWelfareModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/flow/Welfare/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/flow/Welfare/SubmitAudit?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const getFirmCodeflowWelfareGetWelfareByFlowId = <RNU extends (keyof AT_FlowModelWelfareViewModelTuple)[] = []>(
 	flowId: any,
 	detailsId: any,
 	FirmCode: any
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModelWelfareViewModelTuple, RNU>>>(
-		`/${FirmCode}/flow/Welfare/GetWelfareByFlowId?${flowId ? 'flowId=' + flowId : ''}&${detailsId ? 'detailsId=' + detailsId : ''}&${
+		`/${FirmCodeURL}/flow/Welfare/GetWelfareByFlowId?${flowId ? 'flowId=' + flowId : ''}&${detailsId ? 'detailsId=' + detailsId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const postFirmCodeflowWelfareDeleteWelfare = (flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/flow/Welfare/DeleteWelfare?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/flow/Welfare/DeleteWelfare?${flowId ? 'flowId=' + flowId : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeflowWelfareGetFlowInfo = <RNU extends (keyof AT_FlowModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowModel, RNU>>>(
-		`/${FirmCode}/flow/Welfare/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Welfare/GetFlowInfo?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
 };
 export const getFirmCodeflowWelfareGetFlowChat = <RNU extends (keyof AT_FlowChatModel)[] = []>(popupKey: any, flowId: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_FlowChatModel, RNU>[]>>(
-		`/${FirmCode}/flow/Welfare/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
+		`/${FirmCodeURL}/flow/Welfare/GetFlowChat?${popupKey ? 'popupKey=' + popupKey : ''}&${flowId ? 'flowId=' + flowId : ''}&${
 			FirmCode ? 'FirmCode=' + FirmCode : ''
 		}`
 	);
@@ -13103,11 +10521,9 @@ export const postFirmCodeWelfareSubjectGetWelfareSubjectToPage = <
 	FirmCode: any,
 	data: U_I_NoNull<AT_WelfareSubjectQueryModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<U_I_NoNull<AT_WelfareSubjectPageModelIEnumerableInt32Tuple, RNU>>>(
-		`/${FirmCode}/WelfareSubject/GetWelfareSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
+		`/${FirmCodeURL}/WelfareSubject/GetWelfareSubjectToPage?${FirmCode ? 'FirmCode=' + FirmCode : ''}`,
 		data
 	);
 };
@@ -13115,25 +10531,19 @@ export const postFirmCodeWelfareSubjectSaveWelfareSubject = <NUDATA extends (key
 	FirmCode: any,
 	data: U_I_NoNull<AT_WelfareSubjectModel, NUDATA>
 ) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
-	return axios.post<ResponseData<any>>(`/${FirmCode}/WelfareSubject/SaveWelfareSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
+	const FirmCodeURL = COMPANY_CODE;
+	return axios.post<ResponseData<any>>(`/${FirmCodeURL}/WelfareSubject/SaveWelfareSubject?${FirmCode ? 'FirmCode=' + FirmCode : ''}`, data);
 };
 export const postFirmCodeWelfareSubjectDeleteWelfareSubject = (id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.post<ResponseData<any>>(
-		`/${FirmCode}/WelfareSubject/DeleteWelfareSubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/WelfareSubject/DeleteWelfareSubject?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export const getFirmCodeWelfareSubjectGetWelfareSubjectById = <RNU extends (keyof AT_WelfareSubjectModel)[] = []>(id: any, FirmCode: any) => {
-	if (!FirmCode) {
-		FirmCode = COMPANY_CODE;
-	}
+	const FirmCodeURL = COMPANY_CODE;
 	return axios.get<ResponseData<U_I_NoNull<AT_WelfareSubjectModel, RNU>>>(
-		`/${FirmCode}/WelfareSubject/GetWelfareSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
+		`/${FirmCodeURL}/WelfareSubject/GetWelfareSubjectById?${id ? 'id=' + id : ''}&${FirmCode ? 'FirmCode=' + FirmCode : ''}`
 	);
 };
 export declare interface AT_AccountManagerModel {
@@ -22098,8 +19508,6 @@ export declare interface AT_MaterialApplyModel {
 	extractMode: AT_ExtractMode;
 	/*收获地址Id*/
 	personalReceiptId?: number;
-	/*物资申领编码*/
-	materialApplyCode?: string;
 	/*说明*/
 	note?: string;
 	/*员工银行卡编码：通用编码*/
@@ -22112,6 +19520,8 @@ export declare interface AT_MaterialApplyModel {
 	withholdMoney?: number;
 	/*申领明细*/
 	materialApplyDetailsList?: AT_MaterialApplyDetailsModel[];
+	/*物资申领编码*/
+	materialApplyCode?: string;
 }
 
 export declare interface AT_MaterialApplyPageModel {
@@ -29236,10 +26646,6 @@ export declare interface AT_SalaryKeepDeductModel {
 	notes?: string;
 	/*本次扣除金额*/
 	thisMoney?: number;
-	/*流程ID*/
-	flowId: number;
-	/*流程状态*/
-	flowState: number;
 }
 
 export declare interface AT_SalaryKeepDeductViewModel {
@@ -29255,10 +26661,6 @@ export declare interface AT_SalaryKeepDeductViewModel {
 	notes?: string;
 	/*本次扣除金额*/
 	thisMoney?: number;
-	/*流程ID*/
-	flowId: number;
-	/*流程状态*/
-	flowState: number;
 	/*姓名*/
 	name?: string;
 	/*岗位*/

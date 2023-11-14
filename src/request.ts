@@ -149,11 +149,12 @@ const requestInit = (config: I_Config) => {
 								return '${' + item + "?'" + item + "='" + '+' + item + ':' + "''" + '}';
 							})
 							.join('&');
+						const handleAxiosUrl = axiosUrl.replace(/\{/g, '${').replace(/\}/g, 'URL}');
 						requestFileItemContent = `${requestFileItemContent} = ${functionTypeArr.length !== 0 ? '<' + functionTypeArr.join(',') + '>' : ''}(${
 							parameterStr + parameData
-						}) => {\n\t ${config.axiosFuncContent ? config.axiosFuncContent?.(parameterStr) : ''}\n return axios.${requestType}${
+						}) => {\n\t ${config.axiosFuncContent ? config.axiosFuncContent?.(parameterStr, handleAxiosUrl) : ''}\n return axios.${requestType}${
 							responseResult.interContentItemGenericStrValue ? '<ResponseData<' + responseResult.interContentItemGenericStrValue + '>>' : ''
-						}(\`${axiosUrl.replace(/\{/g, '${')}${urlParameStr ? '?' : ''}${urlParameStr}\`${axiosOption.requestBody ? ',data' : ''});\n};\n`;
+						}(\`${handleAxiosUrl}${urlParameStr ? '?' : ''}${urlParameStr}\`${axiosOption.requestBody ? ',data' : ''});\n};\n`;
 
 						Object.keys(axiosOption).forEach((item3) => {
 							if (requestType === 'get') {

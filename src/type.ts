@@ -5,5 +5,5 @@ export declare interface I_Config {
 	interfaceNamePrepend: string;
 	axiosUrl: string;
 	resultFileContentHeader?: string[];
-	axiosFuncContent?: (parameterStr: string) => string;
+	axiosFuncContent?: (parameterStr: string, handleAxiosUrl: string) => string;
 }
