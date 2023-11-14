@@ -4,4 +4,6 @@ export declare interface I_Config {
 	resultFileName: string;
 	interfaceNamePrepend: string;
 	axiosUrl: string;
+	resultFileContentHeader?: string[];
+	axiosFuncContent?: (parameterStr: string) => string;
 }

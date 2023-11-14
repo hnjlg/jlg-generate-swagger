@@ -1,7 +1,0 @@
-{
-	"swaggerUrl": "http://10.1.2.9:10031/swagger/v1/swagger.json",
-	"swaggerFileName": "swa/apiType/production/swagger.json",
-	"resultFileName": "swa/apiType/production/result.ts",
-	"interfaceNamePrepend": "AT_",
-	"axiosUrl": "import axios from '@/axios/index'"
-}

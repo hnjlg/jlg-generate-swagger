@@ -18,6 +18,7 @@ const requestInit = (config: I_Config) => {
 				const requestPostkeys: string[] = [];
 				const requestParametersKeys: string[] = [];
 				let requestFileContent = [
+					...(config.resultFileContentHeader ?? []),
 					config.axiosUrl,
 					'export declare interface ResponseData<T>{content: T;message: string | void;status: number;}',
 					'type ItemInTu<T, K> = T extends [infer F, ...infer R] ? (F extends K ? true : ItemInTu<R, K>) : false;',
@@ -150,9 +151,9 @@ const requestInit = (config: I_Config) => {
 							.join('&');
 						requestFileItemContent = `${requestFileItemContent} = ${functionTypeArr.length !== 0 ? '<' + functionTypeArr.join(',') + '>' : ''}(${
 							parameterStr + parameData
-						}) => {\n\t return axios.${requestType}${
+						}) => {\n\t ${config.axiosFuncContent ? config.axiosFuncContent?.(parameterStr) : ''}\n return axios.${requestType}${
 							responseResult.interContentItemGenericStrValue ? '<ResponseData<' + responseResult.interContentItemGenericStrValue + '>>' : ''
-						}(\`${axiosUrl}${urlParameStr ? '?' : ''}${urlParameStr}\`${axiosOption.requestBody ? ',data' : ''});\n};\n`;
+						}(\`${axiosUrl.replace(/\{/g, '${')}${urlParameStr ? '?' : ''}${urlParameStr}\`${axiosOption.requestBody ? ',data' : ''});\n};\n`;
 
 						Object.keys(axiosOption).forEach((item3) => {
 							if (requestType === 'get') {
