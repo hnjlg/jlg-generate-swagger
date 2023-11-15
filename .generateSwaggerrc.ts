@@ -1,6 +1,6 @@
 export default {
 	// 远程swagger.json文件URL
-	swaggerUrl: 'http://10.1.2.9:10023/swagger/v1/swagger.json',
+	swaggerUrl: 'http://10.1.2.9:10031/swagger/v1/swagger.json',
 	// 生成的swagger.json文件路径，默认src/apiType/swagger.json
 	swaggerFileName: 'test/apiType/production/swagger.json',
 	// 生成的接口文件路径，默认src/apiType/api.ts
