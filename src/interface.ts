@@ -22,6 +22,10 @@ const getInterFileRecordStr = (config: I_Config, obj: { components: { schemas: {
 	const proTypeArr: Array<undefined | string> = [];
 	const propertiesKeyKey: Array<string> = [];
 
+	if (!obj.components.schemas) {
+		return false;
+	}
+
 	Object.keys(obj.components.schemas).forEach((item) => {
 		const schema = obj.components.schemas[item];
 		if (schema.properties && schema.type !== 'object') {
