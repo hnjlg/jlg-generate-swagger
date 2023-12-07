@@ -19,7 +19,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"cosmiconfig": "^8.3.6",
-		"jlg_generate_by_swagger": "^0.0.24"
+		"jlg_generate_by_swagger": "^0.0.39"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.4.4",

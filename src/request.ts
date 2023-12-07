@@ -30,7 +30,7 @@ const requestInit = (config: I_Config) => {
 						const str = axiosUrl
 							.split('/')
 							.map((str) => {
-								return str.replace(/[\\-]/g, '');
+								return str.replace(/[{}-]/g, '');
 							})
 							.join('');
 						requestFileItemContent += `${requestType}${str.substring(0, 1).toUpperCase() + str.substring(1)}`;

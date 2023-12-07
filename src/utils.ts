@@ -107,7 +107,7 @@ export const schemaObjectProperties = (
 		schameTypeName = `${item2Type === 'integer' ? 'number' : item2Type}${
 			isNeedDefault && 'default' in schemaItem2 ? '=' + (item2Type === 'string' ? "''" : schemaItem2.default) : ''
 		}`;
-		interContentItemGenericStrValue = schameTypeName;
+		interContentItemGenericStrValue = interContentItemStrValue;
 	} else if (item2Type === 'array') {
 		if (schemaItem2.items.$ref) {
 			const schemaNameSplitArr = schemaItem2.items.$ref.split('/');
@@ -121,25 +121,33 @@ export const schemaObjectProperties = (
 		} else if (schemaItem2.items.type) {
 			if (schemaItem2.items.type === 'object') {
 				schameTypeName = `${schemaItem2.items.type === 'integer' ? 'number[]' : schemaItem2.items.type + '[]'}`;
-				interContentItemGenericStrValue = `{ ${Object.keys(schemaItem2.items.properties).reduce((acc, cur) => {
-					return `${acc}${cur}: ${
-						schemaObjectProperties(
-							config,
-							{
-								properties: {
-									value: schemaItem2.items.properties[cur],
+				if (
+					!schemaItem2.items.properties ||
+					(typeof schemaItem2.items.properties === 'object' && Object.keys(schemaItem2.items.properties).length === 0)
+				) {
+					interContentItemGenericStrValue = 'any[]';
+				} else {
+					interContentItemGenericStrValue = `{ ${Object.keys(schemaItem2.items.properties).reduce((acc, cur) => {
+						return `${acc}${cur}: ${
+							schemaObjectProperties(
+								config,
+								{
+									properties: {
+										value: schemaItem2.items.properties[cur],
+									},
 								},
-							},
-							item2,
-							propertiesKeyKey,
-							proTypeArr,
-							endingSymbol,
-							isNeedDefault,
-							isNeedGeneric,
-							GenericArr
-						).interContentItemGenericStrValue
-					};\n`;
-				}, '')} }[]`;
+								item2,
+								propertiesKeyKey,
+								proTypeArr,
+								endingSymbol,
+								isNeedDefault,
+								false,
+								GenericArr
+							).interContentItemGenericStrValue
+						};\n`;
+					}, '')} }[]`;
+				}
+
 				interContentItemStrValue = `${interContentItemGenericStrValue}${endingSymbol}\n`;
 			} else {
 				interContentItemStrValue = `${schemaItem2.items.type === 'integer' ? 'number[]' : schemaItem2.items.type + '[]'}${endingSymbol}\n`;
@@ -150,8 +158,7 @@ export const schemaObjectProperties = (
 	} else if (item2Type === 'object') {
 		interContentItemStrValue = `${schema.properties[item2].type}${endingSymbol}\n`;
 		schameTypeName = `${schema.properties[item2].type}`;
-		// 暂时将类型定义为object
-		interContentItemGenericStrValue = `{ ${Object.keys(schema.properties[item2].properties).reduce((acc, cur) => {
+		interContentItemGenericStrValue = `{ ${Object.keys(schema.properties[item2].properties ?? []).reduce((acc, cur) => {
 			return `${acc}${cur}: ${
 				schemaObjectProperties(
 					config,
@@ -165,7 +172,7 @@ export const schemaObjectProperties = (
 					proTypeArr,
 					endingSymbol,
 					isNeedDefault,
-					isNeedGeneric,
+					false,
 					GenericArr
 				).interContentItemGenericStrValue
 			};\n`;
