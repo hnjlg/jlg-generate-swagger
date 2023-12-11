@@ -11,6 +11,7 @@
 		"prettier": "prettier --write ./src",
 		"eslint:fix": "eslint fix ./src",
 		"preinstall": "npx only-allow npm",
+		"link:update": "rimraf ./dist/dist & npm run build",
 		"publish": "rimraf ./dist/dist & npm run build & cd ./dist & npm version patch & npm publish",
 		"jlg_generate_by_swagger": "npx jlg_generate_by_swagger"
 	},
@@ -18,8 +19,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"cosmiconfig": "^8.3.6",
-		"jlg_generate_by_swagger": "^0.0.39"
+		"cosmiconfig": "^8.3.6"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.4.4",

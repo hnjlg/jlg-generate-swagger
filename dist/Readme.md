@@ -22,6 +22,8 @@ export default {
 	interfaceNamePrepend: 'AT_',
 	// 封装的axios实例引入路径，默认import axios from '@/request/index'
 	axiosUrl: "import axios from '@/axios/index';",
+	// 可选，是否需要生成ResponseInterface，默认true
+	isNeedResponse: false,
 	// 可选，在生成的result文件头部插入一段内容
 	resultFileContentHeader: [
 		"import { useUserInfoStoreHook } from '@/store/modules/user-info';",

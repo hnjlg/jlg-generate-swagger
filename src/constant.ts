@@ -6,5 +6,6 @@ const config: I_Config = {
 	resultFileName: 'src/apiType/result.ts',
 	interfaceNamePrepend: 'AT_',
 	axiosUrl: 'import axios from "@/request/index"',
+	isNeedResponse: true,
 };
 export default config;

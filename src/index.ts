@@ -18,6 +18,7 @@ explorer.search().then((result) => {
 		config.resultFileName = path.join(process.cwd(), config.resultFileName ?? constant.resultFileName);
 		config.swaggerFileName = path.join(process.cwd(), config.swaggerFileName ?? constant.swaggerFileName);
 		config.interfaceNamePrepend = config.interfaceNamePrepend ?? constant.interfaceNamePrepend;
+		config.isNeedResponse = config.isNeedResponse ?? constant.isNeedResponse;
 		swaggerInit(config).then(() => {
 			Promise.all([requestInit(config), interfaceInit(config)])
 				.then((res) => {

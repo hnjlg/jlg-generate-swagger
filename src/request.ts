@@ -20,7 +20,7 @@ const requestInit = (config: I_Config) => {
 				let requestFileContent = [
 					...(config.resultFileContentHeader ?? []),
 					config.axiosUrl,
-					'export declare interface ResponseData<T>{content: T;message: string | void;status: number;}',
+					config.isNeedResponse ? 'export declare interface ResponseData<T>{content: T;message: string | void;status: number;}' : '',
 					'type ItemInTu<T, K> = T extends [infer F, ...infer R] ? (F extends K ? true : ItemInTu<R, K>) : false;',
 					'export declare type U_I_NoNull<T, U extends Array<keyof T>> = {[K in keyof T as ItemInTu<U, K> extends true ? never : K]: T[K];} & {[K in keyof T as ItemInTu<U, K> extends true ? K : never]-?: T[K];};',
 				].join('\n');
@@ -153,7 +153,11 @@ const requestInit = (config: I_Config) => {
 						requestFileItemContent = `${requestFileItemContent} = ${functionTypeArr.length !== 0 ? '<' + functionTypeArr.join(',') + '>' : ''}(${
 							parameterStr + parameData
 						}) => {\n\t ${config.axiosFuncContent ? config.axiosFuncContent?.(parameterStr, handleAxiosUrl) : ''}\n return axios.${requestType}${
-							responseResult.interContentItemGenericStrValue ? '<ResponseData<' + responseResult.interContentItemGenericStrValue + '>>' : ''
+							responseResult.interContentItemGenericStrValue
+								? config.isNeedResponse
+									? '<ResponseData<' + responseResult.interContentItemGenericStrValue + '>>'
+									: '<' + responseResult.interContentItemGenericStrValue + '>'
+								: ''
 						}(\`${handleAxiosUrl}${urlParameStr ? '?' : ''}${urlParameStr}\`${axiosOption.requestBody ? ',data' : ''});\n};\n`;
 
 						Object.keys(axiosOption).forEach((item3) => {

@@ -4,7 +4,10 @@
 	"description": "Use swagger.json to generate the corresponding TS constraint and AXIOS interface call function",
 	"bin": "./dist/index.js",
 	"main": "./dist/index.js",
-	"scripts": {},
+	"scripts": {
+		"link": "npm link",
+		"unlink": "npm unlink jlg_generate_by_swagger"
+	},
 	"keywords": [
 		"jlg",
 		"swagger",

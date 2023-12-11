@@ -118,6 +118,7 @@ export const schemaObjectProperties = (
 			}
 			interContentItemStrValue = `${config.interfaceNamePrepend}${schemaName}[]${endingSymbol}\n`;
 			schameTypeName = `${config.interfaceNamePrepend}${schemaName}`;
+			interContentItemGenericStrValue = schameTypeName;
 		} else if (schemaItem2.items.type) {
 			if (schemaItem2.items.type === 'object') {
 				schameTypeName = `${schemaItem2.items.type === 'integer' ? 'number[]' : schemaItem2.items.type + '[]'}`;
