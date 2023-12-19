@@ -78,6 +78,7 @@ const getInterFileRecordStr = (config: I_Config, obj: { components: { schemas: {
 			'maxLength',
 			'additionalProperties',
 			'pattern',
+			'$ref',
 		],
 		(item: string) => {
 			log(
