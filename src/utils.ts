@@ -94,12 +94,14 @@ export const schemaObjectProperties = (
 	} else if (schemaItem2.$ref) {
 		const schemaNameSplitArr = schemaItem2.$ref.split('/');
 		const schemaName = schemaNameSplitArr[schemaNameSplitArr.length - 1];
+		interContentItemStrValue = `${config.interfaceNamePrepend}${schemaName}${endingSymbol}\n`;
+		schameTypeName = `${config.interfaceNamePrepend}${schemaName}`;
 		if (isNeedGeneric) {
 			interContentItemGenericStrValue = `U_I_NoNull<${config.interfaceNamePrepend}${schemaName},${GenericArr[0]}>${endingSymbol}\n`;
 			isSchemaType = true;
+		} else {
+			interContentItemGenericStrValue = schameTypeName;
 		}
-		interContentItemStrValue = `${config.interfaceNamePrepend}${schemaName}${endingSymbol}\n`;
-		schameTypeName = `${config.interfaceNamePrepend}${schemaName}`;
 	} else if (['integer', 'number', 'boolean', 'string'].includes(item2Type)) {
 		interContentItemStrValue = `${item2Type === 'integer' ? 'number' : item2Type}${
 			isNeedDefault && 'default' in schemaItem2 ? '=' + (item2Type === 'string' ? "''" : schemaItem2.default) : ''
