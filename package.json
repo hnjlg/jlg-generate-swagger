@@ -32,6 +32,7 @@
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-prettier": "^5.0.1",
 		"husky": "^8.0.3",
+		"jlg_generate_by_swagger": "^0.0.45",
 		"lint-staged": "^13.1.2",
 		"only-allow": "^1.2.1",
 		"prettier": "^3.0.3",

@@ -117,10 +117,11 @@ export const schemaObjectProperties = (
 			if (isNeedGeneric) {
 				interContentItemGenericStrValue = `U_I_NoNull<${config.interfaceNamePrepend}${schemaName},${GenericArr[0]}>[]${endingSymbol}\n`;
 				isSchemaType = true;
+			} else {
+				interContentItemGenericStrValue = `${config.interfaceNamePrepend}${schemaName}[]\n`;
 			}
 			interContentItemStrValue = `${config.interfaceNamePrepend}${schemaName}[]${endingSymbol}\n`;
 			schameTypeName = `${config.interfaceNamePrepend}${schemaName}`;
-			interContentItemGenericStrValue = `${config.interfaceNamePrepend}${schemaName}[]\n`;
 		} else if (schemaItem2.items.type) {
 			if (schemaItem2.items.type === 'object') {
 				schameTypeName = `${schemaItem2.items.type === 'integer' ? 'number[]' : schemaItem2.items.type + '[]'}`;

@@ -1,1 +1,4650 @@
-{"openapi":"3.0.0","info":{"title":"JLG_BLOG","version":"2023/12/21-09:43:52","description":"API 文档","license":{"name":"swagger.json","url":"http://localhost:3000/swagger.json"}},"servers":[{"url":"http://localhost:3000"}],"components":{"securitySchemes":{"Basic":{"type":"apiKey","description":"在下框中输入请求头中需要添加Jwt授权Token:Basic Token","name":"Authorization","in":"header"}},"schemas":{"RouterMeta":{"type":"object","properties":{"keepAlive":{"type":"boolean","description":"是否缓存路由组件"},"systemPage":{"type":"boolean","description":"是否是系统业务页面"},"title":{"type":"string","description":"页面标题"}}},"RouterConfigUserRouterQueryResponse":{"type":"object","properties":{"path":{"type":"string","description":"路由路径"},"componentName":{"type":"string","description":"路由组件名"},"meta":{"$ref":"#/components/schemas/RouterMeta"},"name":{"type":"string","description":"路由Name"}}},"ArticleTagsTagsQueryResponse":{"type":"object","properties":{"id":{"type":"integer","description":"标签id"},"tag_name":{"type":"string","description":"标签名称"}}},"ArticleTagsTagsQueryRequest":{"type":"object","properties":{"pageIndex":{"type":"integer","description":"要获取的页数"},"pageSize":{"type":"integer","description":"每页显示的标签数量"},"tagName":{"type":"string","description":"标签名tagName查询"}}},"UserQueryAllResponse":{"type":"object","properties":{"id":{"type":"integer","description":"用户id"},"user_name":{"type":"string","description":"用户名"},"pass_word":{"type":"string","description":"用户密码"},"user_code":{"type":"string","description":"用户code"},"user_standing_id":{"type":"integer","description":"用户类型id"},"standing_name":{"type":"string","description":"用户类型名称"},"standing_value":{"type":"integer","description":"用户类型的值"}}},"UserQueryAllRequest":{"type":"object","properties":{"pageIndex":{"type":"integer","description":"要获取的页数"},"pageSize":{"type":"integer","description":"每页显示的用户数量"}}},"UserLoginResponse":{"type":"object","properties":{"id":{"type":"integer","description":"用户id"},"token":{"type":"string","description":"用户token"},"user_name":{"type":"string","description":"用户名"},"user_code":{"type":"string","description":"用户Code"}}},"UserLoginRequest":{"type":"object","properties":{"userName":{"type":"string","description":"用户名"},"passWord":{"type":"string","description":"加密密码"}}},"BlogHotTagsQueryResponse":{"type":"object","properties":{"id":{"type":"integer","description":"标签id"},"article_count":{"type":"integer","description":"标签下文章数量"},"tag_name":{"type":"string","description":"标签名称"}}},"BlogTagsQueryResponse":{"type":"object","properties":{"id":{"type":"integer","description":"标签id"},"tag_name":{"type":"string","description":"标签名称"}}},"BlogTagsQueryRequest":{"type":"object","properties":{"pageIndex":{"type":"integer","description":"要获取的页数"},"pageSize":{"type":"integer","description":"每页显示的标签数量"},"tagName":{"type":"string","description":"标签名tagName查询"}}},"BlogArticleQueryByTagIdResponse":{"type":"object","properties":{"id":{"type":"integer","description":"文章id"},"title":{"type":"string","description":"文章标题"},"reading_quantity":{"type":"integer","description":"文章阅读量"},"add_time":{"type":"string","format":"date-time","description":"文章发布时间"}}},"BlogArticleQueryByTagIdRequest":{"type":"object","properties":{"pageIndex":{"type":"integer","description":"要获取的页数"},"pageSize":{"type":"integer","description":"每页显示的文章数量"},"tagId":{"type":"integer","description":"标签id tagId查询"}}},"BlogHotArticleQueryResponse":{"type":"object","properties":{"id":{"type":"integer","description":"文章id"},"title":{"type":"string","description":"文章标题"},"reading_quantity":{"type":"integer","description":"文章阅读量"},"add_time":{"type":"string","format":"date-time","description":"文章发布时间"},"tags":{"type":"string","description":"文章标签"}}},"BlogArticleInterviewRequest":{"type":"object","properties":{"articleId":{"type":"integer","description":"文章id"}}},"BlogArticleLikeTitleResponse":{"type":"object","properties":{"id":{"type":"integer","description":"文章id"},"title":{"type":"string","description":"文章标题"},"reading_quantity":{"type":"integer","description":"文章阅读量"},"add_time":{"type":"string","format":"date-time","description":"文章发布时间"},"tags":{"type":"string","description":"文章标签"}}},"BlogArticleLikeTitleRequest":{"type":"object","properties":{"pageIndex":{"type":"integer","description":"要获取的页数"},"pageSize":{"type":"integer","description":"每页显示的文章数量"},"title":{"type":"string","description":"文章标题模糊查询"}}},"BlogQueryForArticleIdResponse":{"type":"object","properties":{"id":{"type":"integer","description":"文章id"},"title":{"type":"string","description":"文章标题"},"reading_quantity":{"type":"integer","description":"文章阅读量"},"add_time":{"type":"string","format":"date-time","description":"文章发布时间"},"tags":{"type":"string","description":"文章标签"}}},"BlogQueryForArticleIdRequest":{"type":"object","properties":{"articleTreeId":{"type":"integer","description":"文章树id"}}},"BlogBackstageQueryForArticleIdResponse":{"type":"object","properties":{"id":{"type":"integer","description":"文章id"},"title":{"type":"string","description":"文章标题"},"reading_quantity":{"type":"integer","description":"文章阅读量"},"author":{"type":"integer","description":"作者id"},"add_time":{"type":"string","format":"date-time","description":"文章发布时间"},"content":{"type":"string","description":"文章的内容"},"content_html":{"type":"string","description":"文章的内容（包含html标签元素）"},"tags":{"type":"string","description":"文章标签"}}},"BlogBackstageQueryForArticleIdRequest":{"type":"object","properties":{"articleId":{"type":"integer","description":"文章id"}}},"BlogBackstageArticleAddRequest":{"type":"object","properties":{"title":{"type":"string","description":"新增文章的标题"},"content":{"type":"string","description":"新增文章的内容"},"content_html":{"type":"string","description":"新增文章的内容（包含html标签元素）"},"author":{"type":"integer","description":"用户id"},"article_tree_id":{"type":"integer","description":"文章树id"},"articleTags":{"type":"array","items":{"type":"integer"}}}},"BlogBackstageArticleTakebackRequest":{"type":"object","properties":{"articleId":{"type":"integer","description":"文章id"}}},"BlogBackstageArticleReviewRequest":{"type":"object","properties":{"articleId":{"type":"integer","description":"文章id"}}},"BlogBackstageArticleRejectRequest":{"type":"object","properties":{"articleId":{"type":"integer","description":"文章id"}}},"BlogBackstageArticleDraftAddRequest":{"type":"object","properties":{"title":{"type":"string","description":"新增文章的标题"},"content":{"type":"string","description":"新增文章的内容"},"contentHTML":{"type":"string","description":"新增文章的内容（包含html标签元素）"},"author":{"type":"integer","description":"用户id"},"articleTreeId":{"type":"integer","description":"文章树id"},"articleTags":{"type":"array","items":{"type":"integer"}}}},"BlogBackstageArticleDeleteRequest":{"type":"object","properties":{"articleId":{"type":"integer","description":"文章id"}}},"BlogBackstageArticleQueryForAuthorResponse":{"type":"object","properties":{"id":{"type":"integer","description":"文章id"},"title":{"type":"string","description":"文章标题"},"reading_quantity":{"type":"integer","description":"文章阅读量"},"add_time":{"type":"string","format":"date-time","description":"文章发布时间"},"tags":{"type":"string","description":"文章标签"}}},"BlogBackstageArticleQueryForAuthorRequest":{"type":"object","properties":{"pageIndex":{"type":"integer","description":"要获取的页数"},"pageSize":{"type":"integer","description":"每页显示的文章数量"},"author":{"type":"integer","description":"作者id"}}},"BlogBackstageArticleQueryForArticleTreeIdResponse":{"type":"object","properties":{"id":{"type":"integer","description":"文章id"},"title":{"type":"string","description":"文章标题"},"reading_quantity":{"type":"integer","description":"文章阅读量"},"add_time":{"type":"string","format":"date-time","description":"文章发布时间"},"tags":{"type":"string","description":"文章标签"}}},"BlogBackstageArticleQueryForArticleTreeIdRequest":{"type":"object","properties":{"articleTreeId":{"type":"integer","description":"文章树id"}}},"BlogBackstageArticleQueryForArticleResponse":{"type":"object","properties":{"id":{"type":"integer","description":"文章id"},"title":{"type":"string","description":"文章标题"},"content":{"type":"string","description":"文章内容"},"content_html":{"type":"string","description":"文章内容HTML格式"},"reading_quantity":{"type":"integer","description":"文章阅读量"},"author":{"type":"integer","description":"作者id"},"author_name":{"type":"string","description":"作者名称"},"add_time":{"type":"string","format":"date-time","description":"文章发布时间"},"tags":{"type":"string","description":"文章标签"},"article_tree_id":{"type":"integer","description":"文章所属目录id"},"article_tree_name":{"type":"string","description":"文章所属目录名称"}}},"BlogBackstageArticleQueryForArticleRequest":{"type":"object","properties":{"articleId":{"type":"integer","description":"文章id"}}},"BlogBackstageArticleAllQueryResponse":{"type":"object","properties":{"id":{"type":"integer","description":"文章id"},"title":{"type":"string","description":"文章标题"},"reading_quantity":{"type":"integer","description":"文章阅读量"},"add_time":{"type":"string","format":"date-time","description":"文章发布时间"},"tags":{"type":"string","description":"文章标签"},"status_name":{"type":"string","description":"状态名称"},"status_value":{"type":"integer","description":"状态值"},"author":{"type":"integer","description":"作者id"},"author_name":{"type":"string","description":"作者名称"}}},"BlogBackstageArticleAllQueryRequest":{"type":"object","properties":{"pageIndex":{"type":"integer","description":"要获取的页数"},"pageSize":{"type":"integer","description":"每页显示的文章数量"}}},"ArticleTreeArticleTreeNameQueryRequest":{"type":"object","properties":{"pageIndex":{"type":"integer","description":"要获取的页数"},"pageSize":{"type":"integer","description":"每页显示的文章树数量"},"articleTreeName":{"type":"string","description":"文章树名称articleTreeName"}}},"ArticleTreeByIdDeleteRequest":{"type":"object","properties":{"articleTreeId":{"type":"integer","description":"文章树id"}}},"UserRegisterRequest":{"type":"object","properties":{"userName":{"type":"string","description":"用户名"},"passWord":{"type":"string","description":"加密密码"}}},"UserUpdateRequest":{"type":"object","properties":{"author":{"type":"integer","description":"用户id"},"passWord":{"type":"string","description":"加密密码"}}},"UserDeleteRequest":{"type":"object","properties":{"author":{"type":"integer","description":"用户id"}}},"ArticleTreeTable":{"type":"object","properties":{"id":{"type":"integer","description":"文章树id"},"article_tree_name":{"type":"string","description":"文章树标题"},"parent_article_tree_id":{"type":"string","description":"父级文章树"}}},"MySQLResult":{"type":"object","properties":{"fieldCount":{"type":"integer","description":"描述"},"affectedRows":{"type":"integer","description":"描述"},"insertId":{"type":"integer","description":"描述"},"info":{"type":"string","description":"描述"},"serverStatus":{"type":"integer","description":"描述"},"warningStatus":{"type":"integer","description":"描述"},"changedRows":{"type":"integer","description":"描述"}}}}},"security":[{"Basic":[]}],"paths":{"/article-tags/tags/query":{"post":{"tags":["article-tags"],"summary":"获取所有文章标签","description":"获取所有文章标签，并可根据参数分页查询。\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ArticleTagsTagsQueryRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"object","properties":{"total":{"type":"integer","description":"数据量"},"arr":{"type":"array","items":{"$ref":"#/components/schemas/ArticleTagsTagsQueryResponse"}}}}}}}}}}}},"/article-tree/byId/delete":{"post":{"tags":["article-tree"],"summary":"删除文章树","description":"删除文章树\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ArticleTreeByIdDeleteRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/article-tree/all/query":{"post":{"tags":["article-tree"],"summary":"获取文章树","description":"获取文章树\n","responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/article-tree/article-tree-name/query":{"post":{"tags":["article-tree"],"summary":"远程检索文章树","description":"获取文章树，支持分页\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ArticleTreeArticleTreeNameQueryRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"object","properties":{"total":{"type":"integer","description":"数据量"},"arr":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}}}},"/blog-backstage/article/all/query":{"post":{"tags":["blog-backstage"],"summary":"登录用户获取文章列表","description":"获取文章，并可根据参数分页查询。\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageArticleAllQueryRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"object","properties":{"total":{"type":"integer","description":"数据量"},"arr":{"type":"array","items":{"$ref":"#/components/schemas/BlogBackstageArticleAllQueryResponse"}}}}}}}}}}}},"/blog-backstage/article/query/for/articleId":{"post":{"tags":["blog-backstage"],"summary":"获取文章详情通过文章id","description":"获取文章详情\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageArticleQueryForArticleRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"$ref":"#/components/schemas/BlogBackstageArticleQueryForArticleResponse"}}}}}}}}},"/blog-backstage/article/query/for/articleTreeId":{"post":{"tags":["blog-backstage"],"summary":"获取文章列表通过文章树id","description":"获取文章\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageArticleQueryForArticleTreeIdRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/BlogBackstageArticleQueryForArticleTreeIdResponse"}}}}}}}}}},"/blog-backstage/article/query/for/author":{"post":{"tags":["blog-backstage"],"summary":"获取文章列表通过作者id","description":"获取文章，并可根据参数分页查询。\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageArticleQueryForAuthorRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"object","properties":{"total":{"type":"integer","description":"数据量"},"arr":{"type":"array","items":{"$ref":"#/components/schemas/BlogBackstageArticleQueryForAuthorResponse"}}}}}}}}}}}},"/blog-backstage/article/delete":{"post":{"tags":["blog-backstage"],"summary":"删除文章","description":"删除文章\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageArticleDeleteRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/blog-backstage/article/draft/add":{"post":{"tags":["blog-backstage"],"summary":"新增草稿文章","description":"新增一篇草稿状态的文章\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageArticleDraftAddRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/blog-backstage/article/reject":{"post":{"tags":["blog-backstage"],"summary":"文章审核不通过","description":"将待审文章改为驳回\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageArticleRejectRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/blog-backstage/article/review":{"post":{"tags":["blog-backstage"],"summary":"文章审核通过","description":"将待审文章改为审核通过\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageArticleReviewRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/blog-backstage/article/takeback":{"post":{"tags":["blog-backstage"],"summary":"文章下架","description":"将已审文章改为待审\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageArticleTakebackRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/blog-backstage/article/add":{"post":{"tags":["blog-backstage"],"summary":"新增博客文章","description":"新增一篇待审的文章\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageArticleAddRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/blog/article/query/for/articleId":{"post":{"tags":["blog"],"summary":"获取文章详情通过文章id","description":"获取文章详情\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogBackstageQueryForArticleIdRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"$ref":"#/components/schemas/BlogBackstageQueryForArticleIdResponse"}}}}}}}}},"/blog/article/query/for/articleTreeId":{"post":{"tags":["blog"],"summary":"获取文章列表通过文章树id","description":"获取文章\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogQueryForArticleIdRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/BlogQueryForArticleIdResponse"}}}}}}}}}},"/blog/article/like/title/query":{"post":{"tags":["blog"],"summary":"通过文章标题查询文章列表","description":"通过文章标题查询文章列表，并可根据参数分页查询。\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogArticleLikeTitleRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"object","properties":{"total":{"type":"integer","description":"数据量"},"arr":{"type":"array","items":{"$ref":"#/components/schemas/BlogArticleLikeTitleResponse"}}}}}}}}}}}},"/blog/article/articleInterview":{"post":{"tags":["blog"],"summary":"文章阅读量+1","description":"文章阅读量+1\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogArticleInterviewRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/blog/hot/article/query":{"get":{"tags":["blog"],"summary":"获取热门文章","description":"获取热门文章列表，并可根据参数限制查询结果数量。\n","parameters":[{"in":"query","name":"limit","schema":{"type":"integer"},"required":true,"description":"最多查询多少篇文章"}],"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/BlogHotArticleQueryResponse"}}}}}}}}}},"/blog/articles/query/byTagId":{"post":{"tags":["blog"],"summary":"查询标签下的文章","description":"查询标签下的文章，并可根据参数分页查询。\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogArticleQueryByTagIdRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"object","properties":{"total":{"type":"integer","description":"数据量"},"arr":{"type":"array","items":{"$ref":"#/components/schemas/BlogArticleQueryByTagIdResponse"}}}}}}}}}}}},"/blog/tags/query":{"post":{"tags":["blog"],"summary":"获取所有标签","description":"获取所有标签，并可根据参数分页查询。\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/BlogTagsQueryRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"object","properties":{"total":{"type":"integer","description":"数据量"},"arr":{"type":"array","items":{"$ref":"#/components/schemas/BlogTagsQueryResponse"}}}}}}}}}}}},"/blog/hot/tags/query":{"get":{"tags":["blog"],"summary":"获取热门文章标签","description":"获取热门文章标签列表，并可根据参数限制查询结果数量。\n","parameters":[{"in":"query","name":"limit","schema":{"type":"integer"},"required":true,"description":"最多查询多少个文章标签"}],"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/BlogHotTagsQueryResponse"}}}}}}}}}},"/router-config/user/router/query":{"get":{"tags":["router-config"],"summary":"获取登录用户页面权限","description":"获取登录用户页面权限，做前端动态路由\n","responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/RouterConfigUserRouterQueryResponse"}}}}}}}}}},"/user/delete":{"post":{"tags":["user"],"summary":"删除用户","description":"删除用户\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/UserDeleteRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/user/login":{"post":{"tags":["user"],"summary":"登录","description":"登录系统\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/UserLoginRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"$ref":"#/components/schemas/UserLoginResponse"}}}}}}}}},"/user/all/query":{"post":{"tags":["user"],"summary":"查询用户列表","description":"查询用户列表，支持分页查询\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/UserQueryAllRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"object","properties":{"total":{"type":"integer","description":"数据量"},"arr":{"type":"array","items":{"$ref":"#/components/schemas/UserQueryAllResponse"}}}}}}}}}}}},"/user/register":{"post":{"tags":["user"],"summary":"注册","description":"注册系统账户\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/UserRegisterRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}},"/user/update":{"post":{"tags":["user"],"summary":"修改账户资料","description":"修改账户资料\n","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"#/components/schemas/UserUpdateRequest"}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"integer","description":"1表示成功，2表示失败"},"message":{"type":"string","description":"success表示成功，failed表示失败"},"content":{"type":"array","items":{"$ref":"#/components/schemas/MySQLResult"}}}}}}}}}}},"tags":[]}
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "中心管理系统 Api文档",
+    "description": "中心管理系统 Api文档",
+    "version": "v1"
+  },
+  "paths": {
+    "/AccountRoute/DispatchRoute": {
+      "post": {
+        "tags": [
+          "AccountRoute"
+        ],
+        "summary": "分配路由",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DispatchRouteModel"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DispatchRouteModel"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DispatchRouteModel"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AccountRoute/GetAccountRouteByAccountCode": {
+      "get": {
+        "tags": [
+          "AccountRoute"
+        ],
+        "summary": "通过账户编码获取路由信息",
+        "parameters": [
+          {
+            "name": "accountCode",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SysPageRouteViewModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SysPageRouteViewModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SysPageRouteViewModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AccountRoute/GetAllAccountRoute": {
+      "get": {
+        "tags": [
+          "AccountRoute"
+        ],
+        "summary": "获取当前用户的所有的路由信息",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SysPageRouteViewModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SysPageRouteViewModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SysPageRouteViewModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Common/SearchAccountType": {
+      "post": {
+        "tags": [
+          "Common"
+        ],
+        "summary": "账户类型",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Common/SearchMachineAuditStatus": {
+      "post": {
+        "tags": [
+          "Common"
+        ],
+        "summary": "机器码审核状态",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Common/SearchSubSystemType": {
+      "post": {
+        "tags": [
+          "Common"
+        ],
+        "summary": "系统类型",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Common/SearchSubSystemCategory": {
+      "post": {
+        "tags": [
+          "Common"
+        ],
+        "summary": "系统分类",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Common/SearchSoftwareCategory": {
+      "post": {
+        "tags": [
+          "Common"
+        ],
+        "summary": "软件类型",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Common/SearchSoftwareClientType": {
+      "post": {
+        "tags": [
+          "Common"
+        ],
+        "summary": "适用客户端",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Common/SearchReleaseLimit": {
+      "post": {
+        "tags": [
+          "Common"
+        ],
+        "summary": "发布范围",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeyValueIntViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Machine/GetAccountMachinePage": {
+      "post": {
+        "tags": [
+          "Machine"
+        ],
+        "summary": "机器管理",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountMachineQueryModel"
+                  }
+                ],
+                "description": "账户mac地址"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountMachineQueryModel"
+                  }
+                ],
+                "description": "账户mac地址"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountMachineQueryModel"
+                  }
+                ],
+                "description": "账户mac地址"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountMachinePageModelIEnumerableInt32Tuple"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountMachinePageModelIEnumerableInt32Tuple"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountMachinePageModelIEnumerableInt32Tuple"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Machine/RemoveAccountMachineCode": {
+      "post": {
+        "tags": [
+          "Machine"
+        ],
+        "summary": "删除机器码",
+        "parameters": [
+          {
+            "name": "machineCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Machine/UpdateAccountMachine": {
+      "post": {
+        "tags": [
+          "Machine"
+        ],
+        "summary": "修改机器码",
+        "parameters": [
+          {
+            "name": "machineCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountMachineModel"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountMachineModel"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountMachineModel"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MachineRegister/GetMachineRegisterPage": {
+      "post": {
+        "tags": [
+          "MachineRegister"
+        ],
+        "summary": "机器码注册列表",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/MachineRegisterQueryModel"
+                  }
+                ],
+                "description": "机器码注册"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/MachineRegisterQueryModel"
+                  }
+                ],
+                "description": "机器码注册"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/MachineRegisterQueryModel"
+                  }
+                ],
+                "description": "机器码注册"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineRegisterPageModelIEnumerableInt32Tuple"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineRegisterPageModelIEnumerableInt32Tuple"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MachineRegisterPageModelIEnumerableInt32Tuple"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MachineRegister/AuditMachine": {
+      "post": {
+        "tags": [
+          "MachineRegister"
+        ],
+        "summary": "机器码审核",
+        "parameters": [
+          {
+            "name": "machineCode",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AuditMachineModel"
+                  }
+                ],
+                "description": "机器码审核"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AuditMachineModel"
+                  }
+                ],
+                "description": "机器码审核"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AuditMachineModel"
+                  }
+                ],
+                "description": "机器码审核"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MachineRegister/RemoveRegisterMachineCode": {
+      "post": {
+        "tags": [
+          "MachineRegister"
+        ],
+        "summary": "删除注册机器码",
+        "parameters": [
+          {
+            "name": "machineCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MachineRegister/RejectMachine": {
+      "post": {
+        "tags": [
+          "MachineRegister"
+        ],
+        "summary": "机器码驳回",
+        "parameters": [
+          {
+            "name": "machineCode",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AuditMachineModel"
+                  }
+                ],
+                "description": "机器码审核"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AuditMachineModel"
+                  }
+                ],
+                "description": "机器码审核"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AuditMachineModel"
+                  }
+                ],
+                "description": "机器码审核"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Notice/GetNoticePage": {
+      "post": {
+        "tags": [
+          "Notice"
+        ],
+        "summary": "通知列表分页",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NoticeQueryModel"
+                  }
+                ],
+                "description": "通知查询"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NoticeQueryModel"
+                  }
+                ],
+                "description": "通知查询"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NoticeQueryModel"
+                  }
+                ],
+                "description": "通知查询"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoticePageModelIEnumerableInt32Tuple"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoticePageModelIEnumerableInt32Tuple"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoticePageModelIEnumerableInt32Tuple"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Notice/AddNotice": {
+      "post": {
+        "tags": [
+          "Notice"
+        ],
+        "summary": "新增通知",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NoticeModel"
+                  }
+                ],
+                "description": "通知"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NoticeModel"
+                  }
+                ],
+                "description": "通知"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NoticeModel"
+                  }
+                ],
+                "description": "通知"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Notice/UpdateNotice": {
+      "post": {
+        "tags": [
+          "Notice"
+        ],
+        "summary": "编辑通知",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NoticeModel"
+                  }
+                ],
+                "description": "通知"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NoticeModel"
+                  }
+                ],
+                "description": "通知"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/NoticeModel"
+                  }
+                ],
+                "description": "通知"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Notice/DeleteNotice": {
+      "post": {
+        "tags": [
+          "Notice"
+        ],
+        "summary": "删除",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Notice/ReleaseNotice": {
+      "post": {
+        "tags": [
+          "Notice"
+        ],
+        "summary": "发布",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SubSystem/PostSubSystem": {
+      "post": {
+        "tags": [
+          "SubSystem"
+        ],
+        "summary": "添加/修改子系统",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SubSystemPostModel"
+                  }
+                ],
+                "description": "子系统表"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SubSystemPostModel"
+                  }
+                ],
+                "description": "子系统表"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SubSystemPostModel"
+                  }
+                ],
+                "description": "子系统表"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SubSystem/RemoveSubSystem": {
+      "post": {
+        "tags": [
+          "SubSystem"
+        ],
+        "summary": "删除子系统",
+        "parameters": [
+          {
+            "name": "systemCode",
+            "in": "query",
+            "description": "系统编码",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SubSystem/ActiveSubSystem": {
+      "post": {
+        "tags": [
+          "SubSystem"
+        ],
+        "summary": "启用子系统",
+        "parameters": [
+          {
+            "name": "systemCode",
+            "in": "query",
+            "description": "系统编码",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SubSystem/GetSubSystemBySystemCode": {
+      "get": {
+        "tags": [
+          "SubSystem"
+        ],
+        "summary": "通过系统编码获取子系统",
+        "parameters": [
+          {
+            "name": "systemCode",
+            "in": "query",
+            "description": "系统编码",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubSystemViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubSystemViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubSystemViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SubSystem/GetSubSystemPage": {
+      "post": {
+        "tags": [
+          "SubSystem"
+        ],
+        "summary": "子系统列表分页",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SubSystemQueryModel"
+                  }
+                ],
+                "description": ""
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SubSystemQueryModel"
+                  }
+                ],
+                "description": ""
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SubSystemQueryModel"
+                  }
+                ],
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubSystemPageModelIEnumerableInt32Tuple"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubSystemPageModelIEnumerableInt32Tuple"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubSystemPageModelIEnumerableInt32Tuple"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SysRoute/AddPageRoute": {
+      "post": {
+        "tags": [
+          "SysRoute"
+        ],
+        "summary": "添加页面路由",
+        "requestBody": {
+          "description": "页面路由",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SysPageRouteModel"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SysPageRouteModel"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SysPageRouteModel"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SysRoute/UpdatePageRoute": {
+      "post": {
+        "tags": [
+          "SysRoute"
+        ],
+        "summary": "修改页面路由",
+        "parameters": [
+          {
+            "name": "pageRouteId",
+            "in": "query",
+            "description": "页面路由id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "页面路由",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SysPageRouteModel"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SysPageRouteModel"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SysPageRouteModel"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SysRoute/RemovePageRoute": {
+      "post": {
+        "tags": [
+          "SysRoute"
+        ],
+        "summary": "删除页面路由",
+        "parameters": [
+          {
+            "name": "pageRouteId",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SysRoute/GetSysPageRouteById": {
+      "get": {
+        "tags": [
+          "SysRoute"
+        ],
+        "summary": "通过页面路由id获取页面路由",
+        "parameters": [
+          {
+            "name": "pageRouteId",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SysPageRouteViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SysPageRouteViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SysPageRouteViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SysRoute/GetAllSysPageRoute": {
+      "get": {
+        "tags": [
+          "SysRoute"
+        ],
+        "summary": "获取所有的页面路由",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SysPageRouteViewModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SysPageRouteViewModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SysPageRouteViewModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/User/PostAccount": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "添加/修改 账户信息",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/OrgAccountPostModel"
+                  }
+                ]
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/OrgAccountPostModel"
+                  }
+                ]
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/OrgAccountPostModel"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/User/GetAccountInfo": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "获取账户详细信息",
+        "parameters": [
+          {
+            "name": "accountCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountUserViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountUserViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountUserViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/User/GetAccountPage": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "账户列表分页",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountQueryModel"
+                  }
+                ],
+                "description": "账户管理"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountQueryModel"
+                  }
+                ],
+                "description": "账户管理"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountQueryModel"
+                  }
+                ],
+                "description": "账户管理"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountPageModelIEnumerableInt32Tuple"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountPageModelIEnumerableInt32Tuple"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountPageModelIEnumerableInt32Tuple"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/User/DistributionSubSystem": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "分配子系统",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountSubSystemsModel"
+                  }
+                ],
+                "description": ""
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountSubSystemsModel"
+                  }
+                ],
+                "description": ""
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AccountSubSystemsModel"
+                  }
+                ],
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/User/GetOnlineAccountPage": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "在线账户列表分页",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/OnlineAccountQueryModel"
+                  }
+                ],
+                "description": "账户管理"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/OnlineAccountQueryModel"
+                  }
+                ],
+                "description": "账户管理"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/OnlineAccountQueryModel"
+                  }
+                ],
+                "description": "账户管理"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnlineAccountPageModelIEnumerableInt32Tuple"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnlineAccountPageModelIEnumerableInt32Tuple"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnlineAccountPageModelIEnumerableInt32Tuple"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/User/CrashUser": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "剔除",
+        "parameters": [
+          {
+            "name": "accountCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/User/RefreshAccountExtensions": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "刷新用户信息",
+        "parameters": [
+          {
+            "name": "accountCode",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkSoftware/AddWorkSoftware": {
+      "post": {
+        "tags": [
+          "WorkSoftware"
+        ],
+        "summary": "添加应用软件",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SoftwarePostModel"
+                  }
+                ],
+                "description": "工作软件"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SoftwarePostModel"
+                  }
+                ],
+                "description": "工作软件"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SoftwarePostModel"
+                  }
+                ],
+                "description": "工作软件"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkSoftware/UpdateWorkSoftware": {
+      "post": {
+        "tags": [
+          "WorkSoftware"
+        ],
+        "summary": "修改应用软件信息",
+        "parameters": [
+          {
+            "name": "softwareId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SoftwarePostModel"
+                  }
+                ],
+                "description": "工作软件"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SoftwarePostModel"
+                  }
+                ],
+                "description": "工作软件"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SoftwarePostModel"
+                  }
+                ],
+                "description": "工作软件"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkSoftware/GetWorkSoftwarePage": {
+      "post": {
+        "tags": [
+          "WorkSoftware"
+        ],
+        "summary": "软件列表",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/WorkSoftwareQueryModel"
+                  }
+                ],
+                "description": "工作软件查询"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/WorkSoftwareQueryModel"
+                  }
+                ],
+                "description": "工作软件查询"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/WorkSoftwareQueryModel"
+                  }
+                ],
+                "description": "工作软件查询"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkSoftwarePageModelIEnumerableInt32Tuple"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkSoftwarePageModelIEnumerableInt32Tuple"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkSoftwarePageModelIEnumerableInt32Tuple"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkSoftware/GetWorkSoftware": {
+      "post": {
+        "tags": [
+          "WorkSoftware"
+        ],
+        "summary": "软件详情",
+        "parameters": [
+          {
+            "name": "softwareId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkSoftwareViewModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkSoftwareViewModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkSoftwareViewModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WorkSoftware/DeleteSoftware": {
+      "post": {
+        "tags": [
+          "WorkSoftware"
+        ],
+        "summary": "删除应用软件",
+        "parameters": [
+          {
+            "name": "softwareId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccountExtensionModel": {
+        "required": [
+          "userName"
+        ],
+        "type": "object",
+        "properties": {
+          "userName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "系统姓名"
+          },
+          "nickname": {
+            "type": "string",
+            "description": "昵称",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "description": "头像",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "手机号码",
+            "nullable": true
+          },
+          "weChatNumber": {
+            "type": "string",
+            "description": "微信号",
+            "nullable": true
+          },
+          "qqNumber": {
+            "type": "string",
+            "description": "QQ号",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "邮箱号",
+            "nullable": true
+          },
+          "otherTel": {
+            "type": "string",
+            "description": "其他联系方式",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "description": "出生年月",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idNumber": {
+            "type": "string",
+            "description": "身份证号码",
+            "nullable": true
+          },
+          "personalNote": {
+            "type": "string",
+            "description": "个人说明",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "description": "备注",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountMachineModel": {
+        "type": "object",
+        "properties": {
+          "expiryDate": {
+            "type": "string",
+            "description": "有效期截止日期",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountMachinePageModel": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "description": "账户",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "description": "系统姓名",
+            "nullable": true
+          },
+          "realName": {
+            "type": "string",
+            "description": "真实姓名",
+            "nullable": true
+          },
+          "nickname": {
+            "type": "string",
+            "description": "昵称",
+            "nullable": true
+          },
+          "mobile": {
+            "type": "string",
+            "description": "账户绑定手机号",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "邮箱地址",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "手机号码",
+            "nullable": true
+          },
+          "isLocking": {
+            "type": "integer",
+            "description": "是否锁定",
+            "format": "int32"
+          },
+          "isActive": {
+            "type": "integer",
+            "description": "是否启用",
+            "format": "int32"
+          },
+          "accountCode": {
+            "type": "string",
+            "description": "账户编码",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "description": "头像",
+            "nullable": true
+          },
+          "gender": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Gender"
+              }
+            ],
+            "description": "性别\r\n\r\n0 = 女\r\n\r\n1 = 男",
+            "nullable": true
+          },
+          "weChatNumber": {
+            "type": "string",
+            "description": "微信号",
+            "nullable": true
+          },
+          "qqNumber": {
+            "type": "string",
+            "description": "QQ号",
+            "nullable": true
+          },
+          "auditStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MachineAuditStatus"
+              }
+            ],
+            "description": "审核状态（待审核、已审核、已驳回）\r\n\r\n0 = 待审核\r\n\r\n1 = 已审核\r\n\r\n2 = 已驳回",
+            "x-enumNames": [
+              "待审核",
+              "已审核",
+              "已驳回"
+            ]
+          },
+          "auditTime": {
+            "type": "string",
+            "description": "审核时间",
+            "format": "date-time",
+            "nullable": true
+          },
+          "auditor": {
+            "type": "string",
+            "description": "审核人",
+            "nullable": true
+          },
+          "expiryDate": {
+            "type": "string",
+            "description": "有效期截止日期",
+            "format": "date-time",
+            "nullable": true
+          },
+          "bindingDescription": {
+            "type": "string",
+            "description": "绑定说明",
+            "nullable": true
+          },
+          "remarks": {
+            "type": "string",
+            "description": "备注",
+            "nullable": true
+          },
+          "registerTime": {
+            "type": "string",
+            "description": "注册时间",
+            "format": "date-time"
+          },
+          "machineCode": {
+            "type": "string",
+            "description": "机器码",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "机器码管理"
+      },
+      "AccountMachinePageModelIEnumerableInt32Tuple": {
+        "type": "object",
+        "properties": {
+          "item1": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountMachinePageModel"
+            },
+            "nullable": true
+          },
+          "item2": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountMachineQueryModel": {
+        "type": "object",
+        "properties": {
+          "pageIndex": {
+            "type": "integer",
+            "description": "页码数",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页的大小",
+            "format": "int32"
+          },
+          "sorts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuerySorting"
+            },
+            "description": "排序数组(前台传入)",
+            "nullable": true
+          },
+          "account": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "账户",
+            "nullable": true
+          },
+          "name": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "姓名",
+            "nullable": true
+          },
+          "machineCode": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "机器码",
+            "nullable": true
+          },
+          "accountCode": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "账户编码",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "账户mac地址"
+      },
+      "AccountPageModel": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "realName": {
+            "type": "string",
+            "nullable": true
+          },
+          "nickname": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobile": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "isLocking": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isActive": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "machineCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Gender"
+              }
+            ],
+            "description": "\r\n\r\n0 = 女\r\n\r\n1 = 男",
+            "nullable": true
+          },
+          "checkMachineCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowBrowserLogin": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AccountType"
+              }
+            ],
+            "description": "\r\n\r\n0 = 无效账户\r\n\r\n1 = 内部账户\r\n\r\n2 = 外部账户",
+            "x-enumNames": [
+              "无效账户",
+              "内部账户",
+              "外部账户"
+            ]
+          },
+          "allowClientLogin": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isDebug": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountSource": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkMacAddress": {
+            "type": "integer",
+            "description": "是否检查mac验证",
+            "format": "int32"
+          },
+          "avatar": {
+            "type": "string",
+            "description": "头像",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "手机号码",
+            "nullable": true
+          },
+          "weChatNumber": {
+            "type": "string",
+            "description": "微信号",
+            "nullable": true
+          },
+          "qqNumber": {
+            "type": "string",
+            "description": "QQ号",
+            "nullable": true
+          },
+          "otherTel": {
+            "type": "string",
+            "description": "其他联系方式",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "description": "出生年月",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idNumber": {
+            "type": "string",
+            "description": "身份证号码",
+            "nullable": true
+          },
+          "personalNote": {
+            "type": "string",
+            "description": "个人说明",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "description": "备注",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "账户管理列表"
+      },
+      "AccountPageModelIEnumerableInt32Tuple": {
+        "type": "object",
+        "properties": {
+          "item1": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountPageModel"
+            },
+            "nullable": true
+          },
+          "item2": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountQueryModel": {
+        "type": "object",
+        "properties": {
+          "pageIndex": {
+            "type": "integer",
+            "description": "页码数",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页的大小",
+            "format": "int32"
+          },
+          "sorts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuerySorting"
+            },
+            "description": "排序数组(前台传入)",
+            "nullable": true
+          },
+          "account": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "账户",
+            "nullable": true
+          },
+          "name": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "姓名",
+            "nullable": true
+          },
+          "accountCode": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "账户编码",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "账户管理"
+      },
+      "AccountSubSystemsModel": {
+        "type": "object",
+        "properties": {
+          "accountCode": {
+            "type": "string",
+            "description": "用户id",
+            "nullable": true
+          },
+          "subSystemCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "子系统",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": ""
+      },
+      "AccountType": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "description": "\r\n\r\n0 = 无效账户\r\n\r\n1 = 内部账户\r\n\r\n2 = 外部账户",
+        "format": "int32",
+        "x-enumNames": [
+          "无效账户",
+          "内部账户",
+          "外部账户"
+        ]
+      },
+      "AccountUserViewModel": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "realName": {
+            "type": "string",
+            "nullable": true
+          },
+          "nickname": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobile": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "isLocking": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isActive": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "machineCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Gender"
+              }
+            ],
+            "description": "\r\n\r\n0 = 女\r\n\r\n1 = 男",
+            "nullable": true
+          },
+          "weChatNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "qqNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkMachineCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowBrowserLogin": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AccountType"
+              }
+            ],
+            "description": "\r\n\r\n0 = 无效账户\r\n\r\n1 = 内部账户\r\n\r\n2 = 外部账户",
+            "x-enumNames": [
+              "无效账户",
+              "内部账户",
+              "外部账户"
+            ]
+          },
+          "allowClientLogin": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isDebug": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountSource": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountExtension": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AccountExtensionModel"
+              }
+            ],
+            "description": "账户基本信息",
+            "nullable": true
+          },
+          "accountMachineCodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountMachinePageModel"
+            },
+            "description": "机器码管理",
+            "nullable": true
+          },
+          "accountSubSystems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubSystemViewModel"
+            },
+            "description": "应用系统管理",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "账户信息"
+      },
+      "AuditMachineModel": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "description": "账户",
+            "nullable": true
+          },
+          "machineCode": {
+            "type": "string",
+            "description": "机器码",
+            "nullable": true
+          },
+          "registerSource": {
+            "type": "string",
+            "description": "注册来源",
+            "nullable": true
+          },
+          "remarks": {
+            "type": "string",
+            "description": "备注",
+            "nullable": true
+          },
+          "expiryDate": {
+            "type": "string",
+            "description": "有效期截止日期",
+            "format": "date-time",
+            "nullable": true
+          },
+          "bindingDescription": {
+            "type": "string",
+            "description": "绑定说明",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "机器码审核"
+      },
+      "DispatchRouteModel": {
+        "type": "object",
+        "properties": {
+          "accountCode": {
+            "type": "string",
+            "description": "账户编码",
+            "nullable": true
+          },
+          "routeIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "路由id",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Gender": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "description": "\r\n\r\n0 = 女\r\n\r\n1 = 男",
+        "format": "int32",
+        "x-enumNames": [
+          "女",
+          "男"
+        ]
+      },
+      "KeyValueIntModel": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "description": "值",
+            "format": "int32"
+          },
+          "text": {
+            "type": "string",
+            "description": "文本",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "下拉框 数值类型选项"
+      },
+      "KeyValueIntViewModel": {
+        "type": "object",
+        "properties": {
+          "selectOptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KeyValueIntModel"
+            },
+            "description": "字符串值下拉框选项集",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "数值类型下拉框显示"
+      },
+      "MachineAuditStatus": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "description": "机器码审核状态\r\n\r\n0 = 待审核\r\n\r\n1 = 已审核\r\n\r\n2 = 已驳回",
+        "format": "int32",
+        "x-enumNames": [
+          "待审核",
+          "已审核",
+          "已驳回"
+        ]
+      },
+      "MachineRegisterPageModel": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "description": "账户",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "description": "系统姓名",
+            "nullable": true
+          },
+          "realName": {
+            "type": "string",
+            "description": "真实姓名",
+            "nullable": true
+          },
+          "nickname": {
+            "type": "string",
+            "description": "昵称",
+            "nullable": true
+          },
+          "mobile": {
+            "type": "string",
+            "description": "账户绑定手机号",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "邮箱地址",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "手机号码",
+            "nullable": true
+          },
+          "isLocking": {
+            "type": "integer",
+            "description": "是否锁定",
+            "format": "int32"
+          },
+          "isActive": {
+            "type": "integer",
+            "description": "是否启用",
+            "format": "int32"
+          },
+          "accountCode": {
+            "type": "string",
+            "description": "账户编码",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "description": "头像",
+            "nullable": true
+          },
+          "gender": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Gender"
+              }
+            ],
+            "description": "性别\r\n\r\n0 = 女\r\n\r\n1 = 男",
+            "nullable": true
+          },
+          "weChatNumber": {
+            "type": "string",
+            "description": "微信号",
+            "nullable": true
+          },
+          "qqNumber": {
+            "type": "string",
+            "description": "QQ号",
+            "nullable": true
+          },
+          "registerSource": {
+            "type": "string",
+            "description": "注册来源",
+            "nullable": true
+          },
+          "machineCode": {
+            "type": "string",
+            "description": "机器码",
+            "nullable": true
+          },
+          "bindDescription": {
+            "type": "string",
+            "description": "绑定说明",
+            "nullable": true
+          },
+          "remarks": {
+            "type": "string",
+            "description": "备注",
+            "nullable": true
+          },
+          "auditStatus": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MachineAuditStatus"
+              }
+            ],
+            "description": "审核状态\r\n\r\n0 = 待审核\r\n\r\n1 = 已审核\r\n\r\n2 = 已驳回",
+            "x-enumNames": [
+              "待审核",
+              "已审核",
+              "已驳回"
+            ]
+          },
+          "registerTime": {
+            "type": "string",
+            "description": "注册时间",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "机器注册"
+      },
+      "MachineRegisterPageModelIEnumerableInt32Tuple": {
+        "type": "object",
+        "properties": {
+          "item1": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MachineRegisterPageModel"
+            },
+            "nullable": true
+          },
+          "item2": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MachineRegisterQueryModel": {
+        "type": "object",
+        "properties": {
+          "pageIndex": {
+            "type": "integer",
+            "description": "页码数",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页的大小",
+            "format": "int32"
+          },
+          "sorts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuerySorting"
+            },
+            "description": "排序数组(前台传入)",
+            "nullable": true
+          },
+          "account": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "账户",
+            "nullable": true
+          },
+          "name": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "姓名",
+            "nullable": true
+          },
+          "machineCode": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "机器码",
+            "nullable": true
+          },
+          "accountCode": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "账户编码",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "机器码注册"
+      },
+      "NoticeModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "releaseLimit": {
+            "type": "integer",
+            "description": "发布范围",
+            "format": "int32",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "标题",
+            "nullable": true
+          },
+          "content": {
+            "type": "string",
+            "description": "内容",
+            "nullable": true
+          },
+          "contentAbb": {
+            "type": "string",
+            "description": "内容",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "通知"
+      },
+      "NoticePageModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "id",
+            "nullable": true
+          },
+          "state": {
+            "type": "integer",
+            "description": "发布状态",
+            "format": "int32",
+            "nullable": true
+          },
+          "releaseUserName": {
+            "type": "string",
+            "description": "发布人",
+            "nullable": true
+          },
+          "content": {
+            "type": "string",
+            "description": "内容",
+            "nullable": true
+          },
+          "contentAbb": {
+            "type": "string",
+            "description": "内容",
+            "nullable": true
+          },
+          "releaseLimit": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReleaseLimit"
+              }
+            ],
+            "description": "范围\r\n\r\n1 = 所有人可见\r\n\r\n2 = 内部用户\r\n\r\n3 = 外部用户",
+            "nullable": true
+          },
+          "releaseLimitText": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReleaseLimit"
+              }
+            ],
+            "description": "流程状态文本值\r\n\r\n1 = 所有人可见\r\n\r\n2 = 内部用户\r\n\r\n3 = 外部用户",
+            "nullable": true,
+            "readOnly": true
+          },
+          "releaseDate": {
+            "type": "string",
+            "description": "发布时间",
+            "format": "date-time",
+            "nullable": true
+          },
+          "addTime": {
+            "type": "string",
+            "description": "发布时间",
+            "format": "date-time",
+            "nullable": true
+          },
+          "addUserName": {
+            "type": "string",
+            "description": "新增人",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "标题",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "通知列表"
+      },
+      "NoticePageModelIEnumerableInt32Tuple": {
+        "type": "object",
+        "properties": {
+          "item1": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NoticePageModel"
+            },
+            "nullable": true
+          },
+          "item2": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NoticeQueryModel": {
+        "type": "object",
+        "properties": {
+          "pageIndex": {
+            "type": "integer",
+            "description": "页码数",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页的大小",
+            "format": "int32"
+          },
+          "sorts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuerySorting"
+            },
+            "description": "排序数组(前台传入)",
+            "nullable": true
+          },
+          "title": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "标题",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "通知查询"
+      },
+      "OnlineAccountPageModel": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "realName": {
+            "type": "string",
+            "nullable": true
+          },
+          "nickname": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobile": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "isLocking": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isActive": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "machineCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Gender"
+              }
+            ],
+            "description": "\r\n\r\n0 = 女\r\n\r\n1 = 男",
+            "nullable": true
+          },
+          "weChatNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "qqNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkMachineCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowBrowserLogin": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AccountType"
+              }
+            ],
+            "description": "\r\n\r\n0 = 无效账户\r\n\r\n1 = 内部账户\r\n\r\n2 = 外部账户",
+            "x-enumNames": [
+              "无效账户",
+              "内部账户",
+              "外部账户"
+            ]
+          },
+          "allowClientLogin": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isDebug": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountSource": {
+            "type": "string",
+            "nullable": true
+          },
+          "onlineTime": {
+            "type": "string",
+            "description": "上线时间",
+            "format": "date-time"
+          },
+          "onlineMachineCode": {
+            "type": "string",
+            "description": "当前mac地址",
+            "nullable": true
+          },
+          "loginDuration": {
+            "type": "string",
+            "description": "登录时长",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OnlineAccountPageModelIEnumerableInt32Tuple": {
+        "type": "object",
+        "properties": {
+          "item1": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OnlineAccountPageModel"
+            },
+            "nullable": true
+          },
+          "item2": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OnlineAccountQueryModel": {
+        "type": "object",
+        "properties": {
+          "pageIndex": {
+            "type": "integer",
+            "description": "页码数",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页的大小",
+            "format": "int32"
+          },
+          "sorts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuerySorting"
+            },
+            "description": "排序数组(前台传入)",
+            "nullable": true
+          },
+          "account": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "账户",
+            "nullable": true
+          },
+          "realName": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "姓名",
+            "nullable": true
+          },
+          "accountCode": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "账户编码",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "账户管理"
+      },
+      "OrgAccountPostModel": {
+        "required": [
+          "account",
+          "gender",
+          "mobile",
+          "realName"
+        ],
+        "type": "object",
+        "properties": {
+          "account": {
+            "minLength": 1,
+            "type": "string",
+            "description": "账户"
+          },
+          "accountCode": {
+            "type": "string",
+            "description": "账户编码",
+            "nullable": true
+          },
+          "realName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "真实姓名"
+          },
+          "gender": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Gender"
+              }
+            ],
+            "description": "性别\r\n\r\n0 = 女\r\n\r\n1 = 男",
+            "x-enumNames": [
+              "女",
+              "男"
+            ]
+          },
+          "password": {
+            "pattern": "((?=.*\\d)(?=.*\\D)|(?=.*[a-zA-Z])(?=.*[^a-zA-Z]))(?!^.*[\\u4E00-\\u9FA5].*$)^\\S{6,32}$",
+            "type": "string",
+            "description": "密码",
+            "nullable": true
+          },
+          "isLocking": {
+            "type": "integer",
+            "description": "是否锁定",
+            "format": "int32"
+          },
+          "isActive": {
+            "type": "integer",
+            "description": "是否启用",
+            "format": "int32"
+          },
+          "isDebug": {
+            "type": "integer",
+            "description": "是否允许调试",
+            "format": "int32"
+          },
+          "mobile": {
+            "minLength": 1,
+            "type": "string",
+            "description": "手机号"
+          },
+          "email": {
+            "type": "string",
+            "description": "邮箱",
+            "nullable": true
+          },
+          "checkMachineCode": {
+            "type": "integer",
+            "description": "是否检查mac验证",
+            "format": "int32"
+          },
+          "allowBrowserLogin": {
+            "type": "integer",
+            "description": "允许浏览器登录",
+            "format": "int32"
+          },
+          "accountType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AccountType"
+              }
+            ],
+            "description": "账户类型\r\n\r\n0 = 无效账户\r\n\r\n1 = 内部账户\r\n\r\n2 = 外部账户",
+            "x-enumNames": [
+              "无效账户",
+              "内部账户",
+              "外部账户"
+            ]
+          },
+          "allowClientLogin": {
+            "type": "integer",
+            "description": "允许客户端登录",
+            "format": "int32"
+          },
+          "accountExtension": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AccountExtensionModel"
+              }
+            ],
+            "description": "账户基本信息",
+            "nullable": true
+          },
+          "subSystemCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "应用分配",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "description": "头像 （ 如果为空根据真实姓名生成）",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "QueryList": {
+        "type": "object",
+        "properties": {
+          "searchType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SearchListType"
+              }
+            ],
+            "description": "\r\n\r\n0 = 包含\r\n\r\n1 = 不包含",
+            "x-enumNames": [
+              "包含",
+              "不包含"
+            ]
+          },
+          "value": {
+            "type": "array",
+            "items": { },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "QuerySorting": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "order": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "QueryString": {
+        "type": "object",
+        "properties": {
+          "searchType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SearchStringType"
+              }
+            ],
+            "description": "\r\n\r\n0 = 精确\r\n\r\n1 = 模糊",
+            "x-enumNames": [
+              "精确",
+              "模糊"
+            ]
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ReleaseLimit": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "description": "发布范围\r\n\r\n1 = 所有人可见\r\n\r\n2 = 内部用户\r\n\r\n3 = 外部用户",
+        "format": "int32",
+        "x-enumNames": [
+          "所有人可见",
+          "内部用户",
+          "外部用户"
+        ]
+      },
+      "SearchListType": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "description": "\r\n\r\n0 = 包含\r\n\r\n1 = 不包含",
+        "format": "int32",
+        "x-enumNames": [
+          "包含",
+          "不包含"
+        ]
+      },
+      "SearchStringType": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "description": "\r\n\r\n0 = 精确\r\n\r\n1 = 模糊",
+        "format": "int32",
+        "x-enumNames": [
+          "精确",
+          "模糊"
+        ]
+      },
+      "SoftwareCategory": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "description": "软件类型s\r\n\r\n1 = 办公软件\r\n\r\n2 = 系统应用\r\n\r\n3 = 通讯工具\r\n\r\n4 = 娱乐媒体\r\n\r\n5 = 其他",
+        "format": "int32",
+        "x-enumNames": [
+          "办公软件",
+          "系统应用",
+          "通讯工具",
+          "娱乐媒体",
+          "其他"
+        ]
+      },
+      "SoftwareClientType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "description": "适用客户端\r\n\r\n0 = win\r\n\r\n1 = mac\r\n\r\n2 = 安卓\r\n\r\n3 = ios",
+        "format": "int32",
+        "x-enumNames": [
+          "win",
+          "mac",
+          "安卓",
+          "ios"
+        ]
+      },
+      "SoftwarePostModel": {
+        "required": [
+          "softwareCategory",
+          "softwareIcon",
+          "softwareName",
+          "softwarePath",
+          "suffix"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "主键id",
+            "nullable": true
+          },
+          "softwareName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "软件名称"
+          },
+          "softwarePath": {
+            "minLength": 1,
+            "type": "string",
+            "description": "软件地址"
+          },
+          "softwareVersion": {
+            "type": "string",
+            "description": "软件版本",
+            "nullable": true
+          },
+          "softwareSize": {
+            "type": "string",
+            "description": "软件大小",
+            "nullable": true
+          },
+          "softwareIcon": {
+            "minLength": 1,
+            "type": "string",
+            "description": "软件图标"
+          },
+          "softwareNote": {
+            "type": "string",
+            "description": "软件简介",
+            "nullable": true
+          },
+          "softwareDescription": {
+            "type": "string",
+            "description": "帮助文档(word或者压缩包地址)",
+            "nullable": true
+          },
+          "softwareCategory": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SoftwareCategory"
+              }
+            ],
+            "description": "软件类型\r\n\r\n1 = 办公软件\r\n\r\n2 = 系统应用\r\n\r\n3 = 通讯工具\r\n\r\n4 = 娱乐媒体\r\n\r\n5 = 其他",
+            "x-enumNames": [
+              "办公软件",
+              "系统应用",
+              "通讯工具",
+              "娱乐媒体",
+              "其他"
+            ]
+          },
+          "softwareClientType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SoftwareClientType"
+              }
+            ],
+            "description": "适用客户端\r\n\r\n0 = win\r\n\r\n1 = mac\r\n\r\n2 = 安卓\r\n\r\n3 = ios",
+            "x-enumNames": [
+              "win",
+              "mac",
+              "安卓",
+              "ios"
+            ]
+          },
+          "suffix": {
+            "minLength": 1,
+            "type": "string",
+            "description": "后缀名"
+          }
+        },
+        "additionalProperties": false,
+        "description": "工作软件"
+      },
+      "SubSystemCategory": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "description": "\r\n\r\n0 = 内部系统\r\n\r\n1 = 外部系统\r\n\r\n2 = 内外部系统",
+        "format": "int32",
+        "x-enumNames": [
+          "内部系统",
+          "外部系统",
+          "内外部系统"
+        ]
+      },
+      "SubSystemPageModel": {
+        "type": "object",
+        "properties": {
+          "systemCode": {
+            "type": "string",
+            "description": "系统编码",
+            "nullable": true
+          },
+          "systemName": {
+            "type": "string",
+            "description": "子系统名称",
+            "nullable": true
+          },
+          "systemUrl": {
+            "type": "string",
+            "description": "Url",
+            "nullable": true
+          },
+          "openSystemUrl": {
+            "type": "string",
+            "description": "回写系统用户Url",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "description": "子系统图标(限制ico文件)",
+            "nullable": true
+          },
+          "pngIcon": {
+            "type": "string",
+            "description": "子系统Png图标",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "integer",
+            "description": "是否启用",
+            "format": "int32"
+          },
+          "systemOrder": {
+            "type": "integer",
+            "description": "排序",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "系统说明",
+            "nullable": true
+          },
+          "systemType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubSystemType"
+              }
+            ],
+            "description": "系统类型\r\n\r\n0 = Uat\r\n\r\n1 = 生产",
+            "x-enumNames": [
+              "Uat",
+              "生产"
+            ]
+          },
+          "systemCategory": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubSystemCategory"
+              }
+            ],
+            "description": "系统分类\r\n\r\n0 = 内部系统\r\n\r\n1 = 外部系统\r\n\r\n2 = 内外部系统",
+            "x-enumNames": [
+              "内部系统",
+              "外部系统",
+              "内外部系统"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubSystemPageModelIEnumerableInt32Tuple": {
+        "type": "object",
+        "properties": {
+          "item1": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubSystemPageModel"
+            },
+            "nullable": true
+          },
+          "item2": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubSystemPostModel": {
+        "required": [
+          "icon",
+          "pngIcon",
+          "systemName",
+          "systemUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "systemCode": {
+            "type": "string",
+            "description": "系统编码",
+            "nullable": true
+          },
+          "systemName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "子系统名称"
+          },
+          "systemUrl": {
+            "minLength": 1,
+            "type": "string",
+            "description": "系统Url"
+          },
+          "openSystemUrl": {
+            "type": "string",
+            "description": "回写系统用户Url",
+            "nullable": true
+          },
+          "icon": {
+            "minLength": 1,
+            "type": "string",
+            "description": "子系统图标(限制ico文件)"
+          },
+          "pngIcon": {
+            "minLength": 1,
+            "type": "string",
+            "description": "子系统Png图标"
+          },
+          "isActive": {
+            "type": "integer",
+            "description": "是否启用",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "description": "系统说明",
+            "nullable": true
+          },
+          "systemOrder": {
+            "type": "integer",
+            "description": "排序",
+            "format": "int32"
+          },
+          "systemCategory": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubSystemCategory"
+              }
+            ],
+            "description": "系统分类\r\n\r\n0 = 内部系统\r\n\r\n1 = 外部系统\r\n\r\n2 = 内外部系统",
+            "x-enumNames": [
+              "内部系统",
+              "外部系统",
+              "内外部系统"
+            ]
+          },
+          "systemType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubSystemType"
+              }
+            ],
+            "description": "系统类型\r\n\r\n0 = Uat\r\n\r\n1 = 生产",
+            "x-enumNames": [
+              "Uat",
+              "生产"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "description": "子系统表"
+      },
+      "SubSystemQueryModel": {
+        "type": "object",
+        "properties": {
+          "pageIndex": {
+            "type": "integer",
+            "description": "页码数",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页的大小",
+            "format": "int32"
+          },
+          "sorts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuerySorting"
+            },
+            "description": "排序数组(前台传入)",
+            "nullable": true
+          },
+          "systemCategory": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryList"
+              }
+            ],
+            "description": "系统分类（内部系统、外部系统、内外部系统）",
+            "nullable": true
+          },
+          "systemType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryList"
+              }
+            ],
+            "description": "系统类型（1、生产；2、UAT）",
+            "nullable": true
+          },
+          "systemName": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "子系统名字",
+            "nullable": true
+          },
+          "systemUrl": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "Url",
+            "nullable": true
+          },
+          "icon": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "子系统图标(限制ico文件)",
+            "nullable": true
+          },
+          "isActive": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryList"
+              }
+            ],
+            "description": "是否启用",
+            "nullable": true
+          },
+          "pngIcon": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "子系统Png图标",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": ""
+      },
+      "SubSystemType": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "description": "\r\n\r\n0 = Uat\r\n\r\n1 = 生产",
+        "format": "int32",
+        "x-enumNames": [
+          "Uat",
+          "生产"
+        ]
+      },
+      "SubSystemViewModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "systemCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "systemName": {
+            "type": "string",
+            "nullable": true
+          },
+          "systemUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "openSystemUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "pngIcon": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "systemOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "systemCategory": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubSystemCategory"
+              }
+            ],
+            "description": "\r\n\r\n0 = 内部系统\r\n\r\n1 = 外部系统\r\n\r\n2 = 内外部系统",
+            "x-enumNames": [
+              "内部系统",
+              "外部系统",
+              "内外部系统"
+            ]
+          },
+          "systemType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SubSystemType"
+              }
+            ],
+            "description": "\r\n\r\n0 = Uat\r\n\r\n1 = 生产",
+            "x-enumNames": [
+              "Uat",
+              "生产"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "SysPageRouteMateModel": {
+        "required": [
+          "showAlways"
+        ],
+        "type": "object",
+        "properties": {
+          "showAlways": {
+            "type": "integer",
+            "description": "是否显示二级菜单",
+            "format": "int32"
+          },
+          "icon": {
+            "type": "string",
+            "description": "图标",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "路由title",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "前端路由附加信息"
+      },
+      "SysPageRouteModel": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "路由名",
+            "nullable": true
+          },
+          "path": {
+            "type": "string",
+            "description": "路由地址",
+            "nullable": true
+          },
+          "parentId": {
+            "type": "string",
+            "description": "父级路由Id",
+            "nullable": true
+          },
+          "sort": {
+            "type": "integer",
+            "description": "排序",
+            "format": "int32",
+            "nullable": true
+          },
+          "mate": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SysPageRouteMateModel"
+              }
+            ],
+            "description": "前端路由附加信息",
+            "nullable": true
+          },
+          "component": {
+            "type": "string",
+            "description": "组件名",
+            "nullable": true
+          },
+          "isTab": {
+            "type": "integer",
+            "description": "是否是tab",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SysPageRouteViewModel": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "路由名",
+            "nullable": true
+          },
+          "path": {
+            "type": "string",
+            "description": "路由地址",
+            "nullable": true
+          },
+          "parentId": {
+            "type": "string",
+            "description": "父级路由Id",
+            "nullable": true
+          },
+          "sort": {
+            "type": "integer",
+            "description": "排序",
+            "format": "int32",
+            "nullable": true
+          },
+          "mate": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SysPageRouteMateModel"
+              }
+            ],
+            "description": "前端路由附加信息",
+            "nullable": true
+          },
+          "component": {
+            "type": "string",
+            "description": "组件名",
+            "nullable": true
+          },
+          "isTab": {
+            "type": "integer",
+            "description": "是否是tab",
+            "format": "int32"
+          },
+          "routeId": {
+            "type": "string",
+            "description": "路由id",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkSoftwarePageModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "软件id",
+            "nullable": true
+          },
+          "updTime": {
+            "type": "string",
+            "description": "最后修改时间",
+            "format": "date-time"
+          },
+          "softwareName": {
+            "type": "string",
+            "description": "软件名称",
+            "nullable": true
+          },
+          "softwarePath": {
+            "type": "string",
+            "description": "软件地址",
+            "nullable": true
+          },
+          "softwareVersion": {
+            "type": "string",
+            "description": "软件版本",
+            "nullable": true
+          },
+          "softwareSize": {
+            "type": "string",
+            "description": "软件大小",
+            "nullable": true
+          },
+          "softwareIcon": {
+            "type": "string",
+            "description": "软件图标",
+            "nullable": true
+          },
+          "softwareNote": {
+            "type": "string",
+            "description": "软件简介",
+            "nullable": true
+          },
+          "softwareDescription": {
+            "type": "string",
+            "description": "帮助文档(word或者压缩包地址)",
+            "nullable": true
+          },
+          "softwareCategory": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SoftwareCategory"
+              }
+            ],
+            "description": "软件类型\r\n\r\n1 = 办公软件\r\n\r\n2 = 系统应用\r\n\r\n3 = 通讯工具\r\n\r\n4 = 娱乐媒体\r\n\r\n5 = 其他",
+            "x-enumNames": [
+              "办公软件",
+              "系统应用",
+              "通讯工具",
+              "娱乐媒体",
+              "其他"
+            ]
+          },
+          "softwareClientType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SoftwareClientType"
+              }
+            ],
+            "description": "适用客户端\r\n\r\n0 = win\r\n\r\n1 = mac\r\n\r\n2 = 安卓\r\n\r\n3 = ios",
+            "x-enumNames": [
+              "win",
+              "mac",
+              "安卓",
+              "ios"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkSoftwarePageModelIEnumerableInt32Tuple": {
+        "type": "object",
+        "properties": {
+          "item1": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkSoftwarePageModel"
+            },
+            "nullable": true
+          },
+          "item2": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkSoftwareQueryModel": {
+        "type": "object",
+        "properties": {
+          "pageIndex": {
+            "type": "integer",
+            "description": "页码数",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "每页的大小",
+            "format": "int32"
+          },
+          "sorts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuerySorting"
+            },
+            "description": "排序数组(前台传入)",
+            "nullable": true
+          },
+          "softwareName": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/QueryString"
+              }
+            ],
+            "description": "软件名称",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "工作软件查询"
+      },
+      "WorkSoftwareViewModel": {
+        "required": [
+          "softwareCategory",
+          "softwareIcon",
+          "softwareName",
+          "softwarePath",
+          "suffix"
+        ],
+        "type": "object",
+        "properties": {
+          "softwareName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "软件名称"
+          },
+          "softwarePath": {
+            "minLength": 1,
+            "type": "string",
+            "description": "软件地址"
+          },
+          "softwareVersion": {
+            "type": "string",
+            "description": "软件版本",
+            "nullable": true
+          },
+          "softwareSize": {
+            "type": "string",
+            "description": "软件大小",
+            "nullable": true
+          },
+          "softwareIcon": {
+            "minLength": 1,
+            "type": "string",
+            "description": "软件图标"
+          },
+          "softwareNote": {
+            "type": "string",
+            "description": "软件简介",
+            "nullable": true
+          },
+          "softwareDescription": {
+            "type": "string",
+            "description": "帮助文档(word或者压缩包地址)",
+            "nullable": true
+          },
+          "softwareCategory": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SoftwareCategory"
+              }
+            ],
+            "description": "软件类型\r\n\r\n1 = 办公软件\r\n\r\n2 = 系统应用\r\n\r\n3 = 通讯工具\r\n\r\n4 = 娱乐媒体\r\n\r\n5 = 其他",
+            "x-enumNames": [
+              "办公软件",
+              "系统应用",
+              "通讯工具",
+              "娱乐媒体",
+              "其他"
+            ]
+          },
+          "softwareClientType": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SoftwareClientType"
+              }
+            ],
+            "description": "适用客户端\r\n\r\n0 = win\r\n\r\n1 = mac\r\n\r\n2 = 安卓\r\n\r\n3 = ios",
+            "x-enumNames": [
+              "win",
+              "mac",
+              "安卓",
+              "ios"
+            ]
+          },
+          "suffix": {
+            "minLength": 1,
+            "type": "string",
+            "description": "后缀名"
+          },
+          "id": {
+            "type": "string",
+            "description": "软件id",
+            "nullable": true
+          },
+          "updTime": {
+            "type": "string",
+            "description": "最后修改时间",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "工作软件显示模型"
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "在下框中输入请求头中需要添加Jwt授权Token：Bearer Token",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

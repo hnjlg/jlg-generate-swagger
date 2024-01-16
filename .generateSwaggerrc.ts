@@ -1,4 +1,4 @@
-export default {
+/* export default {
 	// 远程swagger.json文件URL
 	swaggerUrl: 'http://localhost:3000/swagger.json',
 	// 生成的swagger.json文件路径，默认src/apiType/swagger.json
@@ -24,4 +24,19 @@ export default {
 	// 		return '';
 	// 	}
 	// },
+};
+ */
+
+export default {
+	// 远程swagger.json文件URL
+	swaggerUrl: 'http://10.1.2.9:10011/swagger/v1/swagger.json',
+	// 生成的swagger.json文件路径，默认src/apiType/swagger.json
+	swaggerFileName: 'test/apiType/production/swagger.json',
+	// 生成的接口文件路径，默认src/apiType/api.ts
+	resultFileName: 'test/apiType/production/result.ts',
+	// 生成文件中的Typescript类型命名前缀，默认AT_
+	interfaceNamePrepend: 'AT_',
+	// 封装的axios实例引入路径，默认import axios from '@/request/index'
+	axiosUrl: "import { instanceGenerate as axios } from '@/api/index';",
+	isNeedResponse: true,
 };
