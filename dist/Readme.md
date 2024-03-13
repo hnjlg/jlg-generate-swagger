@@ -37,6 +37,8 @@ export default {
 			return '';
 		}
 	},
+	// 可选，本地swagger.json文件路径，如果有值，会优先去读取本地的文件去生成
+	localSwaggerFilePath: 'C:/Users/G/Desktop/project/person/generate-swagger/test/apiType/production/swagger.json',
 };
 
 ```

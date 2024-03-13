@@ -7,4 +7,5 @@ export declare interface I_Config {
 	resultFileContentHeader?: string[];
 	axiosFuncContent?: (parameterStr: string, handleAxiosUrl: string) => string;
 	isNeedResponse?: boolean;
+	localSwaggerFilePath?: string;
 }

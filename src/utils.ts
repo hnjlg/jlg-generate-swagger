@@ -12,8 +12,9 @@ export const duplicateRemovalInArr = (arr1: any[], arr2: any[], callback: (item:
 		});
 };
 
-export const schemaObject = (config: any, schema: any, proTypeArr: any, propertiesKeyKey: string[]): string => {
+export const schemaObject = (config: I_Config, schema: any, proTypeArr: any, propertiesKeyKey: string[]): string => {
 	if (!schema.properties) {
+		log('info', JSON.stringify(schema));
 		log('error', '出现type是object但是没有properties的情况,请立刻处理');
 	}
 	// interface内容
