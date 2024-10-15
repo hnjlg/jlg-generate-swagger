@@ -93,3 +93,7 @@ with .catch(). The promise rejected with the reason "下载Swagger JSON文件时
 2>: 如遇其它问题，请及时联系开发人员
 
 ## 参考资料
+
+## bug
+
+1、请求路径带.时，生成的请求方法名格式不对
